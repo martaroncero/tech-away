@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>All seekers from <%= current_user.charity.name %></h2>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to seeker_path(user) do %>
+          <%= user.first_name %>
+        <% end %>
+        -
+        <%= link_to edit_seeker_path(user) do %>
+          Edit
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
