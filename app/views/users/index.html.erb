@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>All seekers from <%= current_user.charity.name %></h2>
+  <ul>
+    <% @seekers.each do |seeker| %>
+      <li>
+        <%= seeker.first_name %>
+      </li>
+    <% end %>
+  </ul>
+</div>
