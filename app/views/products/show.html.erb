@@ -1,0 +1,10 @@
+
+   <%= simple_form_for [@product, @booking] do |f| %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :status %>
+    </div>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+
