@@ -7,9 +7,13 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :users, only: [:show, :index]
+  get "/seekers/new", to: "users#new", as: :new_seeker
+  get "/seekers/", to: "users#index", as: :seekers
+  get "/seekers/:id", to: "users#show", as: :seeker
+  post "/seekers", to: "users#create"
+  get "/seekers/:id/edit", to: "users#edit", as: :edit_seeker
+  patch "/seekers/:id", to: "users#update"
+
   resources :bookings, only: [:index]
-  resources :charities, only: [:show] do
-    resources :users, only: [:new, :create, :edit, :update]
-  end
+  resources :charities, only: [:show]
 end

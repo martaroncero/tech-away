@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [ :show, :edit ]
+  before_action :set_user, only: [ :show, :edit, :update ]
+
   def new
     @user = User.new
-    @charity = current_user.charity
   end
 
   def create
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user.charity = current_user.charity
 
     if @user.save
-      redirect_to root_path
+      redirect_to seeker_path(@user)
     else
       render :new
     end
@@ -23,15 +23,18 @@ class UsersController < ApplicationController
   end
 
   def index
-    @seekers = User.where(charity_id: current_user.charity_id, kind: "Seeker")
+    @seekers = User.where(charity: current_user.charity, kind: "Seeker")
   end
 
   def edit
-
   end
-
+  
   def update
-
+    if @user.update(user_params)
+      redirect_to seeker_path(@user)
+    else
+      render :edit
+    end
   end
 
   private
