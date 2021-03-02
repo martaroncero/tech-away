@@ -4,9 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  CONTACTPREFERENCE = [ "Email only", "Phone only", "Either"]
-  validates :contact_preference, inclusion: { in: CONTACTPREFERENCE, message: "must be from the list" }
-
   belongs_to :charity, optional: true
   has_many :bookings
   has_many :products

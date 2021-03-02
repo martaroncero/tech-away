@@ -1,9 +1,6 @@
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for [@charity, @user] do |f| %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
-  <%= f.input :password_confirmation,
-            required: true,
-            input_html: { autocomplete: "new-password" } %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :description %>

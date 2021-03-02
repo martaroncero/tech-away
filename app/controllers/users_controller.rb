@@ -2,15 +2,17 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @charity = current_user.charity
   end
 
   def create
     # Create a seeker
     @user = User.new(user_params)
     @user.kind = "Seeker"
+    @user.charity = current_user.charity
 
     if @user.save
-      # redirect_to user_path(@user)
+      redirect_to root_path
     else
       render :new
     end
