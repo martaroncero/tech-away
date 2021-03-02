@@ -2,11 +2,18 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    raise
   end
 
   def create
+    # Create a seeker
     @user = User.new(user_params)
+    @user.kind = "Seeker"
+
+    if @user.save
+      # redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
   
   def show
