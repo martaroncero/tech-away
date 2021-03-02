@@ -3,7 +3,13 @@
   <ul>
     <% @users.each do |user| %>
       <li>
-        <%= user.first_name %>
+        <%= link_to seeker_path(user) do %>
+          <%= user.first_name %>
+        <% end %>
+        -
+        <%= link_to edit_seeker_path(user) do %>
+          Edit
+        <% end %>
       </li>
     <% end %>
   </ul>
