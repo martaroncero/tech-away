@@ -1,9 +1,9 @@
 <div class="container">
   <h2>All seekers from <%= current_user.charity.name %></h2>
   <ul>
-    <% @seekers.each do |seeker| %>
+    <% @users.each do |user| %>
       <li>
-        <%= seeker.first_name %>
+        <%= user.first_name %>
       </li>
     <% end %>
   </ul>

@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @seekers = User.where(charity: current_user.charity, kind: "Seeker")
+    @users = User.where(charity: current_user.charity, kind: "Seeker")
   end
 
   def edit
