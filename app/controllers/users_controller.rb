@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [ :show, :edit ]
   def new
     @user = User.new
     @charity = current_user.charity
@@ -19,7 +20,6 @@ class UsersController < ApplicationController
   end
   
   def show
-
   end
 
   def index
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-
+    @user = User.find(params[:id])
   end
 
   def user_params
