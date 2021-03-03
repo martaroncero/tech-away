@@ -1,0 +1,7 @@
+<%= simple_form_for @user, url: seeker_path(@user), method: :patch  do |f| %>
+  <%= f.input :email, required: true %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description %>
+  <%= f.submit %>  
+<% end %>

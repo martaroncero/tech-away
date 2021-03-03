@@ -3,13 +3,19 @@ class BookingsController < ApplicationController
     @product = Product.find(params[:product_id])
     @booking = Booking.new(booking_params)
     @booking.product = @product
-    @booking.user = current_user
+    @booking.user = User.where(charity: current_user.charity, kind: "Seeker")
     @booking.charity = current_user.charity
     @booking.save
     redirect_to bookings_path
   end
 
-  def booking_params
-    params.require(:booking).permit(:status)
+  # def booking_params
+  #   params.require(:booking).permit(:status)
+  # end
+
+  def index
+    @user = current_user
+    @bookings = @user.bookings.where(charity_id: @user.charity_id)
   end
+
 end

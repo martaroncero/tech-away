@@ -16,7 +16,7 @@ before_action :set_product, only: [:show, :edit, :update]
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new
     @product.user = current_user
     if @product.save
       redirect_to product_path(@product)
@@ -40,9 +40,9 @@ before_action :set_product, only: [:show, :edit, :update]
 
     private
 
-    def product_params
-      params.require(:product).permit(:title, :description, :status, :condition, :address)
-    end
+    # def product_params
+    #   params.require(:product).permit(:title, :description, :status, :condition, :address)
+    # end
 
     def set_product
       @product = Product.find(params[:id])
