@@ -14,7 +14,7 @@ user_1 = User.create!(first_name: "Nigel", last_name: "Lee", kind: "Donator", de
 
 user_2 = User.create!(first_name: "Amal", last_name: "Shaw", charity_id: charity1.id, kind: "Seeker", description: "Before she was forced to flee civil war in Sudan, Amal was studying to be lawyer. She needs to pass an advanced English exam to get into university, and needs a laptop for the same. Amal hopes she can continue her education here in Britain and someday be a successful lawyer.", phone_number: "+443339200")
 
-user_3 = User.create!(first_name: "Tyler", last_name: "Bond", charity_id: charity1.id, kind: "Charity worker", description: "", phone_number: "+443428099")
+user_3 = User.create!(first_name: "Sarah", last_name: "Parker", charity_id: charity1.id, kind: "Charity worker", description: "", phone_number: "+443428099")
 
 
 #Products 
@@ -35,5 +35,5 @@ product5 = Product.create!(user_id: user_2.id, title: "Desktop", description: "H
 
 #bookings
 Booking1 = Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product3.id, status: "Complete")
-Booking1 = Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product5.id, status: "Complete")
+Booking1 = Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product5.id, status: "Pending")
 
