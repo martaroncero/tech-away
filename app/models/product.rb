@@ -11,6 +11,7 @@ class Product < ApplicationRecord
     against: [ :title, :description ],
     associated_against: {
       category: [ :title ]
+    },
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
