@@ -15,9 +15,5 @@ class BookingsController < ApplicationController
     @bookings = @user.bookings.where(charity_id: @user.charity_id)
   end
 
-private
-  def booking_params
-    params.require(:booking).permit(:status)
-  end
 
 end
