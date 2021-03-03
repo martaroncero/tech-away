@@ -5,4 +5,5 @@ class Category < ApplicationRecord
   validates :title, inclusion: { in: CATEGORIES }
 
   has_many :products
+  has_many :requests
 end
