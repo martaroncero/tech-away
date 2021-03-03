@@ -1,0 +1,17 @@
+<div id="request-form-content" class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLongTitle">Add a request</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <%= simple_form_for [@user, @request], url: new_request_path(@user), method: :post, remote: true  do |f| %>
+  <div class="modal-body">
+    <%= f.association :category %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>

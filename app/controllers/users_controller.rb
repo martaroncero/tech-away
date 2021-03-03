@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @request = Request.new
   end
 
   def index
