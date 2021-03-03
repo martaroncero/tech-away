@@ -2,6 +2,11 @@
   <h1>All available products</h1>
   <% @products.each do |product| %>
     <br>
-    Title<%= product.title %>
+    <%= product.title %>
+  <% end %>
+
+  <%= form_tag products_path, method: :get, class:"form-inline" do %>
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a product" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>

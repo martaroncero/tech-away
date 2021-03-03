@@ -6,8 +6,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def index
-     @products = Product.all
+  def index 
+    @query = params[:query]
+
+    if @query.present?
+      @products = Product.search_by_title_description_and_category(@query)
+    else
+      @products = Product.all
+    end
   end
 
   def new
