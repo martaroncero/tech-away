@@ -24,12 +24,12 @@
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.kind == "Donator" %>
-            <%= link_to "Donate", new_product_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Donate", new_product_path, class: "dropdown-item" %>
               <%= link_to "Your products", "#", class: "dropdown-item" %>
               <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% elsif current_user.kind == "Charity worker" %>
-                 <%= link_to "Browse all products", products_index_path, class: "dropdown-item" %>
+                 <%= link_to "Browse all products", products_path, class: "dropdown-item" %>
                 <%= link_to "Bookings", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% else %>
