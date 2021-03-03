@@ -1,1 +1,6 @@
-index
+ <% @bookings.each do |booking| %>
+    <br>
+    Charity <%= booking.charity.name %>
+    Seeker <%= booking.user.first_name %> <%= booking.user.last_name %>
+    Product <%= booking.product.title %>
+  <% end %>

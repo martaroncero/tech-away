@@ -12,8 +12,10 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @bookings = @user.bookings.where(charity_id: @user.charity_id)
+    # @user = current_user
+    @bookings = current_user.charity.bookings
+
+    # @bookings = Booking.all
   end
 
 

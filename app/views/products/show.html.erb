@@ -1,8 +1,11 @@
-
+Product <%= @product.title %>
+Description <%= @product.description %>
+Status <%= @product.status %>
+Donator <%= @product.user.first_name %> <%= @product.user.last_name %>
 <%= simple_form_for [@product, @booking] do |f| %>
   <div class="row">
     <div class="col">
-      <%= f.input :user %>
+      <%= f.association :user, collection: @seekers, label_method: :first_name %>
     </div>
   </div>
   <%= f.button :submit, class: 'btn btn-primary' %>
