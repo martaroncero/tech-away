@@ -1,7 +1,10 @@
-Product <%= @product.title %>
-Description <%= @product.description %>
-Status <%= @product.status %>
-Donator <%= @product.user.first_name %> <%= @product.user.last_name %>
+<div class="col">
+<h1>Product <%= @product.title %></h1>
+<h2>Description <%= @product.description %></h2>
+<h3>Status <%= @product.status %></h3>
+<h4>Donator <%= @product.user.first_name %> <%= @product.user.last_name %></h4>
+</div>
+
 <%= simple_form_for [@product, @booking] do |f| %>
   <div class="row">
     <div class="col">
@@ -10,3 +13,4 @@ Donator <%= @product.user.first_name %> <%= @product.user.last_name %>
   </div>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+
