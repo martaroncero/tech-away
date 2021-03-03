@@ -1,9 +1,11 @@
-
-<%= simple_form_for [@product, @booking] do |f| %>
-  <div class="row">
-    <div class="col">
-      <%= f.input :user %>
+<div class="container">
+  <%= simple_form_for [@product, @booking] do |f| %>
+    <div class="row">
+      <div class="col">
+        <%= f.input :user %>
+      </div>
     </div>
-  </div>
-  <%= f.button :submit, class: 'btn btn-primary' %>
-<% end %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
