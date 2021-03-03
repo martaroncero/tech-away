@@ -2,6 +2,8 @@
   <h1>All available products</h1>
   <% @products.each do |product| %>
     <br>
-    Title<%= product.title %>
+    <%= product.title %>
   <% end %>
+
+  <%= render 'search' %>
 </div>

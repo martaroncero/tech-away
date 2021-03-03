@@ -13,8 +13,14 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index
-     @products = Product.all
+  def index 
+    @query = params[:query]
+
+    if @query.present?
+      @products = Product.global_search(@query)
+    else
+      @products = Product.all
+    end
   end
 
   def new
