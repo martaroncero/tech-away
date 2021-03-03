@@ -6,6 +6,15 @@
     Add a request
   </button>
 
+  <h3><%= @user.first_name %> needs: </h3>
+  <ul>
+    <% @user.requests.each do |request| %>
+      <li>
+        <%= request.category.title %>
+      </li>
+    <% end %>
+  </ul>
+
   <%= link_to "Go back to all seekers", seekers_path %>
 </div>
 
