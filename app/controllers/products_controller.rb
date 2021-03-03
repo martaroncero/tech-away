@@ -4,6 +4,13 @@ class ProductsController < ApplicationController
   def show
     @booking = Booking.new
     @product = Product.find(params[:id])
+
+    if @product.geocoded?
+      @marker = {
+                  lat: @product.latitude,
+                  lng: @product.longitude
+                }
+    end
   end
 
   def index 
