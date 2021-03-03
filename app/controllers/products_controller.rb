@@ -1,11 +1,20 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
-  
+
+  def show
+    @booking = Booking.new
+    @product = Product.find(params[:id])
+  end
+
+  def index
+     @products = Product.all
+  end
+
   def new
     @product = Product.new
   end
-    
-  def create 
+
+  def create
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
@@ -13,28 +22,28 @@ class ProductsController < ApplicationController
     else
       render :new
     end
-  end  
-    
+  end
+
 
   def edit
   end
-  
+
   def update
     if @product.update(product_params)
-      redirect_to product_path(@product) 
+      redirect_to product_path(@product)
     else
       render :edit
     end
   end
-    
-    
-    private 
 
-    def product_params
-      params.require(:product).permit(:title, :description, :status, :condition, :address)  
-    end
-    
+
+    private
+
+    # def product_params
+    #   params.require(:product).permit(:title, :description, :status, :condition, :address)
+    # end
+
     def set_product
-      @product = Product.find(params[:id])  
+      @product = Product.find(params[:id])
     end
 end
