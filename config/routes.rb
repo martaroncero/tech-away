@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/seekers/new", to: "users#new", as: :new_seeker
   get "/seekers/", to: "users#index", as: :seekers
   get "/seekers/:id", to: "users#show", as: :seeker
-  post "/seekers/:id", to: "requests#create", as: :new_request
+  post "/seekers/:id", to: "requests#create"
 
   post "/seekers", to: "users#create"
   get "/seekers/:id/edit", to: "users#edit", as: :edit_seeker

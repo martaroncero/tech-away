@@ -1,11 +1,12 @@
 class RequestsController < ApplicationController
 
   def create
-    @request = Request.new(request_params) 
-    @request.user = User.find(params[:id])
-
+    @request = Request.new(request_params)
+    seeker = User.find(params[:id])
+    @request.user = seeker
+  
     if @request.save
-      redirect_to seeker_path(user)
+      redirect_to seeker_path(seeker)
     else
       respond_to do |format|
         format.js { render 'requests/form/form_reload.js.erb' }
@@ -16,6 +17,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:category)
+    params.require(:request).permit(:category_id)
   end
 end

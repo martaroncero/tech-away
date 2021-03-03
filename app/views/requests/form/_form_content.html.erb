@@ -5,7 +5,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <%= simple_form_for [@user, @request], url: new_request_path(@user), method: :post, remote: true  do |f| %>
+  <%= simple_form_for [@user, @request], url: seeker_path(@user), method: :post do |f| %>
   <div class="modal-body">
     <%= f.association :category %>
   </div>
