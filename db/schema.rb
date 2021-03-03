@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_120158) do
+ActiveRecord::Schema.define(version: 2021_03_03_124004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2021_03_02_120158) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "charities", force: :cascade do |t|
     t.string "name"
     t.string "website"
@@ -37,14 +43,25 @@ ActiveRecord::Schema.define(version: 2021_03_02_120158) do
 
   create_table "products", force: :cascade do |t|
     t.string "title"
-    t.text "decription"
+    t.text "description"
     t.string "status"
     t.string "condition"
     t.string "address"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_requests_on_category_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_120158) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "kind"
+    t.string "kind", default: "Donator"
     t.text "description"
     t.string "phone_number"
     t.string "contact_preference"
@@ -70,6 +87,9 @@ ActiveRecord::Schema.define(version: 2021_03_02_120158) do
   add_foreign_key "bookings", "charities"
   add_foreign_key "bookings", "products"
   add_foreign_key "bookings", "users"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
+  add_foreign_key "requests", "categories"
+  add_foreign_key "requests", "users"
   add_foreign_key "users", "charities"
 end
