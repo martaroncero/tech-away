@@ -41,6 +41,6 @@ product5 = Product.create!(user_id: user_1.id, title: "Desktop", description: "H
 
 
 #bookings
-Booking1 = Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product3.id, status: "Complete")
-Booking1 = Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product5.id, status: "Pending")
+Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product3.id, status: "Complete")
+Booking.create!(charity_id: charity1.id, user_id: user_2.id, product_id: product5.id, status: "Pending")
 
