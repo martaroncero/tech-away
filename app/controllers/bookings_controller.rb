@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
     @product = Product.find(params[:product_id])
     @booking = Booking.new(booking_params)
     @booking.product = @product
-    @booking.user = current_user
+    @booking.user = User.where(charity: current_user.charity, kind: "Seeker")
     @booking.charity = current_user.charity
     @booking.save
     redirect_to bookings_path
