@@ -17,11 +17,11 @@ category6 = Category.create!(title: "Printer")
 charity1 = Charity.create!(name: "Refugee aid", website: "www.refugee-aid.org", whatsapp_number: "+44356712929")
 
 #Users
-user_1 = User.create!(first_name: "Nigel", last_name: "Lee", kind: "Donator", description: "", phone_number: "+441234120", contact_preference: "Either")
+user_1 = User.create!(email: "donator@mail.com", password: "123456" , first_name: "Nigel", last_name: "Lee", kind: "Donator", description: "", phone_number: "+441234120", contact_preference: "Either")
 
-user_2 = User.create!(first_name: "Amal", last_name: "Shaw", charity_id: charity1.id, kind: "Seeker", description: "Before she was forced to flee civil war in Sudan, Amal was studying to be lawyer. She needs to pass an advanced English exam to get into university, and needs a laptop for the same. Amal hopes she can continue her education here in Britain and someday be a successful lawyer.", phone_number: "+443339200")
+user_2 = User.create!(email: "seeker@mail.com", password: "123456" , first_name: "Amal", last_name: "Shaw", charity_id: charity1.id, kind: "Seeker", description: "Before she was forced to flee civil war in Sudan, Amal was studying to be lawyer. She needs to pass an advanced English exam to get into university, and needs a laptop for the same. Amal hopes she can continue her education here in Britain and someday be a successful lawyer.", phone_number: "+443339200")
 
-user_3 = User.create!(first_name: "Sarah", last_name: "Parker", charity_id: charity1.id, kind: "Charity worker", description: "", phone_number: "+443428099")
+user_3 = User.create!(email: "worker@mail.com", password: "123456" , first_name: "Sarah", last_name: "Parker", charity_id: charity1.id, kind: "Charity worker", description: "", phone_number: "+443428099")
 
 
 #Products 

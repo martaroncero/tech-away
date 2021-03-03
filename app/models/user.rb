@@ -7,4 +7,5 @@ class User < ApplicationRecord
   belongs_to :charity, optional: true
   has_many :bookings
   has_many :products
+  has_many :requests
 end
