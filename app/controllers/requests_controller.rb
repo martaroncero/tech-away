@@ -2,11 +2,11 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    seeker = User.find(params[:id])
-    @request.user = seeker
+    @user = User.find(params[:id])
+    @request.user = @user
   
     if @request.save
-      redirect_to seeker_path(seeker)
+      redirect_to seeker_path(@user)
     else
       respond_to do |format|
         format.js { render 'requests/form/form_reload.js.erb' }
