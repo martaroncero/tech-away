@@ -1,5 +1,7 @@
  
    <div class="container">
+   <div class="card">
+  <div class="card-body">
    <%= simple_form_for product do |f| %>
   <div class="form-row">
     <div class="col-md-4">
@@ -16,13 +18,13 @@
     </div>
       </div>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-8">
       <%= f.input :description %>
     </div>
     
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col-lg-8">
       <%= f.input :address %>
     </div>
     <div class="col">
@@ -34,18 +36,17 @@
     <% end %>
    
     <br><br>
-
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 55rem;">
   <ul class="list-group list-group-flush">
-  <h4>Condition</h4>
+  <h6><b>Condition</b></h6>
     <li class="list-group-item">New - Brand new, never used,undamaged item. Ideally in the original package.</li>
     <li class="list-group-item">Used (like new) - Excellent condition, but has previously been used. No signs of wear or defects</li>
     <li class="list-group-item">Used (good) - Minor signs of wear. Item is operational and works as intended.</li>
      <li class="list-group-item">Used (fair) - Some signs of wear and tear or minor defects. Item is still usable as intended.</li>
   </ul>
-</div>
-
- 
+</div> 
   </div>
+    </div>
+</div>
  
 
