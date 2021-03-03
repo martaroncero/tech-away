@@ -1,0 +1,51 @@
+ 
+   <div class="container">
+   <%= simple_form_for product do |f| %>
+  <div class="form-row">
+    <div class="col-md-4">
+      <%= f.input :title %>
+    </div>
+    
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <%= f.association :category %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.input :condition, collection: Product::CONDITIONS %>
+    </div>
+      </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= f.input :description %>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :address %>
+    </div>
+    <div class="col">
+      <%= f.input :photo, as: :file %>
+    </div>
+  </div>
+ 
+  <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+   
+    <br><br>
+
+    <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+  <h4>Condition</h4>
+    <li class="list-group-item">New - Brand new, never used,undamaged item. Ideally in the original package.</li>
+    <li class="list-group-item">Used (like new) - Excellent condition, but has previously been used. No signs of wear or defects</li>
+    <li class="list-group-item">Used (good) - Minor signs of wear. Item is operational and works as intended.</li>
+     <li class="list-group-item">Used (fair) - Some signs of wear and tear or minor defects. Item is still usable as intended.</li>
+  </ul>
+</div>
+
+ 
+  </div>
+ 
+
