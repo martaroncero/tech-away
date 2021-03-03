@@ -5,10 +5,23 @@ class ProductsController < ApplicationController
     @booking = Booking.new
     @product = Product.find(params[:id])
     @seekers = User.where(kind: "Seeker")
+  
+    if @product.geocoded?
+      @marker = {
+                  lat: @product.latitude,
+                  lng: @product.longitude
+                }
+    end
   end
 
-  def index
-     @products = Product.all
+  def index 
+    @query = params[:query]
+
+    if @query.present?
+      @products = Product.global_search(@query)
+    else
+      @products = Product.all
+    end
   end
 
   def new

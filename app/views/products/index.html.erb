@@ -2,8 +2,9 @@
   <h1>All available products</h1>
   <% @products.each do |product| %>
     <br>
-
     <%= link_to product.title, product_path(product) %>
   <% end %>
+
+  <%= render 'search' %>
 </div>
 

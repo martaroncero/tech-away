@@ -1,16 +1,22 @@
-<div class="col">
-<h1>Product <%= @product.title %></h1>
-<h2>Description <%= @product.description %></h2>
-<h3>Status <%= @product.status %></h3>
-<h4>Donator <%= @product.user.first_name %> <%= @product.user.last_name %></h4>
-</div>
-
-<%= simple_form_for [@product, @booking] do |f| %>
-  <div class="row">
-    <div class="col">
-      <%= f.association :user, collection: @seekers, label_method: :first_name %>
-    </div>
+<div class="container">
+  <div class="col">
+    <h1>Product <%= @product.title %></h1>
+    <h2>Description <%= @product.description %></h2>
+    <h3>Status <%= @product.status %></h3>
+    <h4>Donator <%= @product.user.first_name %> <%= @product.user.last_name %></h4>
   </div>
-  <%= f.button :submit, class: 'btn btn-primary' %>
-<% end %>
 
+  <%= simple_form_for [@product, @booking] do |f| %>
+    <div class="row">
+      <div class="col">
+        <%= f.association :user, collection: @seekers, label_method: :first_name %>
+      </div>
+    </div>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+
+   <h3>Location: <%= @product.address %></h3>
+   <!-- Map with markers -->
+   <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+   </div>
+</div>
