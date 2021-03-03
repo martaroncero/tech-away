@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def create 
     @product = Product.new(product_params)
     @product.user = current_user
+    @product.status = "Pending"
     if @product.save
       redirect_to product_path(@product)
     else
