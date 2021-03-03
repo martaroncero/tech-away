@@ -1,1 +1,13 @@
-index
+ <% @bookings.each do |booking| %>
+    <br>
+    Charity <%= booking.charity.name %>
+    Seeker <%= booking.user.first_name %> <%= booking.user.last_name %>
+    Product <%= booking.product.title %>
+  <% end %>
+
+</div>
+  <div class="mt-2">
+    <%= link_to "Back to all products", products_path, class: "btn btn-primary mt-3" %>
+  </div>
+</div>
+

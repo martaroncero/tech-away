@@ -4,7 +4,8 @@ class ProductsController < ApplicationController
   def show
     @booking = Booking.new
     @product = Product.find(params[:id])
-
+    @seekers = User.where(kind: "Seeker")
+  
     if @product.geocoded?
       @marker = {
                   lat: @product.latitude,
