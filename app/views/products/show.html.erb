@@ -8,6 +8,7 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 
+    <h3>Location: <%= @product.address %></h3>
     <!-- Map with markers -->
     <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
