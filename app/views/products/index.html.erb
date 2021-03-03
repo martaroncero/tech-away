@@ -1,3 +1,7 @@
 <div class="container">
   <h1>All available products</h1>
+  <% @products.each do |product| %>
+    <br>
+    Title<%= product.title %>
+  <% end %>
 </div>
