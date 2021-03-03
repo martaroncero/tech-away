@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     @query = params[:query]
 
     if @query.present?
-      @products = Product.search_by_title_description_and_category(@query)
+      @products = Product.global_search(@query)
     else
       @products = Product.all
     end
