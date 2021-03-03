@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @booking.product = @product
     @booking.user = User.where(charity: current_user.charity, kind: "Seeker").first
     @booking.charity = current_user.charity
+    @booking.status = "pending"
     @booking.save
     redirect_to bookings_path
   end
