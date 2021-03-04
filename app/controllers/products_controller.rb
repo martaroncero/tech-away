@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [ :show, :edit, :update, :mark_as_complete ]
 
   def show
     @booking = Booking.new
@@ -26,6 +26,11 @@ class ProductsController < ApplicationController
 
   def mylistings
     @products = Product.where(user_id: current_user.id)
+  end
+
+  def mark_as_complete
+    @product.update( status: "Complete" )
+    redirect_to my_listings_path
   end
 
   def new
