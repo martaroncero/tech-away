@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>My listings</h1>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <%= link_to product.title, product_path(product) %>
+        -
+        Status: <%= product.status %>
+
+        <% unless product.status == "Complete" %>
+          <%= "- Mark as complete" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
