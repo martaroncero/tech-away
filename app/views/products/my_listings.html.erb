@@ -9,7 +9,7 @@
 
         <% unless product.status == "Complete" %>
            - 
-          <%= link_to(mark_as_complete_path(product), method: :get, data: { confirm: "Are you sure you want unlist this product?"}) do %>
+          <%= link_to(mark_product_as_complete_path(product), method: :get, data: { confirm: "Are you sure you want unlist this product?"}) do %>
             <%= "Remove from market" %>
           <% end %>
         <% end %>
