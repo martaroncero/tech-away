@@ -35,6 +35,11 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+
+    if params[:request_id].present?
+      request = Request.find(params[:request_id])
+      @product.category = request.category
+    end
   end
 
   def create
