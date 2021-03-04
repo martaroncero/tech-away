@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def mylistings
+  def my_listings
     @products = Product.where(user_id: current_user.id)
   end
 
