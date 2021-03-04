@@ -1,4 +1,4 @@
- 
+
    <div class="container">
    <div class="card">
   <div class="card-body">
@@ -7,7 +7,7 @@
     <div class="col-md-4">
       <%= f.input :title %>
     </div>
-    
+
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
@@ -21,20 +21,20 @@
     <div class="col-lg-8">
       <%= f.input :description %>
     </div>
-    
+
   </div>
   <div class="row">
     <div class="col-lg-8">
       <%= f.input :address %>
     </div>
     <div class="col">
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, multiple:true %>
     </div>
   </div>
- 
+
   <%= f.button :submit, class: 'btn btn-primary' %>
     <% end %>
-   
+
     <br><br>
     <div class="card" style="width: 55rem;">
   <ul class="list-group list-group-flush">
@@ -44,9 +44,9 @@
     <li class="list-group-item">Used (good) - Minor signs of wear. Item is operational and works as intended.</li>
      <li class="list-group-item">Used (fair) - Some signs of wear and tear or minor defects. Item is still usable as intended.</li>
   </ul>
-</div> 
+</div>
   </div>
     </div>
 </div>
- 
+
 

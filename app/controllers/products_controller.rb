@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
     @booking = Booking.new
     @product = Product.find(params[:id])
     @seekers = User.where(kind: "Seeker")
-  
+
     if @product.geocoded?
       @marker = {
                   lat: @product.latitude,
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index 
+  def index
     @query = params[:query]
 
     if @query.present?
@@ -55,8 +55,8 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-      params.require(:product).permit(:title, :description, :status, :condition, :category_id, :address)
-      
+      params.require(:product).permit(:title, :description, :status, :condition, :category_id, :address, photos:[])
+
     end
 
     def set_product
