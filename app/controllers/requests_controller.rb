@@ -14,6 +14,10 @@ class RequestsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
 
   def request_params
