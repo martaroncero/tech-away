@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [ :show, :edit, :update, :mark_as_complete ]
+  before_action :set_request, only: [ :new, :create ]
 
   def show
     @booking = Booking.new
@@ -37,8 +38,7 @@ class ProductsController < ApplicationController
     @product = Product.new
 
     if params[:request_id].present?
-      request = Request.find(params[:request_id])
-      @product.category = request.category
+      @product.category = @request.category
     end
   end
 
@@ -46,13 +46,24 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     @product.status = "Pending"
+
+    if @request
+      @product.category = @request.category
+    end
+    
     if @product.save
+      if @request
+        Booking.create(charity: @request.user.charity,
+                      user: @request.user,
+                      status: "Pending"
+        )
+      end
+
       redirect_to product_path(@product)
     else
       render :new
     end
   end
-
 
   def edit
   end
@@ -65,15 +76,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  private
 
-    private
+  def product_params
+    params.require(:product).permit(:title, :description, :status, :condition, :category_id, :address)
+    
+  end
 
-    def product_params
-      params.require(:product).permit(:title, :description, :status, :condition, :category_id, :address)
-      
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def set_request
+    if params[:request_id].present?
+      @request = Request.find(params[:request_id])
     end
-
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  end
 end

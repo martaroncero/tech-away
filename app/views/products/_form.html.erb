@@ -2,7 +2,12 @@
    <div class="container">
    <div class="card">
   <div class="card-body">
-   <%= simple_form_for product do |f| %>
+    <% if @request %>
+    <% action = products_path(request_id: @request.id) %>
+    <% else %>
+    <% action = products_path %>
+    <% end %>
+      <%= simple_form_for product, url: action do |f| %>
   <div class="form-row">
     <div class="col-md-4">
       <%= f.input :title %>
