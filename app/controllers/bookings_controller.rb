@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
 
+  before_action :set_booking, only: [ :mark_as_archived, :mark_as_complete ]
   def create
     @product = Product.find(params[:product_id])
     @booking = Booking.new

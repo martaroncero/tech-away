@@ -1,13 +1,26 @@
- <% @bookings.each do |booking| %>
-    <br>
-    Charity <%= booking.charity.name %>
-    Seeker <%= booking.user.first_name %> <%= booking.user.last_name %>
-    Product <%= booking.product.title %>
-  <% end %>
-
-</div>
+<div class="container">
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        Charity: <%= booking.charity.name %> - 
+        Seeker: <%= booking.user.first_name %> <%= booking.user.last_name %> - 
+        Product: <%= booking.product.title %> - 
+        Status: <%= booking.status %>
+        <% unless booking.status == "Complete" || booking.status == "Archived" %>
+           - Mark as: 
+          <%= link_to(mark_booking_as_complete_path(booking), method: :get, data: { confirm: "Are you sure you want to mark this booking as complete?"}) do %>
+            <%= "Complete" %>
+          <% end %>
+          <%= link_to(mark_booking_as_archived_path(booking), method: :get, data: { confirm: "Are you sure you want to mark this booking as archived?"}) do %>
+            <%= "Archived" %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
   <div class="mt-2">
     <%= link_to "Back to all products", products_path, class: "btn btn-primary mt-3" %>
   </div>
 </div>
+
 
