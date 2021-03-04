@@ -25,6 +25,9 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = current_user
+    @accepted_products = @user.products.where(status: "Accepted")
+    @pending_products = @user.products.where(status: "Pending")
+    @declined_products = @user.products.where(status: "Declined")
   end
 
   def index

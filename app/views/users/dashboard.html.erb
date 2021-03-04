@@ -1,23 +1,45 @@
 <div class="container my-4">
-<h1> Products I have donated </h1>
+  <h1> What I have donated </h1>
 
-<div>
-Accepted:
-<% @user.products.where(status: "accepted").each do |product| %>
-<%= render "product_card", product: product %>
-<% end %>
-</div>
+  <% if @accepted_products.any? %>
+    <div>
+      <h3> Accepted: </h3>
+      <% @accepted_prodcuts.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
 
-<div>
-Pending:
-<% @user.products.where(status: "Pending").each do |product| %>
-<%= render "product_card", product: product %>
-<% end %>
-</div>
+  <% if @pending_products.any? %>
+    <div>
+      <h3> Pending </h3>
+      <% @pending_products.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
 
-<div>
-Declined:
-<% @user.products.where(status: "declined").each do |product| %>
-<%= render "product_card", product: product %>
-<% end %>
+  <% if @declined_products.any? %>
+    <div>
+      <h3> Declined: </h3>
+      <% @declined_products.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @accepted_products.empty? %>
+    <div class="text-muted">
+      Accepted
+    </div>
+  <% end %>
+  <% if @pending_products.empty? %>
+    <div class="text-muted">
+      Pending
+    </div>
+  <% end %>
+  <% if @declined_products.empty? %>
+    <div class="text-muted">
+      Declined
+    </div>
+  <% end %>
 </div>
