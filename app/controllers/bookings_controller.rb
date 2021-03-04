@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_booking, only: [ :mark_as_archived, :mark_as_complete ]
+  before_action :set_booking, only: [ :decline_booking, :accept_booking ]
   def create
     @product = Product.find(params[:product_id])
     @booking = Booking.new
@@ -16,14 +16,19 @@ class BookingsController < ApplicationController
     @bookings = current_user.charity.bookings
   end
 
-  def mark_as_complete
-    @booking.update( status: "Complete" )
-    redirect_to bookings_path
+  def seeker_index
+    @user = User.find(params[:id])
+    @bookings = Booking.where(user_id: @user, status: "Pending")
   end
 
-  def mark_as_archived
-    @booking.update( status: "Archived" )
-    redirect_to bookings_path
+  def accept_booking
+    @booking.update(status: "Accepted")
+    redirect_to seeker_bookings_path(@booking.user)
+  end
+
+  def decline_booking
+    @booking.update(status: "Declined")
+    redirect_to seeker_bookings_path(@booking.user)
   end
 
   private
