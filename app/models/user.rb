@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :products
   has_many :requests
+  has_one_attached :photo
 end
