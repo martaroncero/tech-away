@@ -7,18 +7,24 @@
 }
 
 .jumbotron h1{
-  width: 50%;
+  width: 70%;
   font-size: 48px;
-
 }
 
 
 .btn.btn-light{
   background-color: #14E78E;
   color: white;
+  border-radius: 50px;
 }
 
 .btn.btn-light:hover{
   background-color: #14E78E;
   color: black;
+}
+
+
+.text-orange{
+  color: #FEA451;
+  line-height: 30px
 }
