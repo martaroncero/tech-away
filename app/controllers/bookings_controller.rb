@@ -16,6 +16,11 @@ class BookingsController < ApplicationController
     @bookings = current_user.charity.bookings
   end
 
+  def seeker_index
+    @user = User.find(params[:id])
+    @bookings = Booking.where(user_id: @user)
+  end
+
   def mark_as_complete
     @booking.update( status: "Complete" )
     redirect_to bookings_path
