@@ -18,17 +18,17 @@ class BookingsController < ApplicationController
 
   def seeker_index
     @user = User.find(params[:id])
-    @bookings = Booking.where(user_id: @user)
+    @bookings = Booking.where(user_id: @user, status: "Pending")
   end
 
   def accept_booking
-    @booking.update( status: "Accepted" )
-    redirect_to seeker_bookings(params[@booking.user])
+    @booking.update(status: "Accepted")
+    redirect_to seeker_bookings_path(@booking.user)
   end
 
   def decline_booking
-    @booking.update( status: "Declined" )
-    redirect_to seeker_bookings(params[@booking.user])
+    @booking.update(status: "Declined")
+    redirect_to seeker_bookings_path(@booking.user)
   end
 
   private
