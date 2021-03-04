@@ -24,6 +24,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def mylistings
+    @products = Product.where(user_id: current_user.id)
+  end
+
   def new
     @product = Product.new
   end

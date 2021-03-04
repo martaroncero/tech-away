@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
+  get "/my-listings", to: "products#mylistings", as: :my_listings
+
   get "/seekers/new", to: "users#new", as: :new_seeker
   get "/seekers/", to: "users#index", as: :seekers
   get "/seekers/:id", to: "users#show", as: :seeker
