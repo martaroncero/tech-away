@@ -23,12 +23,12 @@ class BookingsController < ApplicationController
 
   def accept_booking
     @booking.update( status: "Accepted" )
-    redirect_to bookings_path
+    redirect_to seeker_bookings(params[@booking.user])
   end
 
   def decline_booking
     @booking.update( status: "Declined" )
-    redirect_to bookings_path
+    redirect_to seeker_bookings(params[@booking.user])
   end
 
   private
