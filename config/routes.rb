@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
+  resources :requests, only: [ :show ]
+
   get "/my-listings", to: "products#my_listings", as: :my_listings
   get "/my-listings/:id/complete", to: "products#mark_as_complete", as: :mark_product_as_complete
 
