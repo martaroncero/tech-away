@@ -12,11 +12,22 @@ class BookingsController < ApplicationController
   end
 
   def index
-    # @user = current_user
     @bookings = current_user.charity.bookings
-
-    # @bookings = Booking.all
   end
 
+  def mark_as_complete
+    @booking.update( status: "Complete" )
+    redirect_to bookings_path
+  end
 
+  def mark_as_archived
+    @booking.update( status: "Archived" )
+    redirect_to bookings_path
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 end
