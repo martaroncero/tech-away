@@ -1,0 +1,30 @@
+<div class="container my-4">
+<h1> Products I have donated </h1>
+
+<div class="card">
+  <div class="card-body">
+Accepted:
+<% @user.products.where(status: "accepted").each do |product| %>
+<%= product.title %>
+<% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+Pending:
+<% @user.products.where(status: "pending").each do |product| %>
+<%= product.title %>
+<% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+Declined:
+<% @user.products.where(status: "declined").each do |product| %>
+<%= product.title %>
+<% end %>
+  </div>
+</div>
+</div>

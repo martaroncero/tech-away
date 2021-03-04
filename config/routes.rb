@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [:create]
   end
+  get "/dashboard/", to: "users#dashboard"
 
   get "/seekers/new", to: "users#new", as: :new_seeker
   get "/seekers/", to: "users#index", as: :seekers

@@ -18,9 +18,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @request = Request.new
+  end
+
+  def dashboard
+    @user = current_user
   end
 
   def index
@@ -29,7 +33,7 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @user.update(user_params)
       redirect_to seeker_path(@user)

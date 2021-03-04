@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
 
   def index
     # @user = current_user
-    @bookings = current_user.charity.bookings
+  @bookings = current_user.charity.bookings
 
     # @bookings = Booking.all
   end
