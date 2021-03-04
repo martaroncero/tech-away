@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index]
   resources :charities, only: [:show]
 
-  get "/bookings/:id/complete", to: "bookings#mark_as_complete", as: :mark_booking_as_complete
-  get "/bookings/:id/archived", to: "bookings#mark_as_archived", as: :mark_booking_as_archived
+  get "/bookings/:id/accept", to: "bookings#accept_booking", as: :accept_booking
+  get "/bookings/:id/decline", to: "bookings#decline_booking", as: :decline_booking
 end
