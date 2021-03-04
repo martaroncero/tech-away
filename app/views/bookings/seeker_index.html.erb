@@ -1,18 +1,19 @@
 <div class="container my-4">
-  <h2>Pending offers based on your requests</h2>
+  <h2>Pending offers</h2>
   <div class="row m-0">
     <div class="col p-0">
-      <ul class="list-group mt-4">
+      <ul class="list-group mt-2">
         <% if @bookings.empty? %>
           <p>You have no pending offers</p>
         <% else %>
           <% @bookings.each do |booking| %>
             <li class="list-group-item mt-1">
               <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <%= link_to product_path(booking.product) do %>
-                    <div class="mx-3"><%= booking.product.title %></div>
-                  <% end %>
+                <div class="d-flex align-items-center">
+                  <div>
+                    <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
+                    <%= link_to booking.product.title, product_path(booking.product) %>
+                  </div>
                 </div>
                 <div>
                   <div class="btn-group">
