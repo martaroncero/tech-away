@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
-    # raise
     @requests = Request.all
   end
 
