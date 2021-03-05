@@ -8,7 +8,7 @@
     <h1>All seekers </h1>
     <div class="request-cards">
       <% @requests.each do |request| %>
-        <%= link_to seeker_path(request.user) do %>
+        <%= link_to request_path(request) do %>
           <div class="request-card">
             <div class="avatar-request-box">
               <img class="avatar-large request-avatar" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gayatriarora" />
