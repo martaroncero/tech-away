@@ -18,19 +18,20 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @request = Request.new
   end
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
+    # raise
     @requests = Request.all
   end
 
   def edit
   end
-  
+
   def update
     if @user.update(user_params)
       redirect_to seeker_path(@user)
