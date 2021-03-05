@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
+    @requests = Request.all
   end
 
   def edit

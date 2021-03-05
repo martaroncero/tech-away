@@ -1,16 +1,21 @@
+<div class = "bc">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1573496005375-5c898f5275e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);">
+    <div class="container">
+      <h1>Give the gift of <strong>technology</strong> to someone in need</h1>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <h2>All seekers from <%= current_user.charity.name %></h2>
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to seeker_path(user) do %>
-          <%= user.first_name %>
-        <% end %>
-        -
-        <%= link_to edit_seeker_path(user) do %>
-          Edit
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <h1>All seekers </h1>
+<div class="request-cards">
+  <% @requests.each do |request| %>
+      <div class="request-card card">
+        <img class="avatar-large mp-3" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gayatriarora" />    
+        <h4><%=  request.user.first_name %>  needs a 
+
+        <%=  request.category.title %></h4> <i class="fas fa-laptop"></i>
+        <%= link_to "Help #{request.user.first_name}", seeker_path(request.user), class: "btn btn-primary btn-sm" %>
+        
+      </div> 
+  <% end  %>
 </div>

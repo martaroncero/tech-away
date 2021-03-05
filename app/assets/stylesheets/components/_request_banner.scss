@@ -1,0 +1,67 @@
+.request-cards {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+  .avatar-large {
+      width: 110px;
+      margin-left: 91px;
+  }
+
+  h1 {
+      padding-top: 10px;
+  }
+.request-card {
+  width: 33%;
+  height: 250px;
+  padding: 30px;
+  box-shadow: 1px 1px 1px rgb(248, 240, 240);
+  margin-bottom: 21px;
+  margin-left: -34px;
+  border-radius: 7px;
+}
+
+.banner {
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    width: 100%;
+    background-size: cover;
+  }
+ 
+  
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 180px;
+    background-position: inherit;
+    font-family: "Nunito", "Helvetica", "sans-serif";;
+  }
+  
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+.btn-primary {
+    margin-top: 25px;
+}
+.fa-laptop:before {
+    padding-left: 250px;
+    padding-bottom: 20px;
+}
+
+    h4, .h4 {
+        font-size: 1.5rem;
+        padding-top: 12px;
+        margin-bottom: -23px;
+    }
