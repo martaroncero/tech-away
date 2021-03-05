@@ -25,7 +25,6 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.kind == "Donator" %>
                 <%= link_to "Your listed products", my_listings_path, class: "dropdown-item" %>
-                <%= link_to "Requests", mark_product_as_complete_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% elsif current_user.kind == "Charity worker" %>
               <div class="container" style="color: #14E78E">Donate</div>
