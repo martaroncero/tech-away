@@ -1,0 +1,28 @@
+<ul class="list-group mt-2">
+  <% if bookings.empty? %>
+    <p>You have no offers here</p>
+  <% else %>
+    <% bookings.each do |booking| %>
+      <li class="list-group-item mt-1">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <div>
+              <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
+              <%= link_to booking.product.title, product_path(booking.product) %>
+            </div>
+          </div>
+          <div>
+            <div class="btn-group">
+              <%= link_to(accept_booking_path(booking), class: "btn btn-success", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                Accept
+              <% end %>
+              <%= link_to(decline_booking_path(booking), class: "btn btn-danger", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                Decline
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
