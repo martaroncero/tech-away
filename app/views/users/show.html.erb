@@ -17,7 +17,7 @@
       <ul>
         <% @user.requests.each do |request| %>
           <li>
-            <%= request.category.title %>
+            <%= link_to request.category.title, request_path(request) %>
           </li>
         <% end %>
       </ul>
