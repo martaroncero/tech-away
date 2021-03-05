@@ -6,6 +6,8 @@ class PagesController < ApplicationController
     count_hashes = Request.count_per_category
     # transforms this into an array of hashes
     @top_requests = Request.stringify_count(count_hashes)
+    # amount of total requests
+    @request_count = Request.count
   end
 
   def about
