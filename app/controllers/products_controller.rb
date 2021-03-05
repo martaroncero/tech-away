@@ -53,9 +53,10 @@ class ProductsController < ApplicationController
     
     if @product.save
       if @request
-        Booking.create(charity: @request.user.charity,
+        Booking.create!(charity: @request.user.charity,
                       user: @request.user,
-                      status: "Pending"
+                      status: "Pending",
+                      product: @product
         )
       end
 
