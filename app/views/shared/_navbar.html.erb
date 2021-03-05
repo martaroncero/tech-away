@@ -7,39 +7,45 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
           <%= link_to "home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "about", about_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "donate!", donate_path, class: "nav-link" %>
-        </li>
+      </ul>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.kind == "Donator" %>
-            <%= link_to "Donate", new_product_path, class: "dropdown-item" %>
-              <%= link_to "Your products", "#", class: "dropdown-item" %>
-              <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <% elsif current_user.kind == "Charity worker" %>
-                 <%= link_to "Browse all products", products_path, class: "dropdown-item" %>
-                <%= link_to "Bookings", "#", class: "dropdown-item" %>
+                <%= link_to "Your listed products", my_listings_path, class: "dropdown-item" %>
+                <%= link_to "Requests", mark_product_as_complete_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <% else %>
+              <% elsif current_user.kind == "Charity worker" %>
+              <div class="container" style="color: #14E78E">Donate</div>
+                <%= link_to "Your listed products", my_listings_path, class: "dropdown-item" %>
+                <%= link_to "Requests", mark_product_as_complete_path(:id), class: "dropdown-item" %>
+                 <div class="container" style="color: #FEA451">Charity</div>
+                 <%= link_to "Add a seeker", new_seeker_path, class: "dropdown-item" %>
+                 <%= link_to "Requests", mark_product_as_complete_path(:id), class: "dropdown-item" %>
+                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+             <% else %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% end %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-light" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-light" %>
+
+
         </li>
       <% end %>
     </ul>
