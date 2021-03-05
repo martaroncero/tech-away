@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
+    @requests = Request.all
   end
 
   def edit
@@ -52,6 +53,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :description)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :description, :photo)
   end
 end

@@ -22,7 +22,9 @@ class BookingsController < ApplicationController
 
   def seeker_index
     @user = User.find(params[:id])
-    @bookings = Booking.where(user_id: @user, status: "Pending")
+    @pending_bookings = Booking.where(user_id: @user, status: "Pending")
+    @accepted_bookings = Booking.where(user_id: @user, status: "Accepted")
+    @declined_bookings = Booking.where(user_id: @user, status: "Declined")
   end
 >>>>>>> fe17c28a6a237bf65280e6fbab9ee00be4de8044
 
