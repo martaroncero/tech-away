@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     # Create a seeker
     @user = User.new(user_params)
+    @user.password = "123456"
     @user.kind = "Seeker"
     @user.charity = current_user.charity
 
@@ -18,18 +19,19 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @request = Request.new
   end
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
+    @requests = Request.all
   end
 
   def edit
   end
-  
+
   def update
     if @user.update(user_params)
       redirect_to seeker_path(@user)
@@ -45,6 +47,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :description)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :description, :photo)
   end
 end

@@ -1,41 +1,32 @@
 <div class="container my-4">
-  <h2>Pending offers</h2>
+  <h2>Offers</h2>
   <div class="row m-0">
     <div class="col p-0">
-      <ul class="list-group mt-2">
-        <% if @bookings.empty? %>
-          <p>You have no pending offers</p>
-        <% else %>
-          <% @bookings.each do |booking| %>
-            <li class="list-group-item mt-1">
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                  <div>
-                    <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
-                    <%= link_to booking.product.title, product_path(booking.product) %>
-                  </div>
-                </div>
-                <div>
-                  <div class="btn-group">
-                    <%= link_to(accept_booking_path(booking), class: "btn btn-success", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                      Accept
-                    <% end %>
-                    <%= link_to(decline_booking_path(booking), class: "btn btn-danger", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                      Decline
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </li>
-          <% end %>
-        <% end %>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">Pending</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">Accepted</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">Declined</button>
+        </li>
       </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+          <%= render 'booking_items', bookings: @pending_bookings %>
+        </div>
+        <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+          <%= render 'booking_items', bookings: @accepted_bookings %>
+        </div>
+        <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="declined-tab">
+          <%= render 'booking_items', bookings: @declined_bookings %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="mt-2">
     <%= link_to "Back to all seekers", seekers_path, class: "btn btn-primary mt-3" %>
   </div>
 </div>
-
-
-

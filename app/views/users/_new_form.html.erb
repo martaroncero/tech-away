@@ -1,8 +1,9 @@
 <%= simple_form_for @user, url: seekers_path, method: :post do |f| %>
-  <%= f.input :email, required: true %>
-  <%= f.input :password, required: true %>
+  <%= f.input :email, required: true, required: false %>
+  <%#= f.input :password, required: true %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :description %>
-  <%= f.submit %>  
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Add Seeker" %>
 <% end %>

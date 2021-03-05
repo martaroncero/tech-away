@@ -1,0 +1,61 @@
+.request-cards {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+h1 {
+    padding-top: 10px;
+}
+.request-card {
+  width: 300px;
+  height: 200px;
+  padding: 30px;
+  margin: 0 4px;
+  box-shadow: 1px 1px 1px rgb(248, 240, 240);
+  margin-bottom: 21px;
+  border-radius: 7px;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 0.8;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
+
+.request-card-container {
+  margin: 24px;
+}
+
+.request-details {
+  margin-top: 16px;
+  font-size: 20px;
+}
+
+.request-avatar {
+  height: 100px;
+  width: 100px;
+}
+
+.help-button {
+  margin-top: 24px;
+}
+
+.avatar-request-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fas.fa-laptop {
+  font-size: 70px;
+}
