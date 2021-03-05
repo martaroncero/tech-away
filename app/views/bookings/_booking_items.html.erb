@@ -13,10 +13,10 @@
           </div>
           <div>
             <div class="btn-group">
-              <%= link_to(accept_booking_path(booking), class: "btn btn-success", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+              <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
                 Accept
               <% end %>
-              <%= link_to(decline_booking_path(booking), class: "btn btn-danger", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+              <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
                 Decline
               <% end %>
             </div>
