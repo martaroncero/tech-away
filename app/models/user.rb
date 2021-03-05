@@ -9,4 +9,9 @@ class User < ApplicationRecord
   has_many :products
   has_many :requests
   has_one_attached :photo
+
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
