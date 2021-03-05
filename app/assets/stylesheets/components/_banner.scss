@@ -1,50 +1,42 @@
-
-.banner {
+#home-banner {
   background-size: auto;
   background-position: center;
-  padding: 150px 0;
+  padding: 80px 130px;
 }
 
-.banner h1 {
+#home-banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
   font-weight: bold;
-  padding-left: 10px;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.jumbotron{
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ),
-  url("https://res.cloudinary.com/ds32iiece/image/upload/v1614867774/main_eqtx6p.jpg");
-  background-size: cover;
-  color: white;
-  line-height: 50px;
-  height: 600px;
-}
-
-.jumbotron h1{
-  width: 70%;
   font-size: 60px;
+  line-height: 75px;
+  padding: 0;
 }
 
-.banner {
-  margin: 40px 0 0 160px;
-}
-
-.text-orange{
+#home-banner p {
+  margin: 12px 0 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   color: #FEA451;
   line-height: 30px
 }
+ 
+.jumbotron{
+  background-image: url("https://res.cloudinary.com/ds32iiece/image/upload/v1614867774/main_eqtx6p.jpg");
+  background-size: cover;
+  color: white;
+  line-height: 50px
+}
 
+.btn.btn-light{
+  background-color: #14E78E;
+  color: white;
+  border-radius: 50px;
+}
+
+.btn.btn-light:hover{
+  background-color: #14E78E;
+  color: black;
+}

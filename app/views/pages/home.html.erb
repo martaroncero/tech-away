@@ -1,11 +1,7 @@
 <div class="jumbotron">
-  <div class="banner">
-    <h1 id="banner-title">Do you have any tech<br>that you don’t need<br>anymore?</h1>
-    <div class="text-orange">
-    <p class="w-50 lead text">
-      204 people are currently in need of 274 tech items.
-    </p>
-    </div>
+  <div id="home-banner">
+    <h1>Do you have any tech<br>that you don’t need<br>anymore?</h1>
+    <p class="w-50"><%= "#{@request_count} tech items are currently needed!" %></p>
     <%= link_to "Donate Now!", donate_path, class: "btn btn-primary" %>
   </div>
 </div>
@@ -16,15 +12,15 @@
     <div class="row pt-4 pb-3">
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1614868138/createilustration1_xbevn9.svg" alt="">
-        <p class="item-needed pt-3">8 Laptops Needed</p>
+        <p class="item-needed pt-3"><%= @top_requests[0] %></p>
       </div>
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1614868135/add-content_dk0ldi.svg" alt="">
-        <p class="item-needed pt-3">6 Mobile Phones Needed</p>
+        <p class="item-needed pt-3"><%= @top_requests[1] %></p>
       </div>
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1614868134/launchillustration3_afxncl.svg" alt="">
-        <p class="item-needed pt-3">3 Monitors Needed</p>
+        <p class="item-needed pt-3"><%= @top_requests[2] %></p>
       </div>
     </div>
   </div>
