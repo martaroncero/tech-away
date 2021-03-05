@@ -14,7 +14,7 @@
         <h4><%=  request.user.first_name %>  needs a 
 
         <%=  request.category.title %></h4> <i class="fas fa-laptop"></i>
-        <%= link_to "Help Amal", seeker_path(request.user), class: "btn btn-primary" %>
+        <%= link_to "Help #{request.user.first_name}", seeker_path(request.user), class: "btn btn-primary btn-sm" %>
         
       </div> 
   <% end  %>
