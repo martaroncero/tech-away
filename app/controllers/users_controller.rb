@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     # Create a seeker
     @user = User.new(user_params)
+    @user.password = "123456"
     @user.kind = "Seeker"
     @user.charity = current_user.charity
 
@@ -25,7 +26,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
-    # raise
     @requests = Request.all
   end
 
