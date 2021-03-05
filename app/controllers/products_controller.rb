@@ -92,7 +92,6 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
->>>>>>> fe17c28a6a237bf65280e6fbab9ee00be4de8044
 
   def set_request
     if params[:request_id].present?
