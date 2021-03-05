@@ -1,39 +1,46 @@
-
 .banner {
   background-size: auto;
   background-position: center;
-  padding: 150px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 80px 150px 80px;
+}
+.banner h1 {
+  color: #fff;
+  opacity: 0.8;
 }
 
-.banner h1 {
+#home-banner {
+  background-size: auto;
+  background-position: center;
+  padding: 80px 130px;
+}
+
+#home-banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
   font-weight: bold;
-  padding-left: 10px;
+  font-size: 60px;
+  line-height: 75px;
+  padding: 0;
 }
 
-.banner p {
+#home-banner p {
+  margin: 12px 0 20px 0;
   font-size: 20px;
-  color: white;
-  opacity: .7;
+  font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: #FEA451;
+  line-height: 30px
 }
-
+ 
 .jumbotron{
   background-image: url("https://res.cloudinary.com/ds32iiece/image/upload/v1614867774/main_eqtx6p.jpg");
   background-size: cover;
   color: white;
   line-height: 50px
-
 }
-
-.jumbotron h1{
-  width: 70%;
-  font-size: 48px;
-}
-
 
 .btn.btn-light{
   background-color: #14E78E;
@@ -45,10 +52,3 @@
   background-color: #14E78E;
   color: black;
 }
-
-
-.text-orange{
-  color: #FEA451;
-  line-height: 30px
-}
-
