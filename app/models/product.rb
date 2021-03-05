@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :bookings
   belongs_to :category
-  has_many_attached :photos
+  has_one_attached :photo
 
   CONDITIONS = ["New", "Used (like new)", "Used (good)", "Used (fair)"]
   validates :condition, inclusion: {in: CONDITIONS }
