@@ -1,24 +1,40 @@
 <div class="container">
-  <h2>Seeker info</h2>
-  <p><%= @user.first_name %></p>
-  <% if @user.photo.attached? %>
-    <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
 
-  <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-    Add a request
-  </button>
+  <div class="seeker-card">
+    <div class="seeker-details">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
 
-  <h3><%= @user.first_name %> needs: </h3>
-  <ul>
-    <% @user.requests.each do |request| %>
-      <li>
-        <%= request.category.title %>
-      </li>
+      <span class="seeker-name"><%= @user.name %></span>
+    </div>
+    <div class="seeker-description"><%= @user.description %></div>
+  </div>
+
+  <div class="seeker-card">
+    <% if @user.requests.present? %>
+      <h3><%= @user.first_name %>'s requests: </h3>
+      <ul>
+        <% @user.requests.each do |request| %>
+          <li>
+            <%= request.category.title %>
+          </li>
+        <% end %>
+      </ul>
+
+      <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+        Add another request
+      </button>
+    <% else %>
+      <div class="seeker-requests-list">
+        <%= @user.first_name %> currently doesnt have any requests!
+        <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+          Does <%= @user.first_name %> need anything?
+        </button>
+      </div>
     <% end %>
-  </ul>
-
-  <%= link_to "Go back to all seekers", seekers_path %>
+  </div>
+  <%= link_to "Back to All Seekers", seekers_path %>
 </div>
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -26,3 +42,33 @@
     <%= render 'requests/form/form_content' %>
   </div>
 </div>
+
+<style>
+  .seeker-requests-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .seeker-card {
+    margin: 12px 0;
+    padding: 24px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 6px;
+  }
+
+  .seeker-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .seeker-description {
+    margin-top: 24px;
+  }
+
+  .seeker-name {
+    font-size: 36px;
+  }
+</style>
