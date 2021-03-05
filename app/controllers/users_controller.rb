@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     # Create a seeker
     @user = User.new(user_params)
+    @user.password = "123456"
     @user.kind = "Seeker"
     @user.charity = current_user.charity
 
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @request = Request.new
   end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @user.update(user_params)
       redirect_to seeker_path(@user)
