@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/ds32iiece/image/upload/v1614871302/tech-white_yeuwpx.svg" %>
     <% end %>
 
@@ -33,7 +33,7 @@
                 <%= link_to "Requests", mark_product_as_complete_path(:id), class: "dropdown-item" %>
                  <div class="container" style="color: #FEA451">Charity</div>
                  <%= link_to "Add a seeker", new_seeker_path, class: "dropdown-item" %>
-                 <%= link_to "Requests", mark_product_as_complete_path(:id), class: "dropdown-item" %>
+                 <%= link_to "Requests", seekers_path, class: "dropdown-item" %>
                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
              <% else %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

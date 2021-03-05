@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     # Create a seeker
     @user = User.new(user_params)
+    @user.password = "123456"
     @user.kind = "Seeker"
     @user.charity = current_user.charity
 
