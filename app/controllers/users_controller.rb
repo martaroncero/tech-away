@@ -24,6 +24,13 @@ class UsersController < ApplicationController
     @request = Request.new
   end
 
+  def dashboard
+    @user = current_user
+    @accepted_products = @user.products.where(status: "Accepted")
+    @pending_products = @user.products.where(status: "Pending")
+    @declined_products = @user.products.where(status: "Declined")
+  end
+
   def index
     @users = User.where(charity: current_user.charity, kind: "Seeker")
     @requests = Request.all

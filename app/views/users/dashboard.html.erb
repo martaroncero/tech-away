@@ -1,0 +1,65 @@
+<div class="container my-4">
+<h1> My donations </h1>
+
+<nav>
+      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active current-bookings" id="nav-pending-tab" data-toggle="tab"
+        href="#nav-home" role="tab" aria-controls="nav-pending" aria-selected="true">Pending</a>
+        <a class="nav-item nav-link accepted" id="nav-accepted-tab" data-toggle="tab"
+        href="#nav-profile" role="tab" aria-controls="nav-accepted" aria-selected="false">Accepted</a>
+        <a class="nav-item nav-link declined" id="nav-declined-tab" data-toggle="tab"
+        href="#nav-profile" role="tab" aria-controls="nav-declined" aria-selected="false">Declined</a>
+      </div>
+    </nav>
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-pending" role="tabpanel" aria-labelledby="nav-pending-tab">
+PENDING</div>
+   <div class="tab-pane fade" id="nav-accepted" role="tabpanel" aria-labelledby="nav-accepted-tab">
+ACCEPTED</div>
+   <div class="tab-pane fade" id="nav-declined" role="tabpanel" aria-labelledby="nav-declined-tab">
+DECLINED</div>
+</div>
+
+  <% if @accepted_products.any? %>
+    <div>
+      <h3> Accepted: </h3>
+      <% @accepted_prodcuts.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @pending_products.any? %>
+    <div>
+      <h3> Pending </h3>
+      <% @pending_products.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @declined_products.any? %>
+    <div>
+      <h3> Declined: </h3>
+      <% @declined_products.each do |product| %>
+        <%= render "product_card", product: product %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @accepted_products.empty? %>
+    <div class="text-muted">
+      Accepted
+    </div>
+  <% end %>
+  <% if @pending_products.empty? %>
+    <div class="text-muted">
+      Pending
+    </div>
+  <% end %>
+  <% if @declined_products.empty? %>
+    <div class="text-muted">
+      Declined
+    </div>
+  <% end %>
+</div>
+</div>
