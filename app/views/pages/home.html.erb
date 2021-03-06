@@ -2,7 +2,7 @@
   <div id="home-banner">
     <h1>Do you have any tech<br>that you don’t need<br>anymore?</h1>
     <p class="w-50"><%= "#{@request_count} tech items are currently needed!" %></p>
-    <%= link_to "Donate Now!", donate_path, class: "btn btn-primary" %>
+    <%= link_to "Donate Now!", requests_path, class: "btn btn-primary" %>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1614868135/add-content_dk0ldi.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[1] %></p>
-        <%= link_to "See all requests!", seekers_path, class: "btn btn-primary mt-4" %>
+        <%= link_to "See all requests!", requests_path, class: "btn btn-primary mt-4" %>
       </div>
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1614868134/launchillustration3_afxncl.svg" alt="">
