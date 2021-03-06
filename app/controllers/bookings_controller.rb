@@ -12,10 +12,6 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  def index
-    @bookings = current_user.charity.bookings
-  end
-
   def seeker_index
     @user = User.find(params[:id])
     @pending_bookings = Booking.where(user_id: @user, status: "Pending")
