@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   resources :requests, only: [ :index, :show ]
 
-  get "/my-listings", to: "products#my_listings", as: :my_listings
-  get "/my-listings/:id/complete", to: "products#mark_as_complete", as: :mark_product_as_complete
 
   get "/seekers/new", to: "users#new", as: :new_seeker
   get "/seekers/:id", to: "users#show", as: :seeker
@@ -26,7 +24,6 @@ Rails.application.routes.draw do
 
   get "/seekers/:id/bookings", to: "bookings#seeker_index", as: :seeker_bookings
 
-  resources :bookings, only: [:index]
   resources :charities, only: [:show]
 
   get "/bookings/:id/accept", to: "bookings#accept_booking", as: :accept_booking
