@@ -1,14 +1,13 @@
 <div class="container my-5">
 
   <div class="seeker-card">
-    <div class="seeker-details">
+    <h2 class="seeker-name"><%= @user.name %></h2>
+    <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-
-      <span class="seeker-name"><%= @user.name %></span>
+      <div class="seeker-description"><%= @user.description %></div>
     </div>
-    <div class="seeker-description"><%= @user.description %></div>
   </div>
 
   <div class="seeker-card">
