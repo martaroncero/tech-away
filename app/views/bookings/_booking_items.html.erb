@@ -14,7 +14,7 @@
               <% elsif booking.status == "Declined" %>
                 <%="You declined the #{booking.product.category.title.downcase} offer of "%>
               <% end %>
-                <%= link_to booking.product.title, product_path(booking.product) %>
+              <%= link_to booking.product.title, product_path(booking.product) %>
             </div>
           </div>
           <% if booking.status == "Pending" %>
