@@ -14,20 +14,20 @@
               <% elsif booking.status == "Declined" %>
                 <%="You declined the #{booking.product.category.title.downcase} offer of "%>
               <% end %>
-                <%= link_to booking.product.title, product_path(booking.product) %>
+              <%= link_to booking.product.title, product_path(booking.product) %>
             </div>
           </div>
           <% if booking.status == "Pending" %>
-          <div>
-            <div class="btn-group">
-              <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                Accept
-              <% end %>
-              <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                Decline
-              <% end %>
+            <div>
+              <div class="btn-group">
+                <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                  Accept
+                <% end %>
+                <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                  Decline
+                <% end %>
+              </div>
             </div>
-          </div>
           <% end %>
         </div>
       </li>
