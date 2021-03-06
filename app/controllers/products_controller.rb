@@ -25,15 +25,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def my_listings
-    @products = Product.where(user_id: current_user.id)
-  end
-
-  def mark_as_complete
-    @product.update( status: "Complete" )
-    redirect_to my_listings_path
-  end
-
   def new
     @product = Product.new
 
