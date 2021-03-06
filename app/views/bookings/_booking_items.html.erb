@@ -5,22 +5,30 @@
     <% bookings.each do |booking| %>
       <li class="list-group-item mt-1">
         <div class="d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
+          <div class="offer-list-item-content d-flex align-items-center">
             <div>
-              <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
+              <% if booking.status == "Pending" %>
+                <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
+              <% elsif booking.status == "Accepted" %>
+                <%="You accepted the #{booking.product.category.title.downcase} offer of "%>
+              <% elsif booking.status == "Declined" %>
+                <%="You declined the #{booking.product.category.title.downcase} offer of "%>
+              <% end %>
               <%= link_to booking.product.title, product_path(booking.product) %>
             </div>
           </div>
-          <div>
-            <div class="btn-group">
-              <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                Accept
-              <% end %>
-              <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                Decline
-              <% end %>
+          <% if booking.status == "Pending" %>
+            <div>
+              <div class="btn-group">
+                <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                  Accept
+                <% end %>
+                <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                  Decline
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </li>
     <% end %>

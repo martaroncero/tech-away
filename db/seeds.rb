@@ -165,12 +165,12 @@ Booking.create!(charity_id: charity2.id,
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_1.id, 
                 product_id: product_macbook.id, 
-                status: "Complete"
+                status: "Accepted"
                 )
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_1.id, 
                 product_id: product_mobile.id, 
-                status: "Complete"
+                status: "Pending"
                 )
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_2.id, 
@@ -180,7 +180,7 @@ Booking.create!(charity_id: charity2.id,
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_3.id, 
                 product_id: product_ipad.id, 
-                status: "Complete"
+                status: "Accepted"
                 )
 puts "Created seeds"
 puts "- 5 Users (1 Donator, 1 Worker and 3 Seekers)"
