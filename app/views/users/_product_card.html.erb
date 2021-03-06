@@ -1,7 +1,8 @@
 <div class="card">
   <div class="card-body">
-<%= product.title %>
-<%= product.category_id %>
+    You listed 
+    "<%= product.title %>" as a
+    <%= product.category.title.downcase %>
 <%# if product.photos.attached? %>
   <%# photos.each do |photo| %>
     <%#= cl_image_tag photo.key %>
