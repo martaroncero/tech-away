@@ -1,14 +1,13 @@
-<div class="container">
+<div class="container my-5">
 
   <div class="seeker-card">
-    <div class="seeker-details">
+    <h2 class="seeker-name"><%= @user.name %></h2>
+    <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-
-      <span class="seeker-name"><%= @user.name %></span>
+      <div class="seeker-description"><%= @user.description %></div>
     </div>
-    <div class="seeker-description"><%= @user.description %></div>
   </div>
 
   <div class="seeker-card">
@@ -34,7 +33,6 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Back to All Seekers", seekers_path %>
 </div>
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -42,33 +40,3 @@
     <%= render 'requests/form/form_content' %>
   </div>
 </div>
-
-<style>
-  .seeker-requests-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .seeker-card {
-    margin: 12px 0;
-    padding: 24px;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 6px;
-  }
-
-  .seeker-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .seeker-description {
-    margin-top: 24px;
-  }
-
-  .seeker-name {
-    font-size: 36px;
-  }
-</style>

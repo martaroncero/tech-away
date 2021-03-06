@@ -1,0 +1,25 @@
+.seeker-name {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.seeker-card {
+  margin: 12px 0;
+  padding: 24px;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 6px;
+}
+.seeker-content {
+  display: flex;
+}
+
+.seeker-description {
+  padding: 0 30px 0 15px;
+}
+
+.seeker-requests-list {
+  display: flex;
+  flex-direction: column;
+}
