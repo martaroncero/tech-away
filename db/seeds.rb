@@ -170,7 +170,7 @@ Booking.create!(charity_id: charity2.id,
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_1.id, 
                 product_id: product_mobile.id, 
-                status: "Accepted"
+                status: "Pending"
                 )
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_2.id, 

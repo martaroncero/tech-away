@@ -5,7 +5,7 @@
     <% bookings.each do |booking| %>
       <li class="list-group-item mt-1">
         <div class="d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
+          <div class="offer-list-item-content d-flex align-items-center">
             <div>
               <% if booking.status == "Pending" %>
                 <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
