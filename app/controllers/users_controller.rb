@@ -31,11 +31,6 @@ class UsersController < ApplicationController
     @declined_products = @user.products.where(status: "Declined")
   end
 
-  def index
-    @users = User.where(charity: current_user.charity, kind: "Seeker")
-    @requests = Request.all
-  end
-
   def edit
   end
 
