@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get "/seekers/:id/bookings", to: "bookings#seeker_index", as: :seeker_bookings
 
-  resources :charities, only: [:show]
+  resources :charities, only: [:show, :index]
 
   get "/bookings/:id/accept", to: "bookings#accept_booking", as: :accept_booking
   get "/bookings/:id/decline", to: "bookings#decline_booking", as: :decline_booking
