@@ -176,7 +176,7 @@ Booking.create!(charity_id: charity2.id,
                 status: "Pending"
                 )
 Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_3.id, 
+                user_id: user_seeker_2.id, 
                 product_id: product_desktop.id, 
                 status: "Pending"
                 )
