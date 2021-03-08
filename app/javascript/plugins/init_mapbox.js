@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import distance from '@turf/distance';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
@@ -11,7 +12,6 @@ const initMapbox = () => {
   };
 
   if (mapElement) { // only build a map if there's a div#map to inject into
-    console.log("hello")
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
@@ -25,9 +25,22 @@ const initMapbox = () => {
     new mapboxgl.Marker({ color: "#167FFB" })
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
-
+    
     // once all markers are added, fit all markers within map viewport
     fitMapToMarker(map, marker);
+
+    const distanceAndTimeElem = document.getElementById("distance-and-time");
+
+    if (distanceAndTimeElem) {
+      navigator.geolocation.getCurrentPosition((data) => {
+        var to = [marker.lng, marker.lat];
+        var from = [data.coords.longitude, data.coords.latitude];
+        var options = { units: 'kilometers' };
+        var dist = distance(from, to, options).toFixed(1);
+
+        distanceAndTimeElem.insertAdjacentHTML("afterbegin", `<div>${dist + " km away"}</div>`)
+      });
+    }
   }
 };
 
