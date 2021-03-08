@@ -1,15 +1,23 @@
 <div class="container my-5">
 
   <div class="seeker-card">
-    <h2 class="seeker-name"><%= @user.name %></h2>
+    
     <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <div class="seeker-description"><%= @user.description %></div>
+      
+      <div class="seeker-description">
+      <h2 class="seeker-name"><%= @user.name %></h2>
+      
+      <%= @user.description %></div>
     </div>
   </div>
-
+   <% if @user.charity_id == current_user.charity_id %>
+       <button type="button" class="btn btn-primary mt-4 w-100" data-toggle="modal" data-target="#request-modal">
+        Add a request
+      </button>
+       <% end %>
   <div class="seeker-card">
     <% if @user.requests.present? %>
       <h3><%= @user.first_name %>'s requests: </h3>
@@ -20,10 +28,7 @@
           </li>
         <% end %>
       </ul>
-
-      <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-        Add another request
-      </button>
+      
     <% else %>
       <div class="seeker-requests-list">
         <%= @user.first_name %> currently doesnt have any requests!
@@ -40,3 +45,6 @@
     <%= render 'requests/form/form_content' %>
   </div>
 </div>
+
+
+
