@@ -4,6 +4,7 @@ class CharitiesController < ApplicationController
   end
 
   def show
+    @user = User.all
     @charity = Charity.find(params[:id])
     @seekers = @user.all.select{ |user| user.kind == "Seeker" }
     @our_seekers = @charity.users.select{ |user| user.kind == "Seeker" }
