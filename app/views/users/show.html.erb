@@ -1,47 +1,51 @@
 <div class="container my-5">
 
   <div class="seeker-card">
-    <h2 class="seeker-name"><%= @user.name %></h2>
+    
     <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <div class="seeker-description"><%= @user.description %></div>
+      
+      <div class="seeker-description">
+        <h2 class="seeker-name"><%= @user.name %></h2>
+        <%= @user.description %>
+      </div>
     </div>
   </div>
 
-    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+  <% if @user.charity_id == current_user.charity_id %>
+    <button type="button" class="btn btn-primary mt-4 w-100" data-toggle="modal" data-target="#request-modal">
       Add a request
     </button>
+  <% end %>
 
-    <h3 class="mt-4 mb-3"><%= @user.first_name %>'s requests: </h3>
+  <h3 class="mt-4 mb-3"><%= @user.first_name %>'s requests: </h3>
 
-    <% if @user.requests.present? %>
-      <ul class="seeker-requests-list">
-        <% @user.requests.each do |request| %>
-          <li class="list-group-item seeker-card">
-            <div class="d-flex align-items-center">
-              <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
-                <div class="d-flex">
-                  <div class="ml-2 mr-5">Image</div>
-                  <div><%= request.description %></div>
-                </div>
-                <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
+  <% if @user.requests.present? %>
+    <ul class="seeker-requests-list">
+      <% @user.requests.each do |request| %>
+        <li class="list-group-item seeker-card">
+          <div class="d-flex align-items-center">
+            <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
+              <div class="d-flex">
+                <div class="ml-2 mr-5">Image</div>
+                <div><%= request.description %></div>
               </div>
-                <%= link_to new_product_path(request_id: request.id) do %>
-                  <div class="btn btn-primary justify-self-end">
-                    Donate
-                  </div>
-                <% end %>
+              <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
             </div>
-          </li>
-        <% end %>
-      </ul>
-    <% else %>
-      <div class="seeker-requests-list">
-        <%= @user.first_name %> currently doesn't have any requests!
-      </div>
-    <% end %>
+              <%= link_to new_product_path(request_id: request.id) do %>
+                <div class="btn btn-primary justify-self-end">Donate</div>
+              <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="seeker-requests-list">
+      <%= @user.first_name %> currently doesn't have any requests!
+    </div>
+  <% end %>
 </div>
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -49,3 +53,6 @@
     <%= render 'requests/form/form_content' %>
   </div>
 </div>
+
+
+

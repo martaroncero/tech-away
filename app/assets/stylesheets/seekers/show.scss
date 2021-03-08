@@ -1,6 +1,6 @@
 .seeker-name {
   font-size: 36px;
-  margin-bottom: 12px;
+  padding-top: 8px;
 }
 
 .seeker-card {
@@ -8,7 +8,12 @@
   background-clip: border-box;
   box-shadow: 0, 0, 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px !important;
+   
+  h3 {
+    padding-left: 23px;
+  }
 }
+
 .seeker-content {
   display: flex;
 }
