@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <h1>Charities</h1>
+    <div class="request-cards text-center">
+      <% @charity.each do |charity| %>
+        <div class="card" style="width: 18rem;">
+       <!--    <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title"><%= charity.name %></h5>
+            <p class="card-text"><%= charity.whatsapp_number %></p>
+            <%= link_to "Website", "http://#{charity.website}", :target => "_blank" , class: "btn btn-primary mt-3" %>
+          </div>
+        </div>
+      <% end  %>
+  </div>
+</div>
+
+
