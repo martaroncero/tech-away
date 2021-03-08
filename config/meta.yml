@@ -1,0 +1,5 @@
+meta_product_name: "Techaway - Give people the tech they need"
+meta_title: "Techaway - Give people the tech they need"
+meta_description: "A platform for people to donate their unused tech equipment to those who need it the most."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: ""   # required for Twitter Cards
