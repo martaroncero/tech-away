@@ -1,17 +1,14 @@
-.seeker-name {
-  font-size: 36px;
-  padding-top: 8px;
-}
-
 .seeker-card {
   background-color: #fff;
   background-clip: border-box;
-  box-shadow: 0, 0, 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.3);
   border-radius: 6px !important;
-   
-  h3 {
-    padding-left: 23px;
-  }
+  overflow: hidden;
+}
+
+.seeker-name {
+  font-size: 36px;
 }
 
 .seeker-content {
@@ -19,7 +16,7 @@
 }
 
 .seeker-description {
-  padding: 0 30px 0 15px;
+  padding: 20px 30px 0 25px;
 }
 
 .seeker-requests-list {
