@@ -11,12 +11,15 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Our seekers</a>
-    <% @seeker.each do |seeker| %>
-                <%= render "_charity_card.html.erb", seeker: seeker %>
+    <% @our_seekers.each do |our_seeker| %>
+                <%= render "_charity_card.html.erb", our_seeker: our_seeker %>
                  <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Offer</a>
+     <% @requests.each do |request| %>
+                <%= render "_request_card.html.erb", request: request %>
+                 <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Register a new seeker</a>
