@@ -1,6 +1,4 @@
 <div class="col-sm-6 offset-sm-3 my-5">
-  <h2>Edit a current seeker</h2>
+  <h2 class="mb-3">Edit <%= @user.name %>'s details</h2>
   <%= render 'edit_form' %>
-
-  <%= link_to "Go back to all seekers", seekers_path, class: "pt-2" %>
 </div>
