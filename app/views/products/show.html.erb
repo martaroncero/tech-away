@@ -1,9 +1,18 @@
 <div class="container my-5">
-  <div>
-    <h2>Product <%= @product.title %></h2>
-    <h4>Donator <%= @product.user.first_name %> <%= @product.user.last_name %></h4>
-    <h4>Status <%= @product.status %></h4>
-    <p>Description <%= @product.description %></p>
+  <div class="d-flex">
+    <% if @product.photo.key %>
+      <%= cl_image_tag @product.photo.key %>
+    <% end %>
+
+    <div>
+      <h2>Product <%= @product.title %></h2>
+      <h4>Status <%= @product.condition %></h4>
+      <div class="d-flex justify-content-between">
+      
+        <div><%= @product.posted_ago %></div>
+      </div>
+      <p>Description <%= @product.description %></p>
+    </div>
   </div>
 
    <h4 class="mt-4">Location: <%= @product.address %></h4>
