@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <div>
+    <h2>Charity <%= @charity.name %></h2>
+
+<!--     <h4>Website <%= @charity.website %></h4>
+    <h4>Number <%= @charity.whatsapp_number%></h4> -->
+  </div>
+</div>
+
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Our seekers</a>
+    <% @seeker.each do |seeker| %>
+                <%= render "_charity_card.html.erb", seeker: seeker %>
+                 <% end %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Offer</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Register a new seeker</a>
+  </li>
+</ul>
