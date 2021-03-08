@@ -8,10 +8,11 @@
       <% end %>
       <div class="seeker-description"><%= @user.description %></div>
     </div>
-    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-      Add another request
-    </button>
   </div>
+
+    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+      Add a request
+    </button>
 
     <h3 class="mt-4 mb-3"><%= @user.first_name %>'s requests: </h3>
 
@@ -23,7 +24,7 @@
               <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
                 <div class="d-flex">
                   <div class="ml-2 mr-5">Image</div>
-                  <div>Description</div>
+                  <div><%= request.description %></div>
                 </div>
                 <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
               </div>
@@ -38,10 +39,7 @@
       </ul>
     <% else %>
       <div class="seeker-requests-list">
-        <%= @user.first_name %> currently doesnt have any requests!
-        <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-          Does <%= @user.first_name %> need anything?
-        </button>
+        <%= @user.first_name %> currently doesn't have any requests!
       </div>
     <% end %>
 </div>
