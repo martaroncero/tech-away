@@ -8,7 +8,7 @@
     <h1>All requests</h1>
     <div class="request-cards text-center">
       <% @requests.each do |request| %>
-        <%= link_to request_path(request) do %>
+        <%= link_to seeker_path(request.user) do %>
           <div class="request-card">
             <div class="avatar-request-box">
               <% if request.user.photo.attached? %>
