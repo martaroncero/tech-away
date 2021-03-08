@@ -8,22 +8,29 @@
       <% end %>
       <div class="seeker-description"><%= @user.description %></div>
     </div>
+    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+      Add another request
+    </button>
   </div>
 
-  <div class="seeker-card">
+    <h3 class="mt-4 mb-2"><%= @user.first_name %>'s requests: </h3>
+
     <% if @user.requests.present? %>
-      <h3><%= @user.first_name %>'s requests: </h3>
-      <ul>
+      <ul class="p-0">
         <% @user.requests.each do |request| %>
-          <li>
-            <%= link_to request.category.title, request_path(request) %>
+          <li class="list-group-item mt-2">
+            <div class="d-flex align-items-center">
+              <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between">
+                <div>Description</div>
+                <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
+              </div>
+              <div class="btn btn-primary justify-self-end">
+                Donate
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
-
-      <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-        Add another request
-      </button>
     <% else %>
       <div class="seeker-requests-list">
         <%= @user.first_name %> currently doesnt have any requests!
@@ -32,7 +39,6 @@
         </button>
       </div>
     <% end %>
-  </div>
 </div>
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
