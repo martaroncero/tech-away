@@ -20,13 +20,18 @@
         <% @user.requests.each do |request| %>
           <li class="list-group-item mt-2">
             <div class="d-flex align-items-center">
-              <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between">
-                <div>Description</div>
+              <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
+                <div class="d-flex">
+                  <div>Image</div>
+                  <div>Description</div>
+                </div>
                 <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
               </div>
-              <div class="btn btn-primary justify-self-end">
-                Donate
-              </div>
+                <%= link_to new_product_path(request_id: request.id) do %>
+                  <div class="btn btn-primary justify-self-end">
+                    Donate
+                  </div>
+                <% end %>
             </div>
           </li>
         <% end %>
