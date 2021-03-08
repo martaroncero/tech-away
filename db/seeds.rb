@@ -140,7 +140,7 @@ user_seeker_8 = User.new(email: "seeker8@mail.com",
                         kind: "Seeker",
                         description: "Wafaa was in her final year of university studying International Finance , before she was forced to flee the civil war in Libya and seek asylum in Britain. She needs a laptop to continue her studies so that she can be independent and secure a bright future.",
                         phone_number: "+44428840")
-user_seeker_8.photo.attach(io: URI.open(''),
+user_seeker_8.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614945795/photo-1583431978096-e09dc7b7fcf4_ojjhlr.jpg'),
                           filename: "user_seeker_8.jpg",
                           content_type: "image/jpg"
                           )
@@ -230,7 +230,7 @@ product_printer = Product.create!(user_id: User.last.id,
                           condition: "Used (good)",category_id: category_printer.id, 
                           address: "Alma Road, St.Albans AL1"
                           )
-product_printer.photo.attach(io: URI.open(''), 
+product_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'), 
                             filename: 'printer.jpg', 
                             content_type: 'image/jpg'
                             )
@@ -243,7 +243,7 @@ product_monitor = Product.create!(user_id: User.last.id,
                           condition: "Used (good)",category_id: category_monitor.id, 
                           address: "Winchester House, Merchant Street, Bow, Mile End, London E3"
                           )
-product_monitor.photo.attach(io: URI.open(''), 
+product_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'), 
                             filename: 'monitor.jpg', 
                             content_type: 'image/jpg'
                             )
