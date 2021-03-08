@@ -11,8 +11,9 @@
 .request-card {
   width: 300px;
   height: 225px;
-  padding: 30px;
+  padding: 10px;
   margin: 0 4px;
+  display: flex;
   box-shadow: 1px 1px 1px rgb(248, 240, 240);
   margin-bottom: 21px;
   border-radius: 7px;
@@ -28,6 +29,18 @@
   }
 }
 
+.img{
+      height: 200px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .request-card-container {
   margin: 24px;
 }
@@ -35,6 +48,7 @@
 .request-details {
   text-align: left;
   margin-top: 16px;
+  padding-left: 20px;
 }
 
 .request-avatar {
@@ -50,8 +64,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  object-fit: cover;
 }
 
 .fas.fa-laptop {
-  font-size: 70px;
+  font-size: 40px;
+  margin: 20px;
 }
