@@ -10,29 +10,38 @@
     </div>
   </div>
 
-  <div class="seeker-card">
+    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
+      Add a request
+    </button>
+
+    <h3 class="mt-4 mb-3"><%= @user.first_name %>'s requests: </h3>
+
     <% if @user.requests.present? %>
-      <h3><%= @user.first_name %>'s requests: </h3>
-      <ul>
+      <ul class="seeker-requests-list">
         <% @user.requests.each do |request| %>
-          <li>
-            <%= link_to request.category.title, request_path(request) %>
+          <li class="list-group-item seeker-card">
+            <div class="d-flex align-items-center">
+              <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
+                <div class="d-flex">
+                  <div class="ml-2 mr-5">Image</div>
+                  <div><%= request.description %></div>
+                </div>
+                <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
+              </div>
+                <%= link_to new_product_path(request_id: request.id) do %>
+                  <div class="btn btn-primary justify-self-end">
+                    Donate
+                  </div>
+                <% end %>
+            </div>
           </li>
         <% end %>
       </ul>
-
-      <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-        Add another request
-      </button>
     <% else %>
       <div class="seeker-requests-list">
-        <%= @user.first_name %> currently doesnt have any requests!
-        <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#request-modal">
-          Does <%= @user.first_name %> need anything?
-        </button>
+        <%= @user.first_name %> currently doesn't have any requests!
       </div>
     <% end %>
-  </div>
 </div>
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
