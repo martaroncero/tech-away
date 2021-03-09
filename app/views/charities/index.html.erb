@@ -13,7 +13,7 @@
                 <%= charity.generate_qr_code.html_safe %>
               </div>
               <div class="whatsapp-section-mobile">
-                or click <%= link_to "here", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %> to open whatsapp desktop
+                or open <%= link_to "whatsapp desktop", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %>
               </div>
             </div>
 
@@ -23,5 +23,4 @@
       <% end %>
   </div>
 </div>
-
 
