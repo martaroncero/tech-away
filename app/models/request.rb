@@ -2,6 +2,8 @@ class Request < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
+  validates :category, uniqueness: { scope: :user_id, message: "You can only have one request per category" }
+
   def self.count_per_category(*limit)
     Request.joins(:category).group(:title).size.map{ |k, v| { category: k, count: v }}.sort_by { |k| k[:count] }.reverse
   end

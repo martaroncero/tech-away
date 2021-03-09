@@ -20,13 +20,34 @@ class BookingsController < ApplicationController
   end
 
   def accept_booking
-    @booking.update(status: "Accepted")
-    redirect_to charity_path(params[:charity_id], tab: 2)
+    if @booking.status == "Pending"
+      # accept the booking
+      @booking.update(status: "Accepted")
+
+      # get the category and seeker pertaining the booking
+      booking_category = @booking.product.category
+      seeker = @booking.user
+
+      # set the corresponding request as complete
+      user_request = seeker.requests.find_by(category: booking_category)
+      user_request.update(status: "Completed")
+
+      # get all the other bookings that relate to the request and set them as declined
+      other_bookings = Booking.joins(:product).where( user: seeker,
+                                                      status: "Pending",
+                                                      products: { category: booking_category }
+                                                    )
+      other_bookings.each{ |booking| booking.update(status: "Declined")}
+
+      redirect_to charity_path(params[:charity_id], tab: 2)
+    end
   end
 
   def decline_booking
-    @booking.update(status: "Declined")
-    redirect_to charity_path(params[:charity_id], tab: 2)
+    if @booking.status == "Pending"
+      @booking.update(status: "Declined")
+      redirect_to charity_path(params[:charity_id], tab: 2)
+    end
   end
 
   private
