@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = Request.where(status: "Pending")
   end
 
   private
