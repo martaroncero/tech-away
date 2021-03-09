@@ -1,21 +1,24 @@
 <div class="container my-5">
-  <div class="d-flex pb-5">
-    <% if @product.photo.key %>
-      <%= cl_image_tag @product.photo.key %>
-    <% end %>
-
-    <div class="p-2 pl-4">
-      <h2><%= @product.title %></h2>
-      <h5><%= @product.condition %></h5>
-      <div id="distance-and-time"class="d-flex justify-content-between pb-2">
-        <div><%= @product.posted_ago %></div>
+  <div class="pb-5 mt-2">
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <% if @product.photo.attached? %>
+          <%= cl_image_tag @product.photo.key, id: "product-show-image" %>
+        <% end %>
       </div>
-      <p class="pt-2">Description <%= @product.description %></p>
+
+      <div class="col-12 col-md-6 p-2 pl-4">
+        <h2><%= @product.title %></h2>
+        <h5><%= @product.condition %></h5>
+        <div id="distance-and-time"class="d-flex justify-content-between pb-2">
+          <div><%= @product.posted_ago %></div>
+        </div>
+        <p class="pt-2">Description <%= @product.description %></p>
+      </div>
     </div>
   </div>
 
    <h4 class="mb-4"><%= @product.address %></h4>
-   <!-- Map with markers -->
-   <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-   </div>
+   <!-- Map with a marker -->
+   <div id="map" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

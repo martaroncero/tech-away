@@ -1,16 +1,13 @@
-<%= link_to seeker_path(request.user) do %>
-  <div class="request-card">
-    <div class="avatar-request-box">
-      <% if request.user.photo.attached? %>
-        <%= cl_image_tag request.user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'request-avatar', alt: 'avatar-large' %>
-      <% end %>
+<div class="request-container">
+  <%= link_to seeker_path(user) do %>
+    <div class="card-product">
+      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'request-avatar', alt: 'avatar-large' %>
+        <div class="card-product-infos">
+          <h3><%= user.first_name %> </h3>
+          <% if request && request.category.photo.attached? %>
+            <%= cl_image_tag request.category.photo.key %>
+          <% end %>
+        </div>
     </div>
-    <div class="info">
-      <div class="request-details">
-        <h3><%= request.user.first_name %> </h3>
-        <p>Needs a <%=  request.category.title.downcase %></p>
-        <i class="fas fa-laptop"></i>
-      </div>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

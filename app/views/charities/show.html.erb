@@ -1,51 +1,31 @@
 <div class="container my-5">
   <div>
     <h1>Charity <%= @charity.name %></h1>
-
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
-  </li>
-  <li class="nav-item" role="presentation">
-
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Offer</button>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link <%= 'active' unless params[:tab] == "2" %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
+       </li>
+       <li class="nav-item" role="presentation">
+    <button class="nav-link <%= 'active' if params[:tab] == "2" %>" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Offer</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Register a new seeker</button>
   </li>
 </ul>
-
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-  <%= render 'bookings/booking_items', bookings: @charity.bookings %>
-  </div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  <%= render 'users/new_form'%>
-  </div>
-</div>
-   <div class="container my-5">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade <%= 'show active' unless params[:tab] == "2" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="request-cards text-center">
-       <% @our_seekers.each do |our_seeker| %>
-          <%= link_to seeker_path(our_seeker) do %>
-            <div class="request-card">
-              <div class="avatar-request-box">
-                  <% if our_seeker.photo.attached? %>
-                    <%= cl_image_tag our_seeker.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'request-avatar', alt: 'avatar-large' %>
-                  <% end %>
-              </div>
-                <div class="info">
-                  <div class="request-details">
-                    <h3><%= our_seeker.first_name %> </h3>
-                    <% our_seeker.requests.each do |request| %>
-                     <p>Needs a <%=  request.category.title.downcase %></p>
-                     <% end %>
-                  </div>
-                </div>
-              </div>
-          <% end %>
+        <% @our_seekers.each do |our_seeker| %>
+           <%= render 'shared/seeker_card', user: our_seeker %>
         <% end %>
       </div>
-    </div>
   </div>
+  <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <%= render 'bookings/booking_items', bookings: @charity.bookings, charity: @charity %>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <%= render 'users/new_form'%>
+    <a class="nav-link" href="#">
 
     </a>
   </div>
