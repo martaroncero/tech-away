@@ -3,15 +3,45 @@ require 'open-uri'
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 puts "Creating seeds..."
 
+
+
+
 #Categories
 category_camera = Category.create!(title: "Camera")
+category_camera.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293253/camera_pjbop4.png'), 
+                            filename: 'camera.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_laptop = Category.create!(title: "Laptop")
+category_laptop.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293176/laptop_poh39o.png'), 
+                            filename: 'laptop.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_desktop = Category.create!(title: "Desktop computer")
+category_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293276/computer_fm4dqg.png'), 
+                            filename: 'desktop.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_tablet = Category.create!(title: "Tablet")
+category_tablet.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293214/ipad_jdsnkv.png'), 
+                            filename: 'tablet.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_mobile = Category.create!(title: "Mobile phone")
+category_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615288780/android_dwnkhr.png'), 
+                            filename: 'mobile.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_printer = Category.create!(title: "Printer")
+category_printer.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293233/printer-door-open_p7mmxz.png'), 
+                            filename: 'printer.jpg', 
+                            content_type: 'image/jpg'
+                            )
 category_monitor = Category.create!(title: "Monitor")
-
+category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293190/monitor--v1_tbd0c8.png'), 
+                            filename: 'monitor.jpg', 
+                            content_type: 'image/jpg'
+                            )
 
 
 # Charities
