@@ -29,7 +29,11 @@
           <div class="d-flex align-items-center">
             <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
               <div class="d-flex">
-                <div class="ml-2 mr-5">Image</div>
+                <div class="ml-2 mr-5">
+                <% if request.category.photo.attached? %>
+                  <%= cl_image_tag request.category.photo.key, class: "request-category-icon" %>
+                <% end %>
+                </div>
                 <div><%= request.description %></div>
               </div>
               <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
