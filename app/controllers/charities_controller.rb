@@ -1,6 +1,5 @@
 class CharitiesController < ApplicationController
-
- def index
+  def index
     @charity = Charity.all
   end
 
@@ -14,10 +13,9 @@ class CharitiesController < ApplicationController
     @requests = @charity.requests
   end
 
-private
+  private
 
   def request_params
     params.require(:charity)
   end
-
 end
