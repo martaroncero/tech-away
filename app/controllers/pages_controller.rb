@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @top_requests = Request.stringify_count(count_hashes)
     # amount of total requests
     @request_count = Request.count
+    @charity = Charity.all
   end
 
   def about
