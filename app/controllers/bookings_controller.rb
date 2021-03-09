@@ -21,12 +21,12 @@ class BookingsController < ApplicationController
 
   def accept_booking
     @booking.update(status: "Accepted")
-    redirect_to charity_path(params[:charity_id])
+    redirect_to charity_path(params[:charity_id], tab: 2)
   end
 
   def decline_booking
     @booking.update(status: "Declined")
-    redirect_to charity_path(params[:charity_id])
+    redirect_to charity_path(params[:charity_id], tab: 2)
   end
 
   private
