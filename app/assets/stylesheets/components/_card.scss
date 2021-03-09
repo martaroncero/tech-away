@@ -17,7 +17,7 @@
 
 }
 
-.card-product img {
+.card-product-profile {
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -39,4 +39,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-product-icon {
+  width: 40px;
 }
