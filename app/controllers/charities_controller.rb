@@ -1,5 +1,6 @@
 class CharitiesController < ApplicationController
-  def index
+
+ def index
     @charity = Charity.all
   end
 

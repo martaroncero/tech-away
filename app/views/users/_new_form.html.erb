@@ -1,4 +1,4 @@
-<%= simple_form_for @user, url: seekers_path, method: :post do |f| %>
+<%= simple_form_for User.new, url: seekers_path, method: :post do |f| %>
   <%= f.input :email, required: true, required: false %>
   <%#= f.input :password, required: true %>
   <%= f.input :first_name %>
