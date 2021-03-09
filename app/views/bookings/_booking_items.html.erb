@@ -5,6 +5,9 @@
     <div class="d-flex">
       <div class="col m-6">
         <h3>Pending offers</h3>
+         <% if bookings.where(status: "Pending").empty? %>
+           <p class="m-4">You have no offers yet</p>
+           <% else %>
         <% bookings.where(status: "Pending").each do |booking| %>
           <li class="list-group-item mt-1">
             <div class="d-flex align-items-center justify-content-between">
@@ -35,11 +38,15 @@
             </div>
           </li>
         <% end %>
+           <% end %>
       </div>
 
       <div class="col m-6">
         <h3>Accepted offers</h3>
-        <% bookings.where(status: "Accepted").each do |booking| %>
+         <% if bookings.where(status: "Accepted").empty? %>
+           <p class="m-4">You haven't accepted any offer yet</p>
+           <% else %>
+           <% bookings.where(status: "Accepted").each do |booking| %>
             <li class="list-group-item mt-1">
               <div class="d-flex align-items-center justify-content-between">
                 <div class="offer-list-item-content d-flex align-items-center">
@@ -94,9 +101,11 @@
                     </div>
                   </div>
                 <% end %>
-            </li>
+             </li>
+          <% end %>
         <% end %>
       </div>
     </div>
+
   <% end %>
 </ul>
