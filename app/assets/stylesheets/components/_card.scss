@@ -14,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
      border-radius: 6px;
+     width: 300px;
 
 }
 
@@ -39,6 +40,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  flex-grow: 1;
 }
 
 .card-product-icon {
