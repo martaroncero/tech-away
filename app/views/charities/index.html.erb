@@ -7,20 +7,21 @@
             <%= link_to charity_path(charity) do %>
               <h5 class="card-title"><%= charity.name %></h5>
             <% end %>
-            <div class="whatsapp-section">
-              <div class="whatsapp-section-desktop">
-                <p>Scan to chat with us on whatsapp:</p>
-                <%= charity.generate_qr_code.html_safe %>
-              </div>
-              <div class="whatsapp-section-mobile">
-                or open <%= link_to "whatsapp desktop", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %>
+            <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#chat-modal-<%= charity.id %>">
+              Chat with us
+            </button>
+
+            <div class="modal fade" id="chat-modal-<%= charity.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <%= render 'shared/whatsapp', charity: charity %>
               </div>
             </div>
-
-            <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-primary mt-3" %>
+            
+            <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-dark text-white mt-3" %>
           </div>
         </div>
       <% end %>
   </div>
 </div>
+
 
