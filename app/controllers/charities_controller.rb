@@ -2,7 +2,6 @@ class CharitiesController < ApplicationController
 
   def index
     @charity = Charity.all
-
   end
 
   def show
