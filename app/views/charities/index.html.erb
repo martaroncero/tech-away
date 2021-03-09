@@ -13,11 +13,11 @@
                 <%= charity.generate_qr_code.html_safe %>
               </div>
               <div class="whatsapp-section-mobile">
-                or click <%= link_to "here", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link" %> to open whatsapp desktop
+                or click <%= link_to "here", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %> to open whatsapp desktop
               </div>
             </div>
 
-            <%= link_to "Visit our Website", "http://#{charity.website}", :target => "_blank" , class: "btn btn-primary mt-3" %>
+            <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-primary mt-3" %>
           </div>
         </div>
       <% end %>
