@@ -1,12 +1,12 @@
 <div class="request-container">
   <%= link_to seeker_path(user) do %>
     <div class="card-product">
-      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'request-avatar', alt: 'avatar-large' %>
+      <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: "card-product-profile", alt: 'avatar-large' %>
         <div class="card-product-infos">
           <h3><%= user.first_name %> </h3>
 
           <% if seeker_request && seeker_request.category.photo.attached? %>
-            <%= cl_image_tag seeker_request.category.photo.key %>
+            <%= cl_image_tag seeker_request.category.photo.key, class: "card-product-icon" %>
           <% end %>
         </div>
     </div>

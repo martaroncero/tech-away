@@ -14,10 +14,11 @@
   justify-content: space-between;
   align-items: center;
      border-radius: 6px;
+     width: 300px;
 
 }
 
-.card-product img {
+.card-product-profile {
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -39,4 +40,9 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  flex-grow: 1;
+}
+
+.card-product-icon {
+  width: 40px;
 }
