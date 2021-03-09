@@ -1,21 +1,26 @@
 <div class="container my-5">
   <h1>Charities</h1>
-
     <div class="request-cards text-center">
       <% @charity.each do |charity| %>
-      <%= link_to charity_path(charity) do %>
         <div class="card" style="width: 18rem;">
-       <!--    <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div class="card-body">
-            <h5 class="card-title"><%= charity.name %></h5>
-            <p class="card-text"><%= charity.whatsapp_number %></p>
-            <%= link_to "Website", "http://#{charity.website}", :target => "_blank" , class: "btn btn-primary mt-3" %>
+            <%= link_to charity_path(charity) do %>
+              <h5 class="card-title"><%= charity.name %></h5>
+            <% end %>
+            <div class="whatsapp-section">
+              <div class="whatsapp-section-desktop">
+                <p>Scan to chat with us on whatsapp:</p>
+                <%= charity.generate_qr_code.html_safe %>
+              </div>
+              <div class="whatsapp-section-mobile">
+                or open <%= link_to "whatsapp desktop", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %>
+              </div>
+            </div>
+
+            <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-primary mt-3" %>
           </div>
         </div>
-          <% end %>
-      <% end  %>
+      <% end %>
   </div>
-
 </div>
-
 
