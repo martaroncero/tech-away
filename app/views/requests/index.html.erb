@@ -8,7 +8,7 @@
     <h1>All requests</h1>
     <div class="request-cards text-center">
       <% @requests.each do |request| %>
-        <%= render 'shared/seeker_card', user: request.user, request: request %>
+        <%= render 'shared/seeker_card', user: request.user, seeker_request: request %>
       <% end  %>
     </div>
   </div>
