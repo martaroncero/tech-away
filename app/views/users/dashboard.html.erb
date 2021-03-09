@@ -18,7 +18,7 @@
           <% if @accepted_products.any? %>
             <div>
               <h3> Accepted: </h3>
-              <% @accepted_prodcuts.each do |product| %>
+              <% @accepted_products.each do |product| %>
                 <%= render "product_card", product: product %>
               <% end %>
             </div>

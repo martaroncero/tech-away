@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   get "/dashboard/", to: "users#dashboard"
 
-  resources :requests, only: [ :index, :show ]
+  resources :requests, only: [ :index ]
 
 
   get "/seekers/new", to: "users#new", as: :new_seeker
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get "/seekers/:id/bookings", to: "bookings#seeker_index", as: :seeker_bookings
 
-  resources :charities, only: [:show]
+  resources :charities, only: [:show, :index]
 
   get "/bookings/:id/accept", to: "bookings#accept_booking", as: :accept_booking
   get "/bookings/:id/decline", to: "bookings#decline_booking", as: :decline_booking
