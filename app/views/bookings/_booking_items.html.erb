@@ -2,35 +2,101 @@
   <% if bookings.empty? %>
     <p class="m-4">You have no offers here</p>
   <% else %>
-    <% bookings.each do |booking| %>
-      <li class="list-group-item mt-1">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="offer-list-item-content d-flex align-items-center">
-            <div>
+    <div class="d-flex">
+      <div class="col m-6">
+        <h3>Pending offers</h3>
+        <% bookings.where(status: "Pending").each do |booking| %>
+          <li class="list-group-item mt-1">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="offer-list-item-content d-flex align-items-center">
+                <div>
+                  <% if booking.status == "Pending" %>
+                    <%="New offer for"%>
+                  <% elsif booking.status == "Accepted" %>
+                    <%="You accepted an offer for "%>
+                  <% elsif booking.status == "Declined" %>
+                    <%="You declined an offer for "%>
+                  <% end %>
+                  <%= link_to booking.user.first_name, product_path(booking.product) %>
+                </div>
+              </div>
               <% if booking.status == "Pending" %>
-                <%="You requested a  #{booking.product.category.title.downcase} and got offered a "%>
-              <% elsif booking.status == "Accepted" %>
-                <%="You accepted the #{booking.product.category.title.downcase} offer of "%>
-              <% elsif booking.status == "Declined" %>
-                <%="You declined the #{booking.product.category.title.downcase} offer of "%>
+                <div>
+                  <div class="btn-group">
+                    <%= link_to(accept_booking_path(booking),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                      Accept
+                    <% end %>
+                    <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                      Decline
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
-              <%= link_to booking.product.title, product_path(booking.product) %>
             </div>
-          </div>
-          <% if booking.status == "Pending" %>
-            <div>
-              <div class="btn-group">
-                <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                  Accept
-                <% end %>
-                <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                  Decline
+          </li>
+        <% end %>
+      </div>
+
+      <div class="col m-6">
+        <h3>Accepted offers</h3>
+        <% bookings.where(status: "Accepted").each do |booking| %>
+            <li class="list-group-item mt-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="offer-list-item-content d-flex align-items-center">
+                  <div>
+                    <% if booking.status == "Pending" %>
+                      <%="New offer for"%>
+                    <% elsif booking.status == "Accepted" %>
+                      <%="You accepted an offer for "%>
+                    <% elsif booking.status == "Declined" %>
+                      <%="You declined an offer for "%>
+                    <% end %>
+                    <%= link_to booking.user.first_name, product_path(booking.product) %>
+                  </div>
+                </div>
+                <% if booking.status == "Pending" %>
+                  <div>
+                    <div class="btn-group">
+                      <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                        Accept
+                      <% end %>
+                      <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                        Decline
+                      <% end %>
+                    </div>
+                  </div>
                 <% end %>
               </div>
-            </div>
-          <% end %>
-        </div>
-      </li>
-    <% end %>
+            </li>
+            <li class="list-group-item mt-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="offer-list-item-content d-flex align-items-center">
+                  <div>
+                    <% if booking.status == "Pending" %>
+                      <%="New offer for"%>
+                    <% elsif booking.status == "Accepted" %>
+                      <%="You accepted an offer for "%>
+                    <% elsif booking.status == "Declined" %>
+                      <%="You declined an offer for "%>
+                    <% end %>
+                    <%= link_to booking.user.first_name, product_path(booking.product) %>
+                  </div>
+                </div>
+                <% if booking.status == "Pending" %>
+                  <div>
+                    <div class="btn-group">
+                      <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                        Accept
+                      <% end %>
+                      <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                        Decline
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+            </li>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </ul>

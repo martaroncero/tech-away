@@ -1,7 +1,7 @@
 class CharitiesController < ApplicationController
 
  def index
-    @charity = Charity.all
+   @charity = Charity.all
   end
 
   def show
@@ -12,7 +12,11 @@ class CharitiesController < ApplicationController
     @seekers = @user.all.select{ |user| user.kind == "Seeker" }
     @our_seekers = @charity.users.select{ |user| user.kind == "Seeker" }
     @requests = @charity.requests
+    @pending_offers = @charity.bookings.where(user_id: @user, status: "Pending")
+    @accepted_offers = @charity.bookings.where(user_id: @user, status: "Accepted")
+    @declined_offers = @charity.bookings.where(user_id: @user, status: "Declined")
   end
+
 
 private
 
