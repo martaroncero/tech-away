@@ -4,8 +4,9 @@
       <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'request-avatar', alt: 'avatar-large' %>
         <div class="card-product-infos">
           <h3><%= user.first_name %> </h3>
-          <% if request && request.category.photo.attached? %>
-            <%= cl_image_tag request.category.photo.key %>
+
+          <% if seeker_request && seeker_request.category.photo.attached? %>
+            <%= cl_image_tag seeker_request.category.photo.key %>
           <% end %>
         </div>
     </div>
