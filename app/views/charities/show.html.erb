@@ -7,21 +7,14 @@
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
   </li>
   <li class="nav-item" role="presentation">
-
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Offer</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Register a new seeker</button>
   </li>
 </ul>
-
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-  <%= render 'bookings/booking_items', bookings: @charity.bookings %>
-  </div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  <%= render 'users/new_form'%>
-  </div>
-</div>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
    <div class="container my-5">
       <div class="request-cards text-center">
        <% @our_seekers.each do |our_seeker| %>
@@ -46,6 +39,12 @@
       </div>
     </div>
   </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <%= render 'bookings/booking_items', bookings: @charity.bookings %>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <%= render 'users/new_form'%>
+    <a class="nav-link" href="#">
 
     </a>
   </div>
