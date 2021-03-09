@@ -37,7 +37,7 @@
       </div>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%= render 'bookings/booking_items', bookings: @charity.bookings %>
+    <%= render 'bookings/booking_items', bookings: @charity.bookings, charity: @charity %>
   </div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <%= render 'users/new_form'%>
