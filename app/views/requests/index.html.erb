@@ -14,7 +14,7 @@
               <% if request.user.photo.attached? %>
                 <%= cl_image_tag request.user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: 'avatar-large request-avatar', alt: 'avatar-large' %>
               <% end %>
-              <i class="fas fa-laptop"></i>
+              <%= cl_image_tag request.category.photo.key %>
             </div>
             <div class="request-details">
               <%= request.user.first_name %> needs a <%=  request.category.title.downcase %>
