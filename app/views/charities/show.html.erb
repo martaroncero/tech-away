@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@charity} | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "All of the seekers from #{@charity}" %>
+
 <div class="container my-5">
   <div>
     <h1>Charity <%= @charity.name %></h1>
@@ -23,7 +26,14 @@
         </div>
       </div>
       <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <%= render 'bookings/booking_items', bookings: @charity.bookings, charity: @charity %>
+        <div class="d-flex">
+          <div class="col m-6">
+            <%= render 'bookings/booking_items', bookings: @charity.bookings, charity: @charity, status: "Pending" %>
+          </div>
+          <div class="col m-6">
+            <%= render 'bookings/booking_items', bookings: @charity.bookings, charity: @charity, status: "Accepted" %>
+          </div>
+        </div>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <%= render 'users/new_form'%>

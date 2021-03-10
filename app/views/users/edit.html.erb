@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Edit #{ @user.name }'s details | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Edit the details of #{ @user.name }'s details" %>
+
 <div class="col-sm-6 offset-sm-3 my-5">
   <h2 class="mb-3">Edit <%= @user.name %>'s details</h2>
   <%= render 'edit_form' %>

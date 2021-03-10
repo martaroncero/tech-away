@@ -39,3 +39,14 @@
 .card-product-icon {
   width: 40px;
 }
+
+.list-item-card {
+  display: block;
+  position: relative;
+  background: #fff;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.3);
+}

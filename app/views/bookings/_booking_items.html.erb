@@ -1,111 +1,37 @@
+<h3><%= status %> offers</h3>
 <ul class="list-group mt-2">
-  <% if bookings.empty? %>
-    <p class="m-4">You have no offers here</p>
+  <% if bookings.where(status: status).empty? %>
+    <p class="m-4">You have no <%= status.downcase %> offers</p>
   <% else %>
-    <div class="d-flex">
-      <div class="col m-6">
-        <h3>Pending offers</h3>
-         <% if bookings.where(status: "Pending").empty? %>
-           <p class="m-4">You have no offers yet</p>
-           <% else %>
-        <% bookings.where(status: "Pending").each do |booking| %>
-          <li class="list-group-item mt-1">
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="offer-list-item-content d-flex align-items-center">
-                <div>
-                  <% if booking.status == "Pending" %>
-                    <%="New offer for"%>
-                  <% elsif booking.status == "Accepted" %>
-                    <%="You accepted an offer for "%>
-                  <% elsif booking.status == "Declined" %>
-                    <%="You declined an offer for "%>
-                  <% end %>
-                  <%= link_to booking.user.first_name, product_path(booking.product) %>
-                </div>
-              </div>
+    <% bookings.where(status: status).each do |booking| %>
+      <li class="list-item-card">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="offer-list-item-content d-flex align-items-center">
+            <div>
               <% if booking.status == "Pending" %>
-                <div>
-                  <div class="btn-group">
-                    <%= link_to(accept_booking_path(booking, charity_id: charity.id),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                      Accept
-                    <% end %>
-                    <%= link_to(decline_booking_path(booking, charity_id: charity.id), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                      Decline
-                    <% end %>
-                  </div>
-                </div>
+                <%= "New offer for" %>
+              <% elsif booking.status == "Accepted" %>
+                <%= "You accepted an offer for " %>
+              <% elsif booking.status == "Declined" %>
+                <%= "You declined an offer for " %>
               <% end %>
+              <%= link_to booking.user.first_name, product_path(booking.product) %>
             </div>
-          </li>
-        <% end %>
-           <% end %>
-      </div>
-
-      <div class="col m-6">
-        <h3>Accepted offers</h3>
-         <% if bookings.where(status: "Accepted").empty? %>
-           <p class="m-4">You haven't accepted any offer yet</p>
-           <% else %>
-           <% bookings.where(status: "Accepted").each do |booking| %>
-            <li class="list-group-item mt-1">
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="offer-list-item-content d-flex align-items-center">
-                  <div>
-                    <% if booking.status == "Pending" %>
-                      <%="New offer for"%>
-                    <% elsif booking.status == "Accepted" %>
-                      <%="You accepted an offer for "%>
-                    <% elsif booking.status == "Declined" %>
-                      <%="You declined an offer for "%>
-                    <% end %>
-                    <%= link_to booking.user.first_name, product_path(booking.product) %>
-                  </div>
-                </div>
-                <% if booking.status == "Pending" %>
-                  <div>
-                    <div class="btn-group">
-                      <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                        Accept
-                      <% end %>
-                      <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                        Decline
-                      <% end %>
-                    </div>
-                  </div>
+          </div>
+          <% if booking.status == "Pending" %>
+            <div>
+              <div class="btn-group">
+                <%= link_to(accept_booking_path(booking),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                  Accept
+                <% end %>
+                <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                  Decline
                 <% end %>
               </div>
-            </li>
-            <li class="list-group-item mt-1">
-              <div class="d-flex align-items-center justify-content-between">
-                <div class="offer-list-item-content d-flex align-items-center">
-                  <div>
-                    <% if booking.status == "Pending" %>
-                      <%="New offer for"%>
-                    <% elsif booking.status == "Accepted" %>
-                      <%="You accepted an offer for "%>
-                    <% elsif booking.status == "Declined" %>
-                      <%="You declined an offer for "%>
-                    <% end %>
-                    <%= link_to booking.user.first_name, product_path(booking.product) %>
-                  </div>
-                </div>
-                <% if booking.status == "Pending" %>
-                  <div>
-                    <div class="btn-group">
-                      <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
-                        Accept
-                      <% end %>
-                      <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
-                        Decline
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-             </li>
+            </div>
           <% end %>
-        <% end %>
-      </div>
-    </div>
-
+        </div>
+      </li>
+    <% end %>
   <% end %>
 </ul>
