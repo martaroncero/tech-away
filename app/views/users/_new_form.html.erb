@@ -5,7 +5,11 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
+    <%#= f.input :photo, as: :file %>
+            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
+    <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
     <%= f.submit "Add Seeker", class: "btn btn-primary" %>
+
   <% end %>
 </div>
