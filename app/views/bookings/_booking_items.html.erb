@@ -29,7 +29,7 @@
                     <%= link_to(accept_booking_path(booking, charity_id: charity.id),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
                       Accept
                     <% end %>
-                    <%= link_to(decline_booking_path(booking, charity_id: charity.id), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                    <%= link_to(decline_booking_path(booking, charity_id: charity.id), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
                       Decline
                     <% end %>
                   </div>
@@ -67,7 +67,7 @@
                       <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
                         Accept
                       <% end %>
-                      <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                      <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
                         Decline
                       <% end %>
                     </div>
@@ -95,7 +95,7 @@
                       <%= link_to(accept_booking_path(booking), class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
                         Accept
                       <% end %>
-                      <%= link_to(decline_booking_path(booking), class: "btn btn-warning", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
+                      <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
                         Decline
                       <% end %>
                     </div>
