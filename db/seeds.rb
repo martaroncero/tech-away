@@ -45,20 +45,17 @@ category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0
 charity1 = Charity.create!(name: "Refugee aid",
                           website: "www.refugee-aid.org",
                           whatsapp_number: "+4435671229",
-                          description: "Refugee Action has been  responding to the world’s worst humanitarian crises and helps people whose lives and livelihoods are shattered by conflict and disaster to survive, recover and gain control of their future. In more than 5 countries and over 20 U.K. cities, our dedicated teams provide clean water, shelter, health care, technical equipment for  education/ work  and empowerment support to refugees and displaced people.",
-                          description2: "Thanks to our 56 Donors, who have helped make this possible."
+                          description: "Refugee Action has been  responding to the world’s worst humanitarian crises and helps people whose lives and livelihoods are shattered by conflict and disaster to survive, recover and gain control of their future. In more than 5 countries and over 20 U.K. cities, our dedicated teams provide clean water, shelter, health care, technical equipment for  education/ work  and empowerment support to refugees and displaced people.\n \n Thanks to our 56 Donors, who have helped make this possible."
                           )
 charity2 = Charity.create!(name: "We are one",
                           website: "www.weareone.org",
                           whatsapp_number: "+4430712929",
-                          description: "We believe in the power of technology as a tool to help displaced people and develop meaningful solutions that improve lives. Since we started, WRO has helped more than 250 refugees find meaningful jobs through awareness and education.",
-                          description2: "We thank generous donors like you who continue to keep their dreams alive!"
+                          description: "We believe in the power of technology as a tool to help displaced people and develop meaningful solutions that improve lives. Since we started, WRO has helped more than 250 refugees find meaningful jobs through awareness and education.\n \n We thank generous donors like you who continue to keep their dreams alive!"
                           )
 charity3 = Charity.create!(name: "Refugee-Voice",
                           website: "www.refugee-voice.org",
                           whatsapp_number: "+44307129760",
-                          description: "We are a  Bristol based Charity working towards Women Refugee Rights to work providing a place of welcome in Bristol where asylum seekers and refugees can meet and be supported to start or continue their professional careers. She refugee aid that addresses the practical, psychological and human rights needs of refugees and asylum seekers and help them start a new , deserving and fruitful life again.",
-                          description2: "We thank generous donors like you who continue to keep their dreams alive!"
+                          description: "We are a  Bristol based Charity working towards Women Refugee Rights to work providing a place of welcome in Bristol where asylum seekers and refugees can meet and be supported to start or continue their professional careers. She refugee aid that addresses the practical, psychological and human rights needs of refugees and asylum seekers and help them start a new , deserving and fruitful life again.\n \n We thank generous donors like you who continue to keep their dreams alive!",
                           )
 charity4 = Charity.create!(name: "She Refugee aid",
                           website: "www.sherefugeeaid.com",
