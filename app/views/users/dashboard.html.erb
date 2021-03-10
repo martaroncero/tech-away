@@ -17,7 +17,6 @@
         <div class="tab-pane fade show active" id="accepted" role="tabpanel" aria-labelledby="pending-tab">
           <% if @accepted_products.any? %>
             <div>
-              <h3> Accepted: </h3>
               <% @accepted_products.each do |product| %>
                 <%= render "product_card", product: product %>
               <% end %>
@@ -27,7 +26,6 @@
         <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="accepted-tab">
           <% if @declined_products.any? %>
             <div>
-              <h3> Declined: </h3>
               <% @declined_products.each do |product| %>
                 <%= render "product_card", product: product %>
               <% end %>
@@ -37,7 +35,6 @@
         <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="declined-tab">
           <% if @pending_products.any? %>
             <div>
-              <h3> Pending </h3>
               <% @pending_products.each do |product| %>
                 <%= render "product_card", product: product %>
                <% end %>
