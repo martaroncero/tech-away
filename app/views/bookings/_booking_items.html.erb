@@ -3,7 +3,7 @@
   <% if bookings.where(status: status).empty? %>
     <p class="m-4">You have <%= status.downcase %> no offers</p>
   <% else %>
-    <% bookings.where(status: "Pending").each do |booking| %>
+    <% bookings.where(status: status).each do |booking| %>
       <li class="list-item-card">
         <div class="d-flex align-items-center justify-content-between">
           <div class="offer-list-item-content d-flex align-items-center">
