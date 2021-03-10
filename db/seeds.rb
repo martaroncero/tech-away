@@ -292,12 +292,12 @@ Request.create!(user_id: user_seeker_6.id, category_id: category_tablet.id, stat
 Booking.create!(charity_id: charity2.id, 
                 user_id: user_seeker_2.id, 
                 product_id: product_dell_laptop.id, 
-                status: "Declined"
+                status: "Accepted"
                 )
 Booking.create!(charity_id: charity1.id, 
                 user_id: user_seeker_1.id, 
                 product_id: product_macbook.id, 
-                status: "Accepted"
+                status: "Declined"
                 )
 Booking.create!(charity_id: charity1.id, 
                 user_id: user_seeker_8.id, 
