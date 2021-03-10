@@ -4,7 +4,7 @@
     <div class="row">
       <% @charity.each do |charity| %>
         <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="card-product">
+          <div class="card-product opacity-hover-none">
             <div class="card-body d-flex flex-column">
               <%= link_to charity_path(charity) do %>
                 <h5 class="card-title"><%= charity.name %></h5>
