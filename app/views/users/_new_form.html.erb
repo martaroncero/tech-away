@@ -1,15 +1,15 @@
+
 <div class="p-4 col-6 float-left">
-  <%= simple_form_for User.new, url: seekers_path, method: :post do |f| %>
+  <%= simple_form_for @user, url: seekers_path, method: :post do |f| %>
     <%= f.input :email, required: true, required: false %>
     <%#= f.input :password, required: true %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :description %>
     <%#= f.input :photo, as: :file %>
-            <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-
+    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
     <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+  
     <%= f.submit "Add Seeker", class: "btn btn-primary" %>
-
   <% end %>
 </div>
