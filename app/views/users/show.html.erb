@@ -1,7 +1,9 @@
+<% content_for :meta_title, "#{@user.name}'s seeker profile | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.description %>
+<% content_for :meta_image, cl_image_path(@user.photo.key) %>
+
 <div class="container my-5">
-
   <div class="seeker-card">
-
     <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
