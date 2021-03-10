@@ -1,12 +1,14 @@
-<div class="container my-5">
+<% content_for :meta_title, "#{@user.name}'s seeker profile | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.description %>
+<% content_for :meta_image, cl_image_path(@user.photo.key) %>
 
+<div class="container my-5">
   <div class="seeker-card">
-    
     <div class="seeker-content">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      
+
       <div class="seeker-description">
         <h2 class="seeker-name"><%= @user.name %></h2>
         <%= @user.description %>
@@ -15,7 +17,7 @@
   </div>
 
   <% if @user.charity_id == current_user.charity_id && @unchosen_categories.present? %>
-    <button type="button" class="btn btn-primary mt-3 w-100" data-toggle="modal" data-target="#request-modal">
+    <button type="button" class="btn btn-secondary mt-3 w-100" data-toggle="modal" data-target="#request-modal">
       Add a request
     </button>
   <% end %>
@@ -27,7 +29,7 @@
       <% @user.requests.each do |request| %>
         <li class="list-item-card">
           <div class="d-flex align-items-center">
-            <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
+            <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between">
               <div class="d-flex">
                 <div class="ml-2 mr-5">
                   <% if request.category.photo.attached? %>

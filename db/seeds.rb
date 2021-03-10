@@ -5,69 +5,69 @@ puts "Creating seeds..."
 
 #Categories
 category_camera = Category.create!(title: "Camera")
-category_camera.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293253/camera_pjbop4.png'), 
-                            filename: 'camera.jpg', 
+category_camera.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371916/camera_qm1iim.png'),
+                            filename: 'camera.jpg',
                             content_type: 'image/jpg'
                             )
 category_laptop = Category.create!(title: "Laptop")
-category_laptop.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293176/laptop_poh39o.png'), 
-                            filename: 'laptop.jpg', 
+category_laptop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371871/laptop_e5qwy4.png'),
+                            filename: 'laptop.jpg',
                             content_type: 'image/jpg'
                             )
 category_desktop = Category.create!(title: "Desktop computer")
-category_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293276/computer_fm4dqg.png'), 
-                            filename: 'desktop.jpg', 
+category_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371935/computer_vvbebw.png'),
+                            filename: 'desktop.jpg',
                             content_type: 'image/jpg'
                             )
 category_tablet = Category.create!(title: "Tablet")
-category_tablet.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293214/ipad_jdsnkv.png'), 
-                            filename: 'tablet.jpg', 
+category_tablet.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371880/ipad_plk9j1.png'),
+                            filename: 'tablet.jpg',
                             content_type: 'image/jpg'
                             )
 category_mobile = Category.create!(title: "Mobile phone")
-category_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615288780/android_dwnkhr.png'), 
-                            filename: 'mobile.jpg', 
+category_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371927/android_r4nqea.png'),
+                            filename: 'mobile.jpg',
                             content_type: 'image/jpg'
                             )
 category_printer = Category.create!(title: "Printer")
-category_printer.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293233/printer-door-open_p7mmxz.png'), 
-                            filename: 'printer.jpg', 
+category_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371889/printer-door-open_nl1f8t.png'),
+                            filename: 'printer.jpg',
                             content_type: 'image/jpg'
                             )
 category_monitor = Category.create!(title: "Monitor")
-category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/diynwton0/image/upload/v1615293190/monitor--v1_tbd0c8.png'), 
-                            filename: 'monitor.jpg', 
+category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371899/monitor--v1_npfioo.png'),
+                            filename: 'monitor.jpg',
                             content_type: 'image/jpg'
                             )
 
 
 # Charities
-charity1 = Charity.create!(name: "Refugee aid", 
-                          website: "www.refugee-aid.org", 
+charity1 = Charity.create!(name: "Refugee aid",
+                          website: "www.refugee-aid.org",
                           whatsapp_number: "+4435671229"
                           )
-charity2 = Charity.create!(name: "We are one", 
-                          website: "www.weareone.org", 
+charity2 = Charity.create!(name: "We are one",
+                          website: "www.weareone.org",
                           whatsapp_number: "+4430712929"
                           )
-charity3 = Charity.create!(name: "Refugee-Voice", 
-                          website: "www.refugee-voice.org", 
+charity3 = Charity.create!(name: "Refugee-Voice",
+                          website: "www.refugee-voice.org",
                           whatsapp_number: "+44307129760"
                           )
-charity4 = Charity.create!(name: "She Refugee aid", 
-                          website: "www.sherefugeeaid.com", 
+charity4 = Charity.create!(name: "She Refugee aid",
+                          website: "www.sherefugeeaid.com",
                           whatsapp_number: "+4465712955"
                           )
-charity5 = Charity.create!(name: "World for all", 
-                          website: "www.world-for-all.uk.org", 
+charity5 = Charity.create!(name: "World for all",
+                          website: "www.world-for-all.uk.org",
                           whatsapp_number: "+446572115"
                           )
 
 #Users
-user_donator = User.create!(email: "donator@mail.com", 
-password: "123456" , 
-first_name: "Nigel", 
-last_name: "Lee", 
+user_donator = User.create!(email: "donator@mail.com",
+password: "123456" ,
+first_name: "Nigel",
+last_name: "Lee",
 kind: "Donator", phone_number: "+441234120", contact_preference: "Either")
 
 user_seeker_1 = User.new(email: "seeker1@mail.com",
@@ -183,7 +183,7 @@ user_worker = User.create!(email: "worker@mail.com",
                           phone_number: "+443428099"
                           )
 
-#Products 
+#Products
 product_dell_laptop = Product.new(user_id: user_donator.id,
                       title: "Dell Laptop",
                       description: " Dell Latitude E7470 . This laptop is 14inches,  6th Gen with i5 processor. It has pre-installed Windows 10 operating system and 8GB RAM.",
@@ -199,80 +199,80 @@ product_dell_laptop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32ii
 product_dell_laptop.save!
 
 product_macbook = Product.new(user_id: user_donator.id,
-                      title: "Apple Laptop", 
-                      description: " 13-inch MacBook Pro with Retina display . This Apple laptop is in excellent condition because I’ve been using 3 different laptops at the same time and I travel frequently(I don’t use laptop when I travel)", 
-                      status: "Pending", 
-                      condition: "Used (like new)",category_id: category_laptop.id, 
+                      title: "Apple Laptop",
+                      description: " 13-inch MacBook Pro with Retina display . This Apple laptop is in excellent condition because I’ve been using 3 different laptops at the same time and I travel frequently(I don’t use laptop when I travel)",
+                      status: "Pending",
+                      condition: "Used (like new)",category_id: category_laptop.id,
                       address: "Stockwell Road, London SW9"
                       )
-product_macbook.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614954171/download_5_vrmc6q.jpg'), 
-                            filename: 'macbook.jpg', 
+product_macbook.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614954171/download_5_vrmc6q.jpg'),
+                            filename: 'macbook.jpg',
                             content_type: 'image/jpg'
                             )
 product_macbook.save!
- 
-product_mobile = Product.new(user_id: user_donator.id, 
-                      title: "Samsung Mobile", 
-                      description: "Samsung Galaxy S9 Plus 64GB. This smartphone is sim-free and can be used on any network. The item is in pristine condition as I recieved it as a gift. Comes with the charger and usb cable. ", 
-                      status: "Complete", 
-                      condition: "New",category_id: category_mobile.id, 
+
+product_mobile = Product.new(user_id: user_donator.id,
+                      title: "Samsung Mobile",
+                      description: "Samsung Galaxy S9 Plus 64GB. This smartphone is sim-free and can be used on any network. The item is in pristine condition as I recieved it as a gift. Comes with the charger and usb cable. ",
+                      status: "Complete",
+                      condition: "New",category_id: category_mobile.id,
                       address: "King & Queen Wharf, Rotherhithe Street, London SE16"
                       )
-product_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'), 
-                            filename: 'samsungmobile.jpg', 
+product_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'),
+                            filename: 'samsungmobile.jpg',
                             content_type: 'image/jpg'
                             )
-product_mobile.save! 
+product_mobile.save!
 
-product_ipad = Product.new(user_id: user_donator.id, 
-                      title: "Apple iPad", 
+product_ipad = Product.new(user_id: user_donator.id,
+                      title: "Apple iPad",
                       description: "Apple ipad Air Space Gray ,iOS operating system WIFi , bluetooth and has a battery standby time of upto 710hr.",
                       status: "Pending",
                       condition: "Used (fair)",
-                      category_id: category_tablet.id, 
+                      category_id: category_tablet.id,
                       address: "Randolph Avenue, Maida Vale, London W9"
                       )
-product_ipad.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948826/download_3_aabucz.jpg'), 
-                          filename: 'ipad.jpg', 
+product_ipad.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948826/download_3_aabucz.jpg'),
+                          filename: 'ipad.jpg',
                           content_type: 'image/jpg'
                           )
-product_ipad.save! 
+product_ipad.save!
 
-product_desktop = Product.create!(user_id: User.last.id, 
-                          title: "Desktop", 
-                          description: "HP Pavilion 24-xa Core i3 Windows 10 Desktop. The desktop is in pristine condition, brought for my son but was used only for a few months.", 
-                          status: "Pending", 
-                          condition: "Used (good)",category_id: category_desktop.id, 
+product_desktop = Product.create!(user_id: User.last.id,
+                          title: "Desktop",
+                          description: "HP Pavilion 24-xa Core i3 Windows 10 Desktop. The desktop is in pristine condition, brought for my son but was used only for a few months.",
+                          status: "Pending",
+                          condition: "Used (good)",category_id: category_desktop.id,
                           address: "Charteris Road, London NW6"
                           )
-product_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'), 
-                            filename: 'desktop.jpg', 
+product_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'),
+                            filename: 'desktop.jpg',
                             content_type: 'image/jpg'
                             )
 product_desktop.save!
 
-product_printer = Product.create!(user_id: User.last.id, 
-                          title: "HP Printer", 
-                          description: "This HP printer is in great condition, used for 6 months only.", 
-                          status: "Pending", 
-                          condition: "Used (good)",category_id: category_printer.id, 
+product_printer = Product.create!(user_id: User.last.id,
+                          title: "HP Printer",
+                          description: "This HP printer is in great condition, used for 6 months only.",
+                          status: "Pending",
+                          condition: "Used (good)",category_id: category_printer.id,
                           address: "Alma Road, St.Albans AL1"
                           )
-product_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615281110/download_mpbrki.jpg'), 
-                            filename: 'printer.jpg', 
+product_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615281110/download_mpbrki.jpg'),
+                            filename: 'printer.jpg',
                             content_type: 'image/jpg'
                             )
 product_printer.save!
 
-product_monitor = Product.create!(user_id: User.last.id, 
-                          title: "Monitor 15inches", 
-                          description: "15inches Touch Screen LCD Monitor Display 1024x768 Resolution. It is 2 years old but used with care, minor scratches but in good usable condition.", 
-                          status: "Pending", 
-                          condition: "Used (good)",category_id: category_monitor.id, 
+product_monitor = Product.create!(user_id: User.last.id,
+                          title: "Monitor 15inches",
+                          description: "15inches Touch Screen LCD Monitor Display 1024x768 Resolution. It is 2 years old but used with care, minor scratches but in good usable condition.",
+                          status: "Pending",
+                          condition: "Used (good)",category_id: category_monitor.id,
                           address: "Winchester House, Merchant Street, Bow, Mile End, London E3"
                           )
-product_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615281109/download_2_eqw6pt.jpg'), 
-                            filename: 'monitor.jpg', 
+product_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615281109/download_2_eqw6pt.jpg'),
+                            filename: 'monitor.jpg',
                             content_type: 'image/jpg'
                             )
 product_monitor.save!
@@ -290,29 +290,29 @@ Request.create!(user_id: user_seeker_8.id, category_id: category_laptop.id)
 Request.create!(user_id: user_seeker_6.id, category_id: category_tablet.id, status: "Completed")
 
 #bookings
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_1.id, 
-                product_id: product_dell_laptop.id, 
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_1.id,
+                product_id: product_dell_laptop.id,
                 status: "Declined"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_2.id, 
-                product_id: product_macbook.id, 
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_2.id,
+                product_id: product_macbook.id,
                 status: "Accepted"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_5.id, 
-                product_id: product_mobile.id, 
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_5.id,
+                product_id: product_mobile.id,
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_3.id, 
-                product_id: product_desktop.id, 
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_3.id,
+                product_id: product_desktop.id,
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_6.id, 
-                product_id: product_ipad.id, 
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_6.id,
+                product_id: product_ipad.id,
                 status: "Accepted"
                 )
 puts "Created seeds"
