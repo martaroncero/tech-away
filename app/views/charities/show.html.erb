@@ -1,7 +1,14 @@
-<div class="container my-5">
+  <div class="show_container">
+   <div class="text_container">
     <h1><%= @charity.name %></h1>
-    <h5><%= @charity.description %></h5>
-    <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+    <h5><%= @charity.description %>
+    <br>
+    <br>
+    <%= @charity.description2 %></h5>
+  </div>
+  </div>
+<div class="container my-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link <%= 'active' unless params[:tab] == "2" %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
        </li>

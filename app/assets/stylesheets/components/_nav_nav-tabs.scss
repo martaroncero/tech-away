@@ -1,3 +1,19 @@
 .nav-link.active {
-  background-color: #14E78E !important
+  background-color: #14E78E !important;
+}
+
+.nav-tabs {
+  width: 100%;
+  margin: 0;
+}
+
+.nav-item {
+  width: 33.333333%;
+}
+
+.nav-link {
+  width: 100%;
+  &:hover{
+    background-color:#14E78E;
+  }
 }
