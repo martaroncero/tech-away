@@ -314,10 +314,20 @@ Booking.create!(charity_id: charity4.id,
                 product_id: product_ipad.id, 
                 status: "Accepted"
                 )
+Booking.create!(charity_id: charity5.id, 
+                user_id: user_seeker_7.id, 
+                product_id: product_dell_laptop.id, 
+                status: "Pending"
+                )
+Booking.create!(charity_id: charity3.id, 
+                user_id: user_seeker_3.id, 
+                product_id: product_dell_laptop.id, 
+                status: "Pending"
+                )
                 
 puts "Created seeds"
 puts "- 8 Users (1 Donator, 1 Worker and 7 Seekers)"
 puts "- 8 Categories"
 puts "- 9 Requests"
 puts "- 7 Products"
-puts "- 5 Bookings"
+puts "- 7 Bookings"
