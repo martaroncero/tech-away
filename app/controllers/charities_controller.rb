@@ -7,6 +7,7 @@ class CharitiesController < ApplicationController
   def show
     @user = User.new
     @charity = Charity.find(params[:id])
+    @booking = Booking.find(params[:id])
     @charity_bookings = @charity.bookings
     @our_seekers = User.where(charity: @charity, kind: "Seeker")
   end

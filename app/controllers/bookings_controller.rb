@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @pending_bookings = Booking.where(user_id: @user, status: "Pending")
     @accepted_bookings = Booking.where(user_id: @user, status: "Accepted")
     @declined_bookings = Booking.where(user_id: @user, status: "Declined")
+    @booking_order = Booking.order(created_at: :desc)
   end
 
   def accept_booking
