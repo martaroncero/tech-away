@@ -22,7 +22,7 @@ const initMapbox = () => {
     // add them to the map
     const marker = JSON.parse(mapElement.dataset.marker);
 
-    new mapboxgl.Marker({ color: "#167FFB" })
+    new mapboxgl.Marker({ color: "#00755E" })
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
     
