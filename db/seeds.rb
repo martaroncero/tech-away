@@ -101,7 +101,7 @@ user_seeker_3 = User.new(email: "seeker3@mail.com",
                         last_name: "Ameer",
                         charity_id: charity3.id,
                         kind: "Seeker",
-                        description: "Bob was studying in his final year of university, before his family had to flee. He is a self taught programmer and would like a desktop to continue his studies. Bob aspires to be a software engineer.",
+                        description: "Bob was studying in his final year of university, before his family had to flee. He is a self taught programmer and would like a desktop and monitor to continue his studies. Bob aspires to be a software engineer.",
                         phone_number: "+44333920")
 user_seeker_3.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614945729/photo-1562925217-61a965391d53_x7pnfh.jpg'),
                           filename: "user_seeker_3.jpg",
@@ -284,40 +284,40 @@ Request.create!(user_id: user_seeker_5.id, category_id: category_mobile.id)
 Request.create!(user_id: user_seeker_7.id, category_id: category_printer.id)
 Request.create!(user_id: user_seeker_3.id, category_id: category_desktop.id)
 Request.create!(user_id: user_seeker_3.id, category_id: category_monitor.id)
-Request.create!(user_id: user_seeker_6.id, category_id: category_printer.id)
 Request.create!(user_id: user_seeker_4.id, category_id: category_camera.id)
 Request.create!(user_id: user_seeker_8.id, category_id: category_laptop.id)
 Request.create!(user_id: user_seeker_6.id, category_id: category_tablet.id, status: "Completed")
 
 #bookings
 Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_1.id, 
+                user_id: user_seeker_2.id, 
                 product_id: product_dell_laptop.id, 
                 status: "Declined"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_2.id, 
+Booking.create!(charity_id: charity1.id, 
+                user_id: user_seeker_1.id, 
                 product_id: product_macbook.id, 
                 status: "Accepted"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_5.id, 
+Booking.create!(charity_id: charity1.id, 
+                user_id: user_seeker_8.id, 
                 product_id: product_mobile.id, 
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_3.id, 
+Booking.create!(charity_id: charity4.id, 
+                user_id: user_seeker_5.id, 
                 product_id: product_desktop.id, 
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity2.id, 
+Booking.create!(charity_id: charity4.id, 
                 user_id: user_seeker_6.id, 
                 product_id: product_ipad.id, 
                 status: "Accepted"
                 )
+                
 puts "Created seeds"
 puts "- 8 Users (1 Donator, 1 Worker and 7 Seekers)"
 puts "- 8 Categories"
-puts "- 10 Requests"
+puts "- 9 Requests"
 puts "- 7 Products"
 puts "- 5 Bookings"
