@@ -3,10 +3,17 @@
     <div class="card-product">
       <%= cl_image_tag user.photo.key, crop: :thumb, gravity: 'face', class: "card-product-profile", alt: 'avatar-large' %>
       <div class="card-product-infos">
-        <h3><%= user.first_name %> </h3>
+        <h3><%= user.first_name %></h3>
 
         <% if seeker_request && seeker_request.category.photo.attached? %>
           <%= cl_image_tag seeker_request.category.photo.key, class: "card-product-icon" %>
+        <% else %>
+          <% request_count = user.requests.where(status: "Pending").count %>
+          <% if request_count > 0 %>
+            <div><%= "needs #{request_count} #{'item'.pluralize(request_count)}" %></div>
+          <% else %>
+            <div>is all set!</div>
+          <% end %>
         <% end %>
       </div>
     </div>
