@@ -1,4 +1,4 @@
-<div class="request-container">
+<div class="col-12 col-md-6 col-lg-4 mb-4">
   <%= link_to seeker_path(user) do %>
     <div class="card-product">
       <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :thumb, gravity: 'face', class: "card-product-profile", alt: 'avatar-large' %>
@@ -12,3 +12,4 @@
     </div>
   <% end %>
 </div>
+
