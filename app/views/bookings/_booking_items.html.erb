@@ -17,7 +17,9 @@
               <% end %>
               <%= link_to booking.user.first_name, product_path(booking.product) %>
                  <div class="time">
-                 <h6><%= @booking.posted_ago %></h6>
+                 <!-- <h6><%#= distance_of_time_in_words(booking.created_at, Time.now) %></h6> -->
+                <h6> <%= booking.posted_ago %></h6>
+
                   </div>
             </div>
           </div>
