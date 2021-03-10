@@ -88,7 +88,7 @@ user_seeker_2 = User.new(email: "seeker2@mail.com",
                         last_name: "Mir",
                         charity_id: charity2.id,
                         kind: "Seeker",
-                        description: "Saloo is from Bhutan and was studying in university before he had to seek asylum in Britain.He needs a laptop to study social work so that he can work with his local council to support other young refugees .",
+                        description: "Saloo is from Bhutan and was studying in university before he had to seek asylum in Britain. He needs a laptop to study social work so that he can work with his local council to support other young refugees.",
                         phone_number: "+44333920")
 user_seeker_2.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614945726/download_irxjsm.jpg'),
                           filename: "user_seeker_2.jpg",
@@ -278,15 +278,15 @@ product_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/
 product_monitor.save!
 
 #Requests
-Request.create!(user_id: user_seeker_1.id, category_id: category_laptop.id)
-Request.create!(user_id: user_seeker_2.id, category_id: category_laptop.id, status: "Completed")
-Request.create!(user_id: user_seeker_5.id, category_id: category_mobile.id)
-Request.create!(user_id: user_seeker_7.id, category_id: category_printer.id)
-Request.create!(user_id: user_seeker_3.id, category_id: category_desktop.id)
-Request.create!(user_id: user_seeker_3.id, category_id: category_monitor.id)
-Request.create!(user_id: user_seeker_4.id, category_id: category_camera.id)
-Request.create!(user_id: user_seeker_8.id, category_id: category_laptop.id)
-Request.create!(user_id: user_seeker_6.id, category_id: category_tablet.id, status: "Completed")
+Request.create!(user_id: user_seeker_1.id, category_id: category_laptop.id, description: "Amal needs a laptop to complete her university degree.")
+Request.create!(user_id: user_seeker_2.id, category_id: category_laptop.id, description: "Saloo needs a laptop to study Social Work.", status: "Completed")
+Request.create!(user_id: user_seeker_5.id, category_id: category_mobile.id, description: "Noor needs a mobile phone to start her own catering business.")
+Request.create!(user_id: user_seeker_7.id, category_id: category_printer.id, description: "Sulaiman needs a desktop computer and a printer to continue his job as an engineer")
+Request.create!(user_id: user_seeker_3.id, category_id: category_desktop.id, description: "Bob needs a desktop and monitor to continue his journey to be a software engineer.")
+Request.create!(user_id: user_seeker_3.id, category_id: category_monitor.id, description: "Bob needs a desktop and monitor to continue his journey to be a software engineer.")
+Request.create!(user_id: user_seeker_4.id, category_id: category_camera.id, description: "Abebe needs a camera so that he can continue his career as a photographer.")
+Request.create!(user_id: user_seeker_8.id, category_id: category_laptop.id, description: "Wafaa needs a laptop to finish her final year of university and find a job.")
+Request.create!(user_id: user_seeker_6.id, category_id: category_tablet.id, description: "Zaida needs a laptop to study and complete her final year of university.", status: "Completed")
 
 #bookings
 Booking.create!(charity_id: charity2.id, 
