@@ -15,12 +15,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
-  end
-
-  def show
-    @request = Request.find(params[:id])
-    @user = @request.user
+    @requests = Request.where(status: "Pending")
   end
 
   private

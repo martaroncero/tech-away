@@ -7,8 +7,7 @@
   </div>
   <%= simple_form_for [@user, @request], url: seeker_path(@user), method: :post, remote: true do |f| %>
   <div class="modal-body">
-    <%= f.association :category %>
-    <%= f.input :photo, as: :file %>
+    <%= f.association :category, collection: @unchosen_categories %>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

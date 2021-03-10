@@ -16,22 +16,26 @@
     </div>
   </div>
 
-  <% if @user.charity_id == current_user.charity_id %>
-    <button type="button" class="btn btn-primary mt-4 w-100" data-toggle="modal" data-target="#request-modal">
+  <% if @user.charity_id == current_user.charity_id && @unchosen_categories.present? %>
+    <button type="button" class="btn btn-primary mt-3 w-100" data-toggle="modal" data-target="#request-modal">
       Add a request
     </button>
   <% end %>
 
-  <h3 class="mt-4 mb-3"><%= @user.first_name %>'s requests: </h3>
+  <h3 class="mt-4 mb-2"><%= @user.first_name %>'s requests: </h3>
 
   <% if @user.requests.present? %>
     <ul class="seeker-requests-list">
       <% @user.requests.each do |request| %>
-        <li class="list-group-item seeker-card">
+        <li class="list-group-item seeker-card mt-2">
           <div class="d-flex align-items-center">
             <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between"> 
               <div class="d-flex">
-                <div class="ml-2 mr-5">Image</div>
+                <div class="ml-2 mr-5">
+                  <% if request.category.photo.attached? %>
+                    <%= cl_image_tag request.category.photo.key, class: "request-category-icon" %>
+                  <% end %>
+                </div>
                 <div><%= request.description %></div>
               </div>
               <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
@@ -55,6 +59,5 @@
     <%= render 'requests/form/form_content' %>
   </div>
 </div>
-
 
 

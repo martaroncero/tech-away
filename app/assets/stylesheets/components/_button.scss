@@ -1,11 +1,7 @@
-.btn.btn-primary{
+.btn.btn-primary, .btn.btn-warning {
   color: white;
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 10px 14px;
 }
-.btn.btn-warning{
-  color: white;
+.btn {
   font-weight: bold;
   border-radius: 6px;
   padding: 10px 14px;

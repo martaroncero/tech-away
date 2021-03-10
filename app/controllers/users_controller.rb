@@ -22,6 +22,16 @@ class UsersController < ApplicationController
 
   def show
     @request = Request.new
+
+    categories = Category.all
+
+    if @user.requests.any?
+      @unchosen_categories = categories.reject do |category|
+        @user.categories.include?(category)
+      end
+    else
+      @unchosen_categories = categories
+    end
   end
 
   def dashboard

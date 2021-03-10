@@ -1,4 +1,4 @@
-<%= form_tag products_path, method: :get, class:"form-inline" do %>
-  <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a product" %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+<%= form_tag products_path, method: :get, class:"form-inline search-form f-flex" do %>
+  <%= text_field_tag :query, params[:query], class: "form-control search-field flex-grow-1", placeholder: "Find a product" %>
+  <%= submit_tag "Search", class: "btn btn-primary search-button" %>
 <% end %>

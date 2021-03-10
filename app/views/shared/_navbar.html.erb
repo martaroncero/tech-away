@@ -14,6 +14,9 @@
         <li class="nav-item">
           <%= link_to "about", about_path, class: "nav-link" %>
         </li>
+         <li class="nav-item">
+          <%= link_to "charities", charities_path, class: "nav-link" %>
+        </li>
       </ul>
 
 
@@ -21,19 +24,18 @@
          <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://ca.slack-edge.com/T02NE0241-U01JGBP2KFE-8e0eca34d966-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.kind == "Donator" %>
                 <%= link_to "Your donations/offers", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Requests", requests_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% elsif current_user.kind == "Charity worker" %>
-              <div class="container" style="color: #14E78E">Donate</div>
+              <div class="container text-primary">Donate</div>
                 <%= link_to "Your donations/offers", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Requests", requests_path, class: "dropdown-item" %>
-                 <div class="container" style="color: #FEA451">Charity</div>
-                 <%= link_to "Add a seeker", new_seeker_path, class: "dropdown-item" %>
-                 <%= link_to "Offers", seeker_bookings_path(User.last), class: "dropdown-item" %>
+                 <div class="container text-warning">Charity</div>
+                 <%= link_to "Your charity", charity_path(current_user.charity), method: :get, class: "dropdown-item" %>
                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
              <% else %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
