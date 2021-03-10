@@ -33,7 +33,9 @@
       </div>
       <div class="row">
         <div class="col">
-          <%= f.input :photo, as: :file %>
+          <%#= f.input :photo, as: :file %>
+           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
         </div>
       </div>
       <%= f.button :submit, "List your donation", class: 'btn btn-primary mt-2' %>
@@ -47,6 +49,6 @@
         <p>Used (good) - Minor signs of wear. Item is operational and works as intended.</p>
         <p>Used (fair) - Some signs of wear and tear or minor defects. Item is still usable as intended.</p>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
