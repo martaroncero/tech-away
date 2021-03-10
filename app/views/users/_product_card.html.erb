@@ -1,12 +1,6 @@
-<div class="card">
-  <div class="card-body">
-    You listed 
-    "<%= product.title %>" as a
-    <%= product.category.title.downcase %>
-<%# if product.photos.attached? %>
-  <%# photos.each do |photo| %>
-    <%#= cl_image_tag photo.key %>
-  <%# end%>
-<%# end%>
+<div class="list-item-card mt-2">
+  <div>
+    <%= product.category.title %> :
+    <%= product.title %>
   </div>
 </div>

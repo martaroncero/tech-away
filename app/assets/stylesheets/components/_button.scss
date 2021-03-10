@@ -1,12 +1,17 @@
-.btn.btn-primary{
+.btn.btn-primary, .btn.btn-warning {
   color: white;
+}
+.btn {
   font-weight: bold;
   border-radius: 6px;
   padding: 10px 14px;
 }
-.btn.btn-warning{
-  color: white;
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 10px 14px;
+
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
 }

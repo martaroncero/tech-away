@@ -1,26 +1,34 @@
+<% content_for :meta_title, "All charities | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "All of the charities that use #{DEFAULT_META["meta_product_name"]}" %>
+
 <div class="container my-5">
   <h1>Charities</h1>
-    <div class="request-cards text-center">
+  <div class="request-cards text-center">
+    <div class="row">
       <% @charity.each do |charity| %>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <%= link_to charity_path(charity) do %>
-              <h5 class="card-title"><%= charity.name %></h5>
-            <% end %>
-            <div class="whatsapp-section">
-              <div class="whatsapp-section-desktop">
-                <p>Scan to chat with us on whatsapp:</p>
-                <%= charity.generate_qr_code.html_safe %>
-              </div>
-              <div class="whatsapp-section-mobile">
-                or open <%= link_to "whatsapp desktop", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %>
-              </div>
-            </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="card-product opacity-hover-none">
+            <div class="card-body d-flex flex-column">
+              <%= link_to charity_path(charity) do %>
+                <h5 class="card-title"><%= charity.name %></h5>
+              <% end %>
+              <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#chat-modal-<%= charity.id %>">
+                Chat with us
+              </button>
 
-            <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-primary mt-3" %>
+              <div class="modal fade" id="chat-modal-<%= charity.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <%= render 'shared/whatsapp', charity: charity %>
+                </div>
+              </div>
+              
+              <%= link_to "Visit our Website", "http://#{charity.website}", target: "_blank" , class: "btn btn-dark text-white mt-3" %>
+            </div>
           </div>
         </div>
       <% end %>
+    </div>
   </div>
 </div>
+
 
