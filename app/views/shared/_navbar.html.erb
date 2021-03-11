@@ -31,10 +31,10 @@
                 <%= link_to "Requests", requests_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% elsif current_user.kind == "Charity worker" %>
-              <div class="container" style="color: #14E78E">Donate</div>
+              <div class="container text-primary">Donate</div>
                 <%= link_to "Your donations/offers", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Requests", requests_path, class: "dropdown-item" %>
-                 <div class="container" style="color: #FEA451">Charity</div>
+                 <div class="container text-warning">Charity</div>
                  <%= link_to "Your charity", charity_path(current_user.charity), method: :get, class: "dropdown-item" %>
                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
              <% else %>
@@ -44,10 +44,8 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-light" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-light" %>
-
-
+          <%= link_to "Login", new_user_session_path, class: "btn btn-secondary btn-rounded-50 mr-2 px-4" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-rounded-50 px-4" %>
         </li>
       <% end %>
     </ul>

@@ -4,8 +4,9 @@
   }
   &-mobile {
     margin: 16px 0 0 0;
+
     &-link {
-      color: #14E78E !important;
+      color: $primary !important;
     }
   }
 }

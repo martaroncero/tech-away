@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Your Donations | #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "View all of your product listings and their status." %>
+
 <div class="container my-5">
 <h1> My donations </h1>
  <div class="row m-0">
@@ -17,7 +20,6 @@
         <div class="tab-pane fade show active" id="accepted" role="tabpanel" aria-labelledby="pending-tab">
           <% if @accepted_products.any? %>
             <div>
-              <h3> Accepted: </h3>
               <% @accepted_products.each do |product| %>
                 <%= render "product_card", product: product %>
               <% end %>
@@ -27,7 +29,6 @@
         <div class="tab-pane fade" id="declined" role="tabpanel" aria-labelledby="accepted-tab">
           <% if @declined_products.any? %>
             <div>
-              <h3> Declined: </h3>
               <% @declined_products.each do |product| %>
                 <%= render "product_card", product: product %>
               <% end %>
@@ -37,7 +38,6 @@
         <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="declined-tab">
           <% if @pending_products.any? %>
             <div>
-              <h3> Pending </h3>
               <% @pending_products.each do |product| %>
                 <%= render "product_card", product: product %>
                <% end %>
