@@ -40,6 +40,7 @@ class BookingsController < ApplicationController
                                                     )
       other_bookings.each{ |booking| booking.update(status: "Declined")}
     end
+
     redirect_to charity_path(@booking.charity, tab: 2)
   end
 
@@ -47,6 +48,7 @@ class BookingsController < ApplicationController
     if @booking.status == "Pending"
       @booking.update(status: "Declined")
     end
+  
     redirect_to charity_path(@booking.charity, tab: 2)
   end
 
