@@ -24,7 +24,7 @@
           <% if booking.status == "Pending" %>
             <div>
               <div class="btn-group">
-                <%= link_to(accept_booking_path(booking),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer?"}) do %>
+                <%= link_to(accept_booking_path(booking),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer and decline all other pending offers on this request?"}) do %>
                   Accept
                 <% end %>
                 <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
