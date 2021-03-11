@@ -47,7 +47,7 @@ charity1 = Charity.create!(name: "Refugee Council",
                           whatsapp_number: "+4435671229",
                           description: "We work directly with thousands of refugees each year. We support them from the moment they arrive in the UK. We provide crisis advice and practical support, help them to integrate into their new communities and offer mental health counselling to help them come to terms with the trauma so many of them have experienced."
                           )
-charity1.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615472562/hands-2888625_1280_re72jj.jpg'),
+charity1.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615480480/Get-involved-donate-online-20190327_kbcbgh.jpg'),
                           filename: "charity1.jpg",
                           content_type: "image/jpg"
                           )
@@ -315,7 +315,7 @@ user_seeker_14 = User.new(email: "seeker14@mail.com",
                         kind: "Seeker",
                         description: "Mohammad once owned an interior design business in Syria until war broke in 2011. He specialises in home design, mostly decorating children's bedrooms. Mohammad needs to learn English and to dreams of being financially independent again.",
                         phone_number: "+4475342149")
-user_seeker_14.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615472332/photo-1510396420478-66e0bfbcd698_j3p5wb.jpg'),
+user_seeker_14.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615484717/photo-1597296678471-578fb9cade27_gyaz5n.jpg'),
                           filename: "user_seeker_14.jpg",
                           content_type: "image/jpg"
                           )
@@ -545,11 +545,6 @@ Booking.create!(charity_id: charity2.id,
                 product_id: product_ipad.id, 
                 status: "Pending"
                 )
-# Booking.create!(charity_id: charity5.id, 
-#                 user_id: user_seeker_7.id, 
-#                 product_id: product_camera.id, 
-#                 status: "Pending"
-#                 )
 Booking.create!(charity_id: charity3.id, 
                 user_id: user_seeker_3.id, 
                 product_id: product_desktop.id, 
