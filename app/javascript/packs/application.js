@@ -26,11 +26,15 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { previewImageOnFileSelect } from '../components/image_preview';
-
+import { runAnimations } from '../components/countup';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  if (document.getElementById("home-banner")){
+    runAnimations()
+  }
+
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
