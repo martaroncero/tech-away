@@ -5,17 +5,19 @@
 <h1> My donations </h1>
  <div class="row m-0">
     <div class="col p-0">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">Pending</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">Accepted</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">Declined</button>
-        </li>
-      </ul>
+      <div id="charity-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">Pending</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">Accepted</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="declined-tab" data-bs-toggle="tab" data-bs-target="#declined" type="button" role="tab" aria-controls="declined" aria-selected="false">Declined</button>
+          </li>
+        </ul>
+      </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="accepted" role="tabpanel" aria-labelledby="pending-tab">
           <% if @accepted_products.any? %>

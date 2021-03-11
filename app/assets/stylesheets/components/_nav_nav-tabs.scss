@@ -1,15 +1,21 @@
 
 #charity-tabs {
+
+  .tab-content{
+   background-color: #fff;
+  }
+
+
   .nav-link.active {
     background-color: $primary !important;
-      color: white !important;
-  border-radius: 6px;
+    color: #fff !important;
+    border-radius: 6px;
   }
 
   .nav-tabs {
     width: 100%;
     margin: 0;
-      border-radius: 6px;
+    border-radius: 6px;
   }
 
   .nav-item {
@@ -18,6 +24,7 @@
 
   .nav-link {
     width: 100%;
+    background-color: #fff;
     &:hover{
       background-color: $primary;
       border-radius: 6px;
