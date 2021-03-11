@@ -5,6 +5,12 @@
   background-repeat: no-repeat;
   padding: 100px 80px 150px 80px;
 }
+
+
+.banner img {
+filter: grayscale(100%);
+}
+
 .banner h1 {
   color: #fff;
   opacity: 0.8;
