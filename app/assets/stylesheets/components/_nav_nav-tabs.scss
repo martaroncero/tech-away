@@ -5,27 +5,27 @@
       color: white !important;
   border-radius: 6px;
   }
-  
+
   .nav-tabs {
     width: 100%;
     margin: 0;
       border-radius: 6px;
   }
-  
+
   .nav-item {
     width: 33.333333%;
   }
-  
+
   .nav-link {
     width: 100%;
     &:hover{
       background-color: $primary;
       border-radius: 6px;
     }
-    
+
     .nav-tabs .nav-link.active {
     color: white;
   }
 }
-  
+  }
 
