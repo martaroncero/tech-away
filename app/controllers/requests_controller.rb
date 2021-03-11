@@ -21,6 +21,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:category_id)
+    params.require(:request).permit(:category_id, :description)
   end
 end

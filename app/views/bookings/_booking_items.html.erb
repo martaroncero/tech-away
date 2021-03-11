@@ -16,6 +16,9 @@
                 <%= "You declined an offer for " %>
               <% end %>
               <%= link_to booking.user.first_name, product_path(booking.product) %>
+                 <div class="time">
+                   <h6> <%= booking.posted_ago %></h6>
+                 </div>
             </div>
           </div>
           <% if booking.status == "Pending" %>
