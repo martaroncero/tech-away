@@ -10,7 +10,7 @@
     <%= simple_form_for product, url: action do |f| %>
 
       <div class="form-row">
-        <%= f.input :title, class: "w-100" %>
+        <%= f.input :title, class: "w-100", label: "Product title"%>
         <%= f.association :category, disabled: (params[:request_id].present?) %>
         <%= f.input :condition, collection: Product::CONDITIONS %>
         <%= link_to "Condition Information", "#", class: "mb-3", data: { toggle: "modal", target: "#exampleModal" } %>
