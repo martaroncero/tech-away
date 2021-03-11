@@ -14,6 +14,7 @@
   background-size: auto;
   background-position: center;
   padding: 80px 130px;
+  max-width: 850px;
 }
 
 #home-banner h1 {
@@ -21,7 +22,7 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold;
-  font-size: 60px;
+  font-size: 74px;
   line-height: 75px;
   padding: 0;
 }
@@ -43,3 +44,31 @@
   height: 100vh;
 }
 
+@media(max-width: 1200px) {
+  #home-banner {
+    max-width: 650px;
+    h1 {
+      font-size: 56px;
+    }
+  }
+}
+@media(max-width: 768px) {
+  #home-banner {
+    padding: 40px 0px 20px 30px;
+    max-width: 580px;
+    h1 {
+      font-size: 48px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  #home-banner {
+    padding: 40px 20px 20px 30px;
+    h1 {
+      font-size: 42px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
