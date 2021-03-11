@@ -1,29 +1,21 @@
-<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
-
+<div class="navbar navbar-expand-sm navbar-dark justify-content-start navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/ds32iiece/image/upload/v1614871302/tech-white_yeuwpx.svg" %>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <%= link_to "home", root_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "about", about_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "charities", charities_path, class: "nav-link" %>
-    </li>
-  </ul>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="flex-grow-1">
+    <ul id="navbar-links" class="navbar-nav flex-direction-row w-100">
+      <li class="nav-item active">
+        <%= link_to "home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "about", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "charities", charities_path, class: "nav-link" %>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown ml-auto">
           <%= image_tag "https://ca.slack-edge.com/T02NE0241-U01JGBP2KFE-8e0eca34d966-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.kind == "Donator" %>
@@ -51,5 +43,6 @@
         </li>
       <% end %>
     </ul>
+    
   </div>
 </div>
