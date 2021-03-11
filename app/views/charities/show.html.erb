@@ -1,10 +1,15 @@
 <% content_for :meta_title, "#{@charity.name.titleize} | #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "All of the seekers from #{@charity}" %>
-
+<% content_for :meta_description, "All of the seekers from #{@charity.name}" %> 
+  <div class="show_container">
+    <div class="text_container">
+      <h1><%= @charity.name.titleize %></h1>
+      <h5><%= @charity.description %></h5>
+    </div>
+  </div>
 <div class="container my-5">
   <div>
-    <h1><%= @charity.name.titleize %></h1>
     <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+
       <li class="nav-item" role="presentation">
         <button class="nav-link <%= 'active' unless params[:tab] == "2" %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
       </li>

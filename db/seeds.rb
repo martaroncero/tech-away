@@ -10,31 +10,37 @@ category_camera.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/
                             content_type: 'image/jpg'
                             )
 category_laptop = Category.create!(title: "Laptop")
+
 category_laptop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371871/laptop_e5qwy4.png'),
                             filename: 'laptop.jpg',
                             content_type: 'image/jpg'
                             )
 category_desktop = Category.create!(title: "Desktop computer")
+
 category_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371935/computer_vvbebw.png'),
                             filename: 'desktop.jpg',
                             content_type: 'image/jpg'
                             )
 category_tablet = Category.create!(title: "Tablet")
+
 category_tablet.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371880/ipad_plk9j1.png'),
                             filename: 'tablet.jpg',
                             content_type: 'image/jpg'
                             )
 category_mobile = Category.create!(title: "Mobile phone")
+
 category_mobile.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371927/android_r4nqea.png'),
                             filename: 'mobile.jpg',
                             content_type: 'image/jpg'
                             )
 category_printer = Category.create!(title: "Printer")
+
 category_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371889/printer-door-open_nl1f8t.png'),
                             filename: 'printer.jpg',
                             content_type: 'image/jpg'
                             )
 category_monitor = Category.create!(title: "Monitor")
+
 category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615371899/monitor--v1_npfioo.png'),
                             filename: 'monitor.jpg',
                             content_type: 'image/jpg'
@@ -44,16 +50,20 @@ category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece
 # Charities
 charity1 = Charity.create!(name: "Refugee aid",
                           website: "www.refugee-aid.org",
-                          whatsapp_number: "+4435671229"
+                          whatsapp_number: "+4435671229",
+                          description: "Refugee Action has been  responding to the world’s worst humanitarian crises and helps people whose lives and livelihoods are shattered by conflict and disaster to survive, recover and gain control of their future. In more than 5 countries and over 20 U.K. cities, our dedicated teams provide clean water, shelter, health care, technical equipment for  education/ work  and empowerment support to refugees and displaced people.\n \n Thanks to our 56 Donors, who have helped make this possible."
                           )
 charity2 = Charity.create!(name: "We are one",
                           website: "www.weareone.org",
-                          whatsapp_number: "+4430712929"
+                          whatsapp_number: "+4430712929",
+                          description: "We believe in the power of technology as a tool to help displaced people and develop meaningful solutions that improve lives. Since we started, WRO has helped more than 250 refugees find meaningful jobs through awareness and education.\n \n We thank generous donors like you who continue to keep their dreams alive!"
                           )
 charity3 = Charity.create!(name: "Refugee-Voice",
                           website: "www.refugee-voice.org",
-                          whatsapp_number: "+44307129760"
+                          whatsapp_number: "+44307129760",
+                          description: "We are a  Bristol based Charity working towards Women Refugee Rights to work providing a place of welcome in Bristol where asylum seekers and refugees can meet and be supported to start or continue their professional careers. She refugee aid that addresses the practical, psychological and human rights needs of refugees and asylum seekers and help them start a new , deserving and fruitful life again.\n \n We thank generous donors like you who continue to keep their dreams alive!"
                           )
+
 charity4 = Charity.create!(name: "She Refugee aid",
                           website: "www.sherefugeeaid.com",
                           whatsapp_number: "+4465712955"
@@ -238,12 +248,13 @@ product_ipad.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/ima
                           )
 product_ipad.save!
 
-product_desktop = Product.create!(user_id: user_donator.id, 
-                          title: "Desktop", 
-                          description: "HP Pavilion 24-xa Core i3 Windows 10 Desktop. The desktop is in pristine condition, brought for my son but was used only for a few months.", 
-                          status: "Pending", 
+
+product_desktop = Product.create!(user_id: user_donator.id,
+                          title: "Desktop",
+                          description: "HP Pavilion 24-xa Core i3 Windows 10 Desktop. The desktop is in pristine condition, brought for my son but was used only for a few months.",
+                          status: "Pending",
                           condition: "Used (good)",
-                          category_id: category_desktop.id, 
+                          category_id: category_desktop.id,
                           address: "Charteris Road, London NW6"
                           )
 product_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1614948906/download_2_zip61w.jpg'),
@@ -252,10 +263,11 @@ product_desktop.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/
                             )
 product_desktop.save!
 
-product_printer = Product.create!(user_id: user_donator.id, 
-                          title: "HP Printer", 
-                          description: "This HP printer is in great condition, used for 6 months only.", 
-                          status: "Pending", 
+
+product_printer = Product.create!(user_id: user_donator.id,
+                          title: "HP Printer",
+                          description: "This HP printer is in great condition, used for 6 months only.",
+                          status: "Pending",
                           condition: "Used (good)",
                           category_id: category_printer.id,
                           address: "Alma Road, St.Albans AL1"
@@ -267,12 +279,13 @@ product_printer.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/
 product_printer.save!
 
 
-product_monitor = Product.create!(user_id: user_donator.id, 
-                          title: "Monitor 15inches", 
-                          description: "15 inch Touch Screen LCD Monitor Display 1024x768 Resolution. It is 2 years old but used with care, minor scratches but in good usable condition.", 
-                          status: "Pending", 
+
+product_monitor = Product.create!(user_id: user_donator.id,
+                          title: "Monitor 15inches",
+                          description: "15 inch Touch Screen LCD Monitor Display 1024x768 Resolution. It is 2 years old but used with care, minor scratches but in good usable condition.",
+                          status: "Pending",
                           condition: "Used (good)",
-                          category_id: category_monitor.id, 
+                          category_id: category_monitor.id,
                           address: "Winchester House, Merchant Street, Bow, Mile End, London E3"
                           )
 product_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615281109/download_2_eqw6pt.jpg'),
@@ -293,42 +306,42 @@ Request.create!(user_id: user_seeker_8.id, category_id: category_laptop.id, desc
 Request.create!(user_id: user_seeker_6.id, category_id: category_laptop.id, description: "Zaida needs a laptop to study and complete her final year of university.", status: "Completed")
 
 #bookings
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_2.id, 
-                product_id: product_dell_laptop.id, 
+
+Booking.create!(charity_id: charity2.id,
+                user_id: user_seeker_2.id,
+                product_id: product_dell_laptop.id,
                 status: "Accepted"
                 )
-Booking.create!(charity_id: charity1.id, 
-                user_id: user_seeker_1.id, 
-                product_id: product_macbook.id, 
+Booking.create!(charity_id: charity1.id,
+                user_id: user_seeker_1.id,
+                product_id: product_macbook.id,
                 status: "Declined"
                 )
-Booking.create!(charity_id: charity1.id, 
-                user_id: user_seeker_8.id, 
-                product_id: product_dell_laptop.id, 
+Booking.create!(charity_id: charity1.id,
+                user_id: user_seeker_8.id,
+                product_id: product_dell_laptop.id,
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity4.id, 
-                user_id: user_seeker_5.id, 
-                product_id: product_mobile.id, 
+Booking.create!(charity_id: charity4.id,
+                user_id: user_seeker_5.id,
+                product_id: product_mobile.id,
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity5.id, 
-                user_id: user_seeker_7.id, 
-                product_id: product_desktop.id, 
+Booking.create!(charity_id: charity5.id,
+                user_id: user_seeker_7.id,
+                product_id: product_desktop.id,
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity3.id, 
-                user_id: user_seeker_3.id, 
-                product_id: product_desktop.id, 
+Booking.create!(charity_id: charity3.id,
+                user_id: user_seeker_3.id,
+                product_id: product_desktop.id,
                 status: "Pending"
                 )
 
-                
+
 puts "Created seeds"
 puts "- 8 Users (1 Donator, 1 Worker and 7 Seekers)"
 puts "- 8 Categories"
 puts "- 9 Requests"
 puts "- 7 Products"
 puts "- 8 Bookings"
-

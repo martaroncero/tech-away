@@ -1,5 +1,5 @@
 <h3><%= status %> offers</h3>
-<ul class="list-group mt-2">
+<ul class="list-group p-3">
   <% if bookings.where(status: status).empty? %>
     <p class="m-4">You have no <%= status.downcase %> offers</p>
   <% else %>
