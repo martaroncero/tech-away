@@ -1,14 +1,14 @@
 <div class="d-flex jumbotron align-items-center">
   <div id="home-banner">
-    <h1>Got unused tech<br>that others need?</h1>
-    <p class="w-50"><span class="countup"> <%= @request_count %> </span> tech items are needed now! </p>
+    <h1>Got unused tech that others need?</h1>
+    <p><span class="countup"> <%= @request_count %> </span> tech items are needed now! </p>
     <%= link_to "Donate Now!", requests_path, class: "btn btn-primary" %>
   </div>
 </div>
 
 <div class="container py-5">
   <div class="py-5">
-    <h2 class="text-center font-weight-bold">Do you have...?</h2>
+    <h2 class="text-center font-weight-bold">Do you have?</h2>
     <div class="row pt-4 pb-3">
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389571/createilustration1_gr0xcw.svg" alt="">
@@ -17,12 +17,14 @@
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389568/add-content_h9hrcy.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[1] %></p>
-        <%= link_to "See all requests!", requests_path, class: "btn btn-secondary mt-4" %>
       </div>
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389577/launchillustration3_ayncx3.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[2] %></p>
       </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "See all requests!", requests_path, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>
