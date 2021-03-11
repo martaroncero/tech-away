@@ -6,13 +6,13 @@
     </button>
   </div>
   <%= simple_form_for [@user, @request], url: seeker_path(@user), method: :post, remote: true do |f| %>
-  <div class="modal-body">
-    <%= f.association :category, collection: @unchosen_categories %>
-    <%= f.input :description %>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  </div>
+    <div class="modal-body">
+      <%= f.association :category, collection: @unchosen_categories %>
+      <%= f.input :description %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
