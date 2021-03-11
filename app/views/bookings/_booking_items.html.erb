@@ -1,7 +1,7 @@
 <h3><%= status %> offers</h3>
-<ul class="list-group p-3">
+<ul class="list-group">
   <% if bookings.where(status: status).empty? %>
-    <p class="m-4">You have no <%= status.downcase %> offers</p>
+    <p>You have no <%= status.downcase %> offers</p>
   <% else %>
     <% bookings.where(status: status).each do |booking| %>
       <li class="list-item-card">
