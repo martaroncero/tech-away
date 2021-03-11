@@ -8,6 +8,7 @@
   <%= simple_form_for [@user, @request], url: seeker_path(@user), method: :post, remote: true do |f| %>
   <div class="modal-body">
     <%= f.association :category, collection: @unchosen_categories %>
+    <%= f.input :description %>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -30,7 +30,7 @@
         <li class="list-item-card">
           <div class="d-flex align-items-center">
             <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between">
-              <div class="d-flex">
+              <div class="d-flex align-items-center">
                 <div class="ml-2 mr-5">
                   <% if request.category.photo.attached? %>
                     <%= cl_image_tag request.category.photo.key, class: "request-category-icon" %>
