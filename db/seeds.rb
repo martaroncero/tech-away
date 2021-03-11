@@ -62,7 +62,6 @@ charity3 = Charity.create!(name: "Refugee-Voice",
                           website: "www.refugee-voice.org",
                           whatsapp_number: "+44307129760",
                           description: "We are a  Bristol based Charity working towards Women Refugee Rights to work providing a place of welcome in Bristol where asylum seekers and refugees can meet and be supported to start or continue their professional careers. She refugee aid that addresses the practical, psychological and human rights needs of refugees and asylum seekers and help them start a new , deserving and fruitful life again.\n \n We thank generous donors like you who continue to keep their dreams alive!"
-                          whatsapp_number: "+4435671229"
                           )
 
 charity4 = Charity.create!(name: "She Refugee aid",
@@ -346,4 +345,3 @@ puts "- 8 Categories"
 puts "- 9 Requests"
 puts "- 7 Products"
 puts "- 8 Bookings"
-

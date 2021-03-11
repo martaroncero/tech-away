@@ -1,38 +1,34 @@
 <div id= "product-new-form" class="card px-3 mx-auto">
   <div class="card-body">
+
     <% if @request %>
       <% action = products_path(request_id: @request.id) %>
     <% else %>
       <% action = products_path %>
     <% end %>
+
     <%= simple_form_for product, url: action do |f| %>
+
       <div class="form-row">
-          <%= f.input :title, class: "w-100" %>
-      </div>
-      <div class="form-row">
-          <%= f.association :category, disabled: (params[:request_id].present?) %>
-          <%= f.input :condition, collection: Product::CONDITIONS %>
-        <div class= "mb-3">
-          <%= link_to "Condition Information", "#", data:{toggle: "modal", target: "#exampleModal"} %>
+        <%= f.input :title, class: "w-100" %>
+        <%= f.association :category, disabled: (params[:request_id].present?) %>
+        <%= f.input :condition, collection: Product::CONDITIONS %>
+        <%= link_to "Condition Information", "#", class: "mb-3", data: { toggle: "modal", target: "#exampleModal" } %>
+        <%= f.input :description, class: "w-100" %>
+        <%= f.input :address, class: "w-100" %>
+
+        <div class="col-12 col-md-6 p-0">
+          <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= f.button :submit, "List your donation", class: 'btn btn-primary mb-3' %>
+        </div>
+        <div class="col-12 col-md-6 p-0">
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
         </div>
       </div>
-      <div class="row mx-0">
-          <%= f.input :description, class: "w-100" %>
-      </div>
-      <div class="row mx-0">
-          <%= f.input :address, class: "w-100" %>
-      </div>
-      <div class="row">
-        <div class="col">
-          <%#= f.input :photo, as: :file %>
-           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-        </div>
-      </div>
-      <%= f.button :submit, "List your donation", class: 'btn btn-primary mt-2' %>
     <% end %>
   </div>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
