@@ -4,3 +4,13 @@
   right: 16px;
   z-index: 1000;
 }
+.alert-info {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+}
+.alert-warning {
+  color: #fff;
+  background-color: $secondary;
+  border-color: $secondary;
+}
