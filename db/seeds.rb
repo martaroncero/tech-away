@@ -305,18 +305,13 @@ Booking.create!(charity_id: charity1.id,
                 )
 Booking.create!(charity_id: charity1.id, 
                 user_id: user_seeker_8.id, 
-                product_id: product_laptop.id, 
+                product_id: product_dell_laptop.id, 
                 status: "Pending"
                 )
 Booking.create!(charity_id: charity4.id, 
                 user_id: user_seeker_5.id, 
                 product_id: product_mobile.id, 
                 status: "Pending"
-                )
-Booking.create!(charity_id: charity4.id, 
-                user_id: user_seeker_6.id, 
-                product_id: product_laptop.id, 
-                status: "Accepted"
                 )
 Booking.create!(charity_id: charity5.id, 
                 user_id: user_seeker_7.id, 
@@ -328,11 +323,7 @@ Booking.create!(charity_id: charity3.id,
                 product_id: product_desktop.id, 
                 status: "Pending"
                 )
-Booking.create!(charity_id: charity2.id, 
-                user_id: user_seeker_4.id, 
-                product_id: product_camera.id, 
-                status: "Pending"
-                )
+
                 
 puts "Created seeds"
 puts "- 8 Users (1 Donator, 1 Worker and 7 Seekers)"
