@@ -85,4 +85,26 @@ blockquote{
   .banner {
     margin: 0 0 0 20px;
   }
+  #quote-header-container {
+    padding-right: 0px;
+    width: 75%;
+    margin: 0 auto 30px auto;
+  }
+}
+@media (max-width: 768px) {
+  #quote-header-container {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    padding-left: 40px;
+
+    #huge-quotation-mark {
+      font-size: 400px;
+      top: -150px;
+      left: -100px;
+    }
+
+    h1 {
+      font-size: 39px;
+    }
+  }
 }
