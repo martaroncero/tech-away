@@ -10,9 +10,10 @@
         <% else %>
           <% request_count = user.requests.where(status: "Pending").count %>
           <% if request_count > 0 %>
-            <div><%= "needs #{request_count} #{'item'.pluralize(request_count)}" %></div>
+            <p class="mt-0"><%= "needs #{request_count}" %></p>
+            <p><%= "tech #{'item'.pluralize(request_count)}" %></p>
           <% else %>
-            <div>is all set!</div>
+            <p>is all set!</p>
           <% end %>
         <% end %>
       </div>
