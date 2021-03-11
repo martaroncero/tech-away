@@ -1,36 +1,31 @@
 <div id= "product-new-form" class="card px-3 mx-auto">
   <div class="card-body">
+  
     <% if @request %>
       <% action = products_path(request_id: @request.id) %>
     <% else %>
       <% action = products_path %>
     <% end %>
+
     <%= simple_form_for product, url: action do |f| %>
+
       <div class="form-row">
         <%= f.input :title, class: "w-100" %>
-      </div>
-      <div class="form-row">
         <%= f.association :category, disabled: (params[:request_id].present?) %>
         <%= f.input :condition, collection: Product::CONDITIONS %>
-        <div class= "mb-3">
-          <%= link_to "Condition Information", "#", data:{toggle: "modal", target: "#exampleModal"} %>
-        </div>
-      </div>
-      <div class="row mx-0">
+        <%= link_to "Condition Information", "#", class: "mb-3", data: { toggle: "modal", target: "#exampleModal" } %>
         <%= f.input :description, class: "w-100" %>
-      </div>
-      <div class="row mx-0">
         <%= f.input :address, class: "w-100" %>
-      </div>
-      <div class="row mt-2">
-        <div class="col-12 col-md-6">
+
+        <div class="col-12 col-md-6 p-0">
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
           <%= f.button :submit, "List your donation", class: 'btn btn-primary mt-2' %>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 p-0">
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
         </div>
       </div>
+
     <% end %>
   </div>
 </div>
