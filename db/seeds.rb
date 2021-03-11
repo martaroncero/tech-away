@@ -562,5 +562,5 @@ puts "- 8 Categories"
 puts "- 9 Charities"
 puts "- 13 Requests"
 puts "- 7 Products"
-puts "- 7 Bookings"
+puts "- 6 Bookings"
 
