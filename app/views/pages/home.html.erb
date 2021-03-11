@@ -1,7 +1,7 @@
 <div class="d-flex jumbotron align-items-center">
   <div id="home-banner">
     <h1>Got unused tech that others need?</h1>
-    <p><%= "#{@request_count} tech items are needed now!" %></p>
+    <p><span class="countup"> <%= @request_count %> </span> tech items are needed now! </p>
     <%= link_to "Donate Now!", requests_path, class: "btn btn-primary" %>
   </div>
 </div>
@@ -40,7 +40,7 @@
                 <p id="huge-quotation-mark">“</p>
                 <h1 class="quote-header">Success </h1>
                 <h1 class="quote-header text-right">Stories</h1>
-                <p>Get inspired by these stories</p>
+                <p>How tech items changes lives</p>
               </div>
               <blockquote id="quote-box-left" class="quote-box d-flex flex-grow-1 ml-auto">
                 <p class="quotation-mark">“</p>

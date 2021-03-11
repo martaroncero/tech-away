@@ -14,6 +14,7 @@
       <li class="nav-item">
         <%= link_to "charities", charities_path, class: "nav-link" %>
       </li>
+
       <% if user_signed_in? %>
         <li class="nav-item dropdown ml-auto">
           <%= image_tag "https://ca.slack-edge.com/T02NE0241-U01JGBP2KFE-8e0eca34d966-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -34,6 +35,7 @@
             <% else %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% end %>
+            
           </div>
         </li>
       <% else %>
@@ -42,7 +44,6 @@
           <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-rounded-50 px-4" %>
         </li>
       <% end %>
-    </ul>
-    
+    </ul> 
   </div>
 </div>
