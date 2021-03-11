@@ -30,11 +30,15 @@
 .card-product-infos {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding: 30px 15px 15px 15px;
   align-items: center;
   text-align: center;
   flex-grow: 1;
   color: #000;
+
+  small {
+    font-size: 90%;
+  }
 }
 .card-product-icon {
   width: 40px;
