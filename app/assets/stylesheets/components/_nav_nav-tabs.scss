@@ -3,6 +3,7 @@ $container-gray: #FFFEFC;
 #content-tabs {
   background-color: $container-gray;
   border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 
   .nav-tabs {
     width: 100%;
@@ -50,4 +51,7 @@ $container-gray: #FFFEFC;
   background-color: $container-gray !important;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+  min-height: 235px;
+  padding: 1rem;
+  padding-top: 1.5rem;
 }

@@ -23,14 +23,14 @@
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade <%= 'show active' unless params[:tab] == "2" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="d-flex mt-3 p-3">
+        <div class="d-flex">
           <% @our_seekers.each do |our_seeker| %>
             <%= render 'shared/seeker_card', user: our_seeker, seeker_request: nil %>
           <% end %>
         </div>
       </div>
       <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="d-flex p-3">
+        <div class="d-flex">
           <div class="col m-6">
             <%= render 'bookings/booking_items', bookings: @charity.bookings.order(created_at: :desc), charity: @charity, status: "Pending" %>
           </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="p-3">
+        <div>
           <%= render 'users/new_form'%>
           <a class="nav-link" href="#"></a>
         </div>
