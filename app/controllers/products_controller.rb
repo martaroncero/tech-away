@@ -43,15 +43,18 @@ class ProductsController < ApplicationController
     end
     
     if @product.save
+      flash_message = "Product was successfully created"
+
       if @request
         Booking.create!(charity: @request.user.charity,
                       user: @request.user,
                       status: "Pending",
                       product: @product
         )
+        flash_message = "Product and booking was successfully created"
       end
 
-      redirect_to product_path(@product)
+      redirect_to product_path(@product), notice: flash_message
     else
       render :new
     end
