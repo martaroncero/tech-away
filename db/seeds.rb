@@ -64,7 +64,7 @@ charity2.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
 
 charity3 = Charity.create!(name: "Breaking Barriers",
                           website: "www.breaking-barriers.co.uk",
-                          whatsapp_number: "+44307129760",
+                          whatsapp_number: "+447534615909",
                           description: "We believe that every refugee in London can fulfill their potential and integrate into their new home through employment that matches their skills, experience, and aspirations. Breaking Barriers offers training and support for refugees in London to help them secure stable and fulfilling employment."
                           )
 charity3.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615478864/Ashurt_30-1-1600x1067_sn6xgo.jpg'),
