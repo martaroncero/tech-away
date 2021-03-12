@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     # transforms this into an array of hashes
     @top_requests = Request.stringify_count(count_hashes)
     # amount of total requests
-    @request_count = Request.count
+    @request_count = Request.where(status: "Pending").count
     @charity = Charity.all
   end
 
