@@ -23,13 +23,11 @@
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade <%= 'show active' unless params[:tab] == "2" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="d-flex mt-3 p-3">
+              <% @our_seekers.each do |our_seeker| %>
+                <%= render 'shared/seeker_card', user: our_seeker, seeker_request: nil %>
+              <% end %>
 
-        <div class="mt-3">
-          <div class="row p-3">
-            <% @our_seekers.each do |our_seeker| %>
-              <%= render 'shared/seeker_card', user: our_seeker, seeker_request: nil %>
-            <% end %>
-          </div>
         </div>
       </div>
       <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -43,8 +41,10 @@
         </div>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <%= render 'users/new_form'%>
-        <a class="nav-link" href="#"></a>
+        <div class="p-3">
+          <%= render 'users/new_form'%>
+          <a class="nav-link" href="#"></a>
+        </div>
       </div>
     </div>
   </div>
