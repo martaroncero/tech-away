@@ -5,7 +5,7 @@ class Request < ApplicationRecord
   validates :category, uniqueness: { scope: :user_id, message: "You can only have one request per category" }
 
   def self.count_per_category(*limit)
-    Request.joins(:category).group(:title).size.map{ |k, v| { category: k, count: v }}.sort_by { |k| k[:count] }.reverse
+    Request.where(status: "Pending").joins(:category).group(:title).size.map{ |k, v| { category: k, count: v }}.sort_by { |k| k[:count] }.reverse
   end
 
   def self.stringify_count(hash_array)
