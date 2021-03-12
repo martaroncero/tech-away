@@ -34,11 +34,11 @@
         </div>
       </div>
       <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="d-flex">
-          <div class="col m-6">
+        <div class="row px-3">
+          <div class="col-12 col-lg-6 mb-4">
             <%= render 'bookings/booking_items', bookings: @charity.bookings.order(created_at: :desc), charity: @charity, status: "Pending" %>
           </div>
-          <div class="col m-6">
+          <div class="col-12 col-lg-6 mb-4">
             <%= render 'bookings/booking_items', bookings: @charity.bookings.order(created_at: :desc), charity: @charity, status: "Accepted" %>
           </div>
         </div>
