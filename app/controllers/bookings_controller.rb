@@ -21,6 +21,8 @@ class BookingsController < ApplicationController
   end
 
   def accept_booking
+    successful = false
+  
     if @booking.status == "Pending"
       # accept the booking
       @booking.update(status: "Accepted")
@@ -39,17 +41,29 @@ class BookingsController < ApplicationController
                                                       products: { category: booking_category }
                                                     )
       other_bookings.each{ |booking| booking.update(status: "Declined")}
+      successful = true
     end
 
-    redirect_to charity_path(@booking.charity, tab: 2)
+    if successful 
+      redirect_to charity_path(@booking.charity, tab: 2), notice: "Offer was successfully accepted"
+    else
+      redirect_to charity_path(@booking.charity, tab: 2)
+    end
   end
 
   def decline_booking
+    successful = false
+  
     if @booking.status == "Pending"
       @booking.update(status: "Declined")
+      successful = true
     end
   
-    redirect_to charity_path(@booking.charity, tab: 2)
+    if successful 
+      redirect_to charity_path(@booking.charity, tab: 2), notice: "Offer was successfully declined"
+    else
+      redirect_to charity_path(@booking.charity, tab: 2)
+    end
   end
 
   private
