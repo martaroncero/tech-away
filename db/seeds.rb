@@ -43,7 +43,7 @@ category_monitor.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece
 
 # Charities
 charity1 = Charity.create!(name: "Refugee Council",
-                          website: "https://www.refugeecouncil.org.uk/",
+                          website: "www.refugeecouncil.org.uk",
                           whatsapp_number: "+4435671229",
                           description: "We work directly with thousands of refugees each year. We support them from the moment they arrive in the UK. We provide crisis advice and practical support, help them to integrate into their new communities and offer mental health counselling to help them come to terms with the trauma so many of them have experienced."
                           )
@@ -53,7 +53,7 @@ charity1.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity2 = Charity.create!(name: "Caras",
-                          website: "https://caras.org.uk/",
+                          website: "www.caras.org.uk",
                           whatsapp_number: "+4430712929",
                           description: "Our mission is to work together with young people, families and adults of refugee background to provide practical, educational and social help. We create supportive relationships, networks and well-informed services that enable people to access what they need in order to increase their wellbeing and safety."
                           )
@@ -63,7 +63,7 @@ charity2.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity3 = Charity.create!(name: "Breaking Barriers",
-                          website: "https://breaking-barriers.co.uk",
+                          website: "www.breaking-barriers.co.uk",
                           whatsapp_number: "+44307129760",
                           description: "We believe that every refugee in London can fulfill their potential and integrate into their new home through employment that matches their skills, experience, and aspirations. Breaking Barriers offers training and support for refugees in London to help them secure stable and fulfilling employment."
                           )
@@ -73,7 +73,7 @@ charity3.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity4 = Charity.create!(name: "Women for Refugee Women",
-                          website: "https://www.refugeewomen.co.uk/",
+                          website: "www.refugeewomen.co.uk",
                           whatsapp_number: "+4465712955",
                           description: "We empower refugee and asylum-seeking women to speak out, become leaders and advocate for change. Through English lessons, drama and other activities we support women to build their confidence and skills. We believe that all women have the right to safety, dignity and liberty."
                           )
@@ -83,7 +83,7 @@ charity4.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity5 = Charity.create!(name: "Young Roots",
-                          website: "https://youngroots.org.uk/",
+                          website: "www.youngroots.org.uk",
                           whatsapp_number: "+446572115",
                           description: "Our mission is to improve the well-being and life chances of young refugees and asylum seekers in the UK and overseas. Our vision is of a world in which all young refugees and asylum seekers can realise their rights and fulfil their potential.
                           Our ambition is to be respected and known for our innovative and participatory approach to young refugees and asylum seekers self-advocacy and learning."
@@ -94,7 +94,7 @@ charity5.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity6 = Charity.create!(name: "Refugee Youth",
-                          website: "https://www.refugeeyouth.org/",
+                          website: "www.refugeeyouth.org",
                           whatsapp_number: "+4478210505",
                           description: "RefugeeYouth is a small charity dedicated to supporting young people from refugee and migrant backgrounds to increase resilience, self-esteem and improve emotional well-being. We work towards increasing confidence through improved communication and leadership skills and reduce feelings of isolation through building a sense of community and improved social connections."
                           )
@@ -104,7 +104,7 @@ charity6.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity7 = Charity.create!(name: "Safe Passage",
-                          website: "https://www.safepassage.org.uk/",
+                          website: "www.safepassage.org.uk",
                           whatsapp_number: "+4478111000",
                           description: "Every year thousands of child refugees arrive in Europe, almost half of them are unaccompanied and as a result are at risk of being abused and trafficked. Yet many of these children have a legal right to travel safely to a place of sanctuary. With our support they can access their rights."
                           )
@@ -114,7 +114,7 @@ charity7.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           )
 
 charity8 = Charity.create!(name: "Help Refugees",
-                          website: "https://helprefugees.org/",
+                          website: "www.helprefugees.org",
                           whatsapp_number: "+44703211246",
                           description: "Help Refugees is not simply another aid organisation. We are a group of everyday people, taking action to improve the lives of refugees. We are pioneering a new movement in charity that provides emergency aid and long term solutions where they are most needed."
                           )
@@ -123,7 +123,7 @@ charity8.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/u
                           content_type: "image/jpg"
                           )                          
 charity9 = Charity.create!(name: "The Bike Project",
-                          website: "https://thebikeproject.co.uk/",
+                          website: "www.thebikeproject.co.uk",
                           whatsapp_number: "+4471222206",
                           description: "We take donated bikes, refurbish them, and give them to refugees. We also sell a portion of these bikes. Buy second hand vintage, hybrid, road and mountain bikes and help get refugees cycling!"
                           )
