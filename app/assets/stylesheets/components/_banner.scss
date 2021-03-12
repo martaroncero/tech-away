@@ -79,3 +79,11 @@ filter: grayscale(100%);
   }
 }
 
+.charity-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1, h5 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
