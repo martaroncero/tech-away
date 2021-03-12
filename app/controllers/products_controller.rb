@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
                       status: "Pending",
                       product: @product
         )
-        flash_message = "Product and booking was successfully created"
+        flash_message = "Product and offer was successfully created"
       end
 
       redirect_to product_path(@product), notice: flash_message
