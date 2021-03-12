@@ -263,7 +263,7 @@ user_seeker_10 = User.new(email: "seeker10@mail.com",
                         kind: "Seeker",
                         description: "Ahmad, a young entrepreneur from Saudi Arabia came to the UK 3 years back. He wants to restart his career and dreams of starting his own business here.",
                         phone_number: "+4472009110")
-user_seeker_10.photo.attach(io: URI.open('https://res.cloudinary.com/ds32iiece/image/upload/v1615472346/photo-1608111064768-8c78b7656f32_jhx1cm.jpg'),
+user_seeker_10.photo.attach(io: URI.open('https://images.unsplash.com/photo-1553837851-341a0c2509e5?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OHw0MzU1NjAxfHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60'),
                           filename: "user_seeker_10.jpg",
                           content_type: "image/jpg"
                           )
