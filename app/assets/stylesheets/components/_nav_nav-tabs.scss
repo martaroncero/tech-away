@@ -1,29 +1,53 @@
+$container-gray: #FFFEFC;
 
 #charity-tabs {
-  .nav-link.active {
-    background-color: $primary !important;
-    color: white !important;
-    border-radius: 6px;
-  }
+  background-color: $container-gray;
+  border-radius: 6px;
 
   .nav-tabs {
     width: 100%;
     margin: 0;
-    border-radius: 6px;
     display: flex;
-  }
+    border: none;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
 
-  .nav-item {
-    flex-grow: 1;
-  }
+    .nav-item {
+      flex-grow: 1;
+      
+      &:first-child .nav-link {
+        border-top-left-radius: 6px !important;
+      }
+      &:last-child .nav-link {
+        border-top-right-radius: 6px !important;
+      }
+      
+      .nav-link {
+        width: 100%;
+        background-color: $primary;
+        color: #fff;
+        border: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        transition: background-color 0.2s ease;
 
-  .nav-link {
-    width: 100%;
+        &:hover{
+          background-color: $container-gray;
+          color: $primary;
+          border: none;
 
-    &:hover{
-      background-color: $primary;
-      border-radius: 6px;
+        }
+        &.active {
+          background-color: $container-gray !important;
+          color: $primary !important;
+        }
+      }
     }
   }
 }
 
+.tab-content {
+  background-color: $container-gray !important;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
