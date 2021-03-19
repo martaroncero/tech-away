@@ -5,24 +5,19 @@
   background-repeat: no-repeat;
   padding: 100px 80px 150px 80px;
 }
-
-
 .banner img {
-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
-
 .banner h1 {
   color: #fff;
   opacity: 0.8;
 }
-
 #home-banner {
   background-size: auto;
   background-position: center;
   padding: 80px 130px;
   max-width: 850px;
 }
-
 #home-banner h1 {
   margin: 0;
   color: white;
@@ -32,7 +27,6 @@ filter: grayscale(100%);
   line-height: 75px;
   padding: 0;
 }
-
 #home-banner p {
   margin: 12px 0 20px 0;
   font-size: 20px;
@@ -41,7 +35,6 @@ filter: grayscale(100%);
   color: #FEA451;
   line-height: 30px
 }
-
 .jumbotron{
   background-image: url("https://res.cloudinary.com/ds32iiece/image/upload/v1614867774/main_eqtx6p.jpg");
   background-position: top;
@@ -50,7 +43,6 @@ filter: grayscale(100%);
   line-height: 50px;
   height: 100vh;
 }
-
 @media(max-width: 1200px) {
   #home-banner {
     max-width: 650px;
@@ -79,7 +71,6 @@ filter: grayscale(100%);
     }
   }
 }
-
 .charity-banner {
   background-repeat: no-repeat;
   background-size: cover;
