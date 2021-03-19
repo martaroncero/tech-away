@@ -8,42 +8,47 @@
   min-height: 160px;
   margin-bottom: 25px;
   transition: opacity 0.2s ease;
-}
-.card-item:hover {
-  opacity: 0.8;
-}
-.opacity-hover-none:hover {
-  opacity: 1 !important;
-}
-.card-item-profile {
-  object-fit: cover;
-  width: 45%;
-  max-width: 45%;
-  height: 170px;
-}
-.card-item p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-.card-item-infos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px;
-  align-items: center;
-  text-align: center;
-  flex-grow: 1;
-  color: #000;
 
-  small {
-    font-size: 90%;
+  &:hover {
+    opacity: 0.8;
+  }
+  .card-item-profile {
+    object-fit: cover;
+    width: 45%;
+    max-width: 45%;
+    height: 170px;
+  }
+  .charity-title {
+    min-height: 50px;
+  }
+  .card-item-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    color: #000;
+    
+    p {
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: .7;
+      margin-bottom: 0;
+      margin-top: 8px;
+    }
+    small {
+      font-size: 90%;
+    }
+    .card-item-icon {
+      width: 40px;
+    }
   }
 }
-.card-item-icon {
-  width: 40px;
+
+.opacity-hover-none:hover {
+  opacity: 1 !important;
 }
 
 // list item card
@@ -57,9 +62,7 @@
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
 }
-.charity-title {
-  min-height: 50px;
-}
+
 
 // card product
 .card-product-container {
