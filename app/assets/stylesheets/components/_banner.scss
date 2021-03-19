@@ -71,11 +71,21 @@
     }
   }
 }
-.charity-banner {
+#charity-banner {
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #BFBDC1;
+  color: white;
+  padding-top: 6%;
+  padding-bottom: 5%;
 
-  h1, h5 {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  #text_container {
+    margin: 0 auto;
+    padding: 0 80px;
+    width: 1100px;
+
+    h1, h5 {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
   }
 }
