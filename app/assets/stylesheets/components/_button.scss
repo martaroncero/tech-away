@@ -1,10 +1,22 @@
 .btn.btn-primary, .btn.btn-warning {
   color: white;
 }
+
 .btn {
   font-weight: bold;
   border-radius: 6px;
   padding: 10px 14px;
+}
+
+.btn-secondary {
+  border: 2px solid $primary;
+  color: $primary;
+  background-color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: $primary;
+  }
 }
 
 .upload-photo {
