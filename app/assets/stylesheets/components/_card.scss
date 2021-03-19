@@ -1,4 +1,4 @@
-.card-product {
+.card-item {
   display: flex;
   overflow: hidden;
   background: white;
@@ -8,26 +8,26 @@
   margin-bottom: 25px;
   transition: opacity 0.2s ease;
 }
-.card-product:hover {
+.card-item:hover {
   opacity: 0.8;
 }
 .opacity-hover-none:hover {
   opacity: 1 !important;
 }
-.card-product-profile {
+.card-item-profile {
   object-fit: cover;
   width: 45%;
   max-width: 45%;
   height: 170px;
 }
-.card-product p {
+.card-item p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
-.card-product-infos {
+.card-item-infos {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@
     font-size: 90%;
   }
 }
-.card-product-icon {
+.card-item-icon {
   width: 40px;
 }
 .list-item-card {
