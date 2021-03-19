@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
   before_action :set_booking, only: [ :decline_booking, :accept_booking ]
+  
   def create
     @product = Product.find(params[:product_id])
     @booking = Booking.new
@@ -10,14 +11,6 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.save
     redirect_to bookings_path
-  end
-
-  def seeker_index
-    @user = User.find(params[:id])
-    @pending_bookings = Booking.where(user_id: @user, status: "Pending")
-    @accepted_bookings = Booking.where(user_id: @user, status: "Accepted")
-    @declined_bookings = Booking.where(user_id: @user, status: "Declined")
-    @booking_order = Booking.order(created_at: :desc)
   end
 
   def accept_booking
