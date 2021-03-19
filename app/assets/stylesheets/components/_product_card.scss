@@ -6,7 +6,6 @@
     border: none;
     box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.3);
   }
-
   a {
     text-decoration: none;
     color: #000;
@@ -16,24 +15,19 @@
       color: #000;
       text-decoration: none;
     }
-
     &:focus, .card-body:focus {
       outline: none;
     }
-
     .product-card-content {
-
       img {
         width: 100%;
         height: 250px;
         object-fit: cover;
       }
-
       &:hover {
         opacity: 0.8;
       }
     }
-
     .card-body {
       min-height: 100px;
       height: 125px;
@@ -43,12 +37,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
