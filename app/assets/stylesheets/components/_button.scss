@@ -1,13 +1,11 @@
 .btn.btn-primary, .btn.btn-warning {
   color: white;
 }
-
 .btn {
   font-weight: bold;
   border-radius: 6px;
   padding: 10px 14px;
 }
-
 .btn-primary-outline {
   border: 2px solid $primary;
   background-color: #fff;
@@ -18,7 +16,6 @@
     color: #fff;
   }
 }
-
 .btn-rounded-50 {
   border-radius: 50px !important;
 }
