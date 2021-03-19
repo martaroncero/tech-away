@@ -64,6 +64,9 @@
   .offer-list-item-content {
     height: 50px;
   }
+  .request-category-icon {
+    width: 60px;
+  }
 }
 
 // card product
@@ -104,5 +107,17 @@
         margin-bottom: 0px;
       }
     }
+  }
+}
+
+// other
+.card-container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
