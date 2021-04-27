@@ -4,11 +4,11 @@
   <div class = "bc">
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1573496005375-5c898f5275e9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80); filter: grayscale(100%);">
       <div class="fade-in"> <h1>Give the gift of <strong>technology</strong> to someone in need</h1> </div>
-    </div
+    </div>
   </div>
   <div class="container my-5">
     <h1>All requests</h1>
-    <div class="request-cards text-center">
+    <div class="card-container text-center">
       <div class="row">
         <% @requests.each do |request| %>
           <%= render 'shared/seeker_card', user: request.user, seeker_request: request %>

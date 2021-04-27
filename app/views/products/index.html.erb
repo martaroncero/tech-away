@@ -7,13 +7,13 @@
     <%= render 'search' %>
   </div>
 
-  <div class="product-card-container mt-0">
+  <div class="card-product-container mt-0">
     <div class="row">
       <% @products.each do |product| %>
         <div class="col-12 col-md-6 col-lg-4">
           <%= link_to product_path(product) do %>
-            <div class="card product-card mb-3">
-              <div class="product-card-content">
+            <div class="card card-product mb-3">
+              <div class="card-product-content">
                 <% if product.photo.attached? %>
                   <img src="<%= cl_image_path(product.photo.key) %>" alt="Card image cap">
                 <% elsif %>

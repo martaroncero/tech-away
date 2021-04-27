@@ -1,5 +1,3 @@
-$container-gray: #FFFEFC;
-
 #content-tabs {
   background-color: $container-gray;
   border-radius: 6px;
@@ -22,7 +20,6 @@ $container-gray: #FFFEFC;
       &:last-child .nav-link {
         border-top-right-radius: 6px !important;
       }
-      
       .nav-link {
         width: 100%;
         background-color: $primary;
@@ -36,7 +33,6 @@ $container-gray: #FFFEFC;
           background-color: $container-gray;
           color: $primary;
           border: none;
-
         }
         &.active {
           background-color: $container-gray !important;
@@ -46,7 +42,6 @@ $container-gray: #FFFEFC;
     }
   }
 }
-
 .tab-content {
   background-color: $container-gray !important;
   border-bottom-right-radius: 6px;

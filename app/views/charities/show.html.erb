@@ -2,13 +2,13 @@
 <% content_for :meta_description, "All of the seekers from #{@charity.name}" %>
 
 <% if @charity.photo.attached? %>
-  <div class="show_container charity-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= cl_image_path @charity.photo.key %>);">
+  <div id="charity-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= cl_image_path @charity.photo.key %>);">
 <% else %>
-  <div class="show_container" style="background-color: $primary">
+  <div id="charity-banner">
 <% end %>
-    <div class="text_container">
+    <div id="text_container">
       <h1><%= @charity.name.titleize %></h1>
-      <h5 class="show_description"><%= @charity.description %></h5>
+      <h5 class="whitespace-preline"><%= @charity.description %></h5>
     </div>
   </div>
 
