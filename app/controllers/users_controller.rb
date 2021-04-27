@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user.charity = current_user.charity
 
     if @user.save
-      redirect_to seeker_path(@user)
+      redirect_to seeker_path(@user), notice: "Seeker was successfully created"
     else
       render :new
     end
