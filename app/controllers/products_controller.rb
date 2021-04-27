@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [ :show, :edit, :update, :mark_as_complete ]
-  before_action :set_request, only: [ :new, :create ]
+  before_action :set_product, only: [:show, :edit, :update, :mark_as_complete]
+  before_action :set_request, only: [:new, :create]
 
   def show
     @booking = Booking.new
@@ -9,9 +9,9 @@ class ProductsController < ApplicationController
 
     if @product.geocoded?
       @marker = {
-                  lat: @product.latitude,
-                  lng: @product.longitude
-                }
+        lat: @product.latitude,
+        lng: @product.longitude
+      }
     end
   end
 
@@ -28,9 +28,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
 
-    if params[:request_id].present?
-      @product.category = @request.category
-    end
+    @product.category = @request.category if params[:request_id].present?
   end
 
   def create
@@ -38,19 +36,16 @@ class ProductsController < ApplicationController
     @product.user = current_user
     @product.status = "Pending"
 
-    if @request
-      @product.category = @request.category
-    end
-    
+    @product.category = @request.category if @request
+
     if @product.save
       flash_message = "Product was successfully created"
 
       if @request
         Booking.create!(charity: @request.user.charity,
-                      user: @request.user,
-                      status: "Pending",
-                      product: @product
-        )
+                        user: @request.user,
+                        status: "Pending",
+                        product: @product)
         flash_message = "Product and offer was successfully created"
       end
 
@@ -76,14 +71,12 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :description, :status, :condition, :category_id, :address, :photo)
   end
-    
+
   def set_product
     @product = Product.find(params[:id])
   end
 
   def set_request
-    if params[:request_id].present?
-      @request = Request.find(params[:request_id])
-    end
+    @request = Request.find(params[:request_id]) if params[:request_id].present?
   end
 end
