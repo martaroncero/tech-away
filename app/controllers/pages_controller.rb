@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :about, :donate]
+  skip_before_action :authenticate_user!, only: [:home, :about, :donate]
 
   def home
     # gets the most needed requests as an array of hashes (stats)
@@ -16,5 +16,4 @@ class PagesController < ApplicationController
 
   def donate
   end
-
 end
