@@ -1,12 +1,12 @@
 <div class="col-12 col-md-6 col-xl-4">
   <%= link_to seeker_path(user), class: "text-decoration-none" do %>
-    <div class="card-product">
-      <%= cl_image_tag user.photo.key, height: 350, width: 250, class: "card-product-profile", alt: 'avatar-large' %>
-      <div class="card-product-infos">
+    <div class="card-item">
+      <%= cl_image_tag user.photo.key, height: 350, width: 250, class: "card-item-profile", alt: 'avatar-large' %>
+      <div class="card-item-infos">
         <h3><%= user.first_name %></h3>
 
         <% if seeker_request && seeker_request.category.photo.attached? %>
-          <%= cl_image_tag seeker_request.category.photo.key, class: "card-product-icon" %>
+          <%= cl_image_tag seeker_request.category.photo.key, class: "card-item-icon" %>
         <% else %>
           <% request_count = user.requests.where(status: "Pending").count %>
           <% if request_count > 0 %>

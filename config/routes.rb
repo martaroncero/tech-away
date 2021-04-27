@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   get "/seekers/:id/edit", to: "users#edit", as: :edit_seeker
   patch "/seekers/:id", to: "users#update"
 
-  get "/seekers/:id/bookings", to: "bookings#seeker_index", as: :seeker_bookings
-
   resources :charities, only: [:show, :index]
 
   get "/bookings/:id/accept", to: "bookings#accept_booking", as: :accept_booking

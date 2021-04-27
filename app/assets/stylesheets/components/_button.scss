@@ -6,20 +6,16 @@
   border-radius: 6px;
   padding: 10px 14px;
 }
-
-.upload-photo {
-  border: 1px solid $primary;
-  padding: 16px 24px;
-  cursor: pointer;
-  font-weight: 500;
-  background: white;
-  border-radius: 6px;
+.btn-primary-outline {
+  border: 2px solid $primary;
+  background-color: #fff;
+  color: $primary;
 
   &:hover {
-    opacity: 0.7;
+    background-color: $primary;
+    color: #fff;
   }
 }
-
 .btn-rounded-50 {
   border-radius: 50px !important;
 }

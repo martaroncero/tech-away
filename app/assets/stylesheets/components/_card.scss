@@ -1,4 +1,5 @@
-.card-product {
+// card item
+.card-item {
   display: flex;
   overflow: hidden;
   background: white;
@@ -7,44 +8,49 @@
   min-height: 160px;
   margin-bottom: 25px;
   transition: opacity 0.2s ease;
-}
-.card-product:hover {
-  opacity: 0.8;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  .card-item-profile {
+    object-fit: cover;
+    width: 45%;
+    max-width: 45%;
+    height: 170px;
+  }
+  .charity-title {
+    min-height: 50px;
+  }
+  .card-item-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    color: #000;
+    
+    p {
+      font-size: 12px;
+      line-height: 1.4;
+      opacity: .7;
+      margin-bottom: 0;
+      margin-top: 8px;
+    }
+    small {
+      font-size: 90%;
+    }
+    .card-item-icon {
+      width: 40px;
+    }
+  }
 }
 .opacity-hover-none:hover {
   opacity: 1 !important;
 }
-.card-product-profile {
-  object-fit: cover;
-  width: 45%;
-  max-width: 45%;
-  height: 170px;
-}
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-.card-product-infos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 15px;
-  align-items: center;
-  text-align: center;
-  flex-grow: 1;
-  color: #000;
 
-  small {
-    font-size: 90%;
-  }
-}
-.card-product-icon {
-  width: 40px;
-}
-
+// list item card
 .list-item-card {
   display: block;
   position: relative;
@@ -54,8 +60,91 @@
   border-radius: 6px;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+
+  .offer-list-item-content {
+    height: 50px;
+  }
+  .request-category-icon {
+    width: 60px;
+  }
 }
 
-.charity-title {
-  min-height: 50px;
+// card product
+.card-product-container {
+  margin-top: 60px;
+
+  .card-product {
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.3);
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 auto;
+
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+    &:focus, .card-body:focus {
+      outline: none;
+    }
+    .card-product-content {
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .card-body {
+      min-height: 100px;
+      height: 125px;
+      p {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// other
+.card-container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+// seeker cards
+.seeker-card {
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.3);
+  border-radius: 6px !important;
+  overflow: hidden;
+
+  .seeker-content {
+    display: flex;
+
+    .seeker-description {
+      padding: 20px 30px 0 25px;
+
+      .seeker-name {
+        font-size: 36px;
+      }
+    }
+  }
+}
+.seeker-requests-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
