@@ -1,6 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <h5 class="modal-title" id="exampleModalLongTitle">Chat with us</h5>
+
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -10,15 +11,19 @@
     <div class="whatsapp-section">
       <div class="whatsapp-section-desktop">
         <div class="mb-2">Scan to chat with us on whatsapp:</div>
+
         <%= charity.generate_qr_code.html_safe %>
       </div>
+
       <div class="whatsapp-section-mobile">
         or open <%= link_to "whatsapp desktop", "https://wa.me/#{charity.whatsapp_number.gsub("+", "")}", class: "whatsapp-section-mobile-link", target: "_blank" %>
       </div>
+
     </div>
   </div>
 
   <div class="modal-footer">
     <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
   </div>
+
 </div>
