@@ -1,22 +1,23 @@
 class Product < ApplicationRecord
-  belongs_to :user
-  has_many :bookings
-  belongs_to :category
-  has_one_attached :photo
+  include PgSearch::Model
 
   CONDITIONS = ["New", "Used (like new)", "Used (good)", "Used (fair)"]
-  validates :condition, inclusion: {in: CONDITIONS }
+  validates :condition, inclusion: { in: CONDITIONS }
 
-  geocoded_by :address
+  belongs_to :user
+  belongs_to :category
+  has_many :bookings
+  has_one_attached :photo
+
   after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
 
-  include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :title, :description ],
-    associated_against: {
-      category: [ :title ]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+                  against: [:title, :description],
+                  associated_against: {
+                    category: [:title]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

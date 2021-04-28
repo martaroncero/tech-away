@@ -4,12 +4,10 @@ class Charity < ApplicationRecord
   has_many :requests, through: :users
   has_one_attached :photo
 
-
-
   def generate_qr_code
     qrcode = RQRCode::QRCode.new(whatsapp_number)
 
-    svg = qrcode.as_svg(
+    qrcode.as_svg(
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
