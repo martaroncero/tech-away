@@ -2,7 +2,7 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def time_since_creation
-    return if !created_at
+    return unless created_at
 
     minutes = ((Time.now - created_at) / 60).floor
 
