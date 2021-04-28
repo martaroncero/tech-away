@@ -1,5 +1,7 @@
 <div class="col-8">
+
   <%= simple_form_for @user, url: seeker_path(@user), method: :patch  do |f| %>
+
     <%= f.input :email, required: false %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -10,9 +12,12 @@
         <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'btn btn-primary-outline'}, label: '📷 Upload a photo' %>
         <%= f.submit "Update Profile", class: "btn btn-primary mb-3" %>
       </div>
+
       <div class="col-12 col-md-4">
         <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
       </div>
     </div>
+
   <% end %>
+
 </div>
