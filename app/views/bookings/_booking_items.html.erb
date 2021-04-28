@@ -12,12 +12,10 @@
           <div class="offer-list-item-content d-flex align-items-center">
             <div>
 
-              <% if booking.status == "Pending" %>
+              <% if booking.status == "Pending"%>
                 <%= "New offer for" %>
-              <% elsif booking.status == "Accepted" %>
-                <%= "You accepted an offer for " %>
-              <% elsif booking.status == "Declined" %>
-                <%= "You declined an offer for " %>
+              <% else %>
+                <%= "You #{booking.status.downcase} an offer for " %>
               <% end %>
 
               <%= link_to booking.user.first_name, product_path(booking.product) %>
