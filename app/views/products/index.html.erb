@@ -4,16 +4,21 @@
 <div class="container my-5">
   <div class="d-flex justify-content-between mb-3">
     <h1>All available products</h1>
+
     <%= render 'search' %>
   </div>
 
   <div class="card-product-container mt-0">
     <div class="row">
+
       <% @products.each do |product| %>
         <div class="col-12 col-md-6 col-lg-4">
+
           <%= link_to product_path(product) do %>
+  
             <div class="card card-product mb-3">
               <div class="card-product-content">
+
                 <% if product.photo.attached? %>
                   <img src="<%= cl_image_path(product.photo.key) %>" alt="Card image cap">
                 <% elsif %>
@@ -24,12 +29,17 @@
                   <h5 class="card-title font-weight-bold"><%= product.title %></h5>
                   <div><%= product.address %></div>
                 </div>
+
               </div>
             </div>
+
           <% end %>
+
         </div>
       <% end %>
+
     </div>
   </div>
+
 </div>
 
