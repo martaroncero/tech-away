@@ -1,29 +1,31 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
-  def posted_ago
-    minutes_since_creation = ((Time.now - created_at) / 60).floor
+  def time_since_creation
+    return if !created_at
 
-    if minutes_since_creation < 60
-      return "Posted #{minutes_since_creation} #{'minute'.pluralize(minutes_since_creation)} ago"
+    minutes = ((Time.now - created_at) / 60).floor
+
+    if minutes < 60
+      return "Posted #{minutes} #{'minute'.pluralize(minutes)} ago"
     end
 
-    hours_since_creation = (minutes_since_creation / 60).floor
+    hours = (minutes / 60).floor
 
-    if hours_since_creation < 24
-      return "Posted #{hours_since_creation} #{'hour'.pluralize(hours_since_creation)} ago"
+    if hours < 24
+      return "Posted #{hours} #{'hour'.pluralize(hours)} ago"
     end
 
-    days_since_creation = (hours_since_creation / 24).floor
+    days = (hours / 24).floor
 
-    if days_since_creation < 7
-      return "Posted #{days_since_creation} #{'day'.pluralize(days_since_creation)} ago"
+    if days < 7
+      return "Posted #{days} #{'day'.pluralize(days)} ago"
     end
 
-    weeks_since_creation = (days_since_creation / 7).floor
+    weeks = (days / 7).floor
 
-    if weeks_since_creation < 7
-      return "Posted #{weeks_since_creation} #{'week'.pluralize(weeks_since_creation)} ago"
+    if weeks < 7
+      return "Posted #{weeks} #{'week'.pluralize(weeks)} ago"
     end
   end
 end
