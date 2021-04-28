@@ -2,6 +2,7 @@
   <div id="home-banner">
     <h1>Got unused tech that others need?</h1>
     <p><span class="countup"> <%= @request_count %> </span> tech items are needed now! </p>
+
     <%= link_to "Donate", requests_path, class: "btn btn-primary" %>
   </div>
 </div>
@@ -9,20 +10,24 @@
 <div class="container py-5">
   <div class="py-5">
     <h2 class="text-center font-weight-bold">Do you have?</h2>
+
     <div class="row pt-4 pb-3">
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389571/createilustration1_gr0xcw.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[0] %></p>
       </div>
+
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389568/add-content_h9hrcy.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[1] %></p>
       </div>
+
       <div class="col-sm text-center">
         <img src="https://res.cloudinary.com/ds32iiece/image/upload/v1615389577/launchillustration3_ayncx3.svg" alt="">
         <p class="item-needed pt-3"><%= @top_requests[2] %></p>
       </div>
     </div>
+
     <div class="d-flex justify-content-center">
       <%= link_to "See all requests", requests_path, class: "btn btn-primary-outline" %>
     </div>
@@ -30,58 +35,64 @@
 </div>
 
 <div id="stories">
-  <div class="container py-5">
-    <div class="container py-5 ">
-      <div class="container py-3">
-        <div class="d-flex justify-content-center ">
-          <div class="row">
-            <div class="col flex-grow-1">
-              <div id="quote-header-container">
-                <p id="huge-quotation-mark">“</p>
-                <h1 class="quote-header">Success </h1>
-                <h1 class="quote-header text-right">Stories</h1>
-                <p>How tech items can change lives</p>
-              </div>
-              <blockquote id="quote-box-left" class="quote-box d-flex flex-grow-1 ml-auto">
-                <p class="quotation-mark">“</p>
-                <div>
-                  <p class="quote-text">After receiving a laptop, I managed to score a job as a web developer and could rebuild my career. Thank you so much Techaway!</p>
-                  <p class="quotation-mark text-right mb-0">”</p>
-                  <div class="blog-post-actions">
-                    <p class="quote-name">Saroo</p>
-                    <p class="quote-location">Manchester<!--  <span class="badge quote-badge">896</span>  ❤ --></p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-            <div class="col flex-grow-1">
-              <blockquote id="quote-box-top-right" class="quote-box d-flex flex-grow-1">
-                <p class="quotation-mark">“</p>
-                <div>
-                  <p class="quote-text">I received a mobile phone through Techaway. Now I can keep in contact with my family and work. Amazing!</p>
-                  <p class="quotation-mark text-right mb-0">”</p>
-                  <div class="blog-post-actions">
-                    <p class="quote-name">Asil</p>
-                    <p class="quote-location">Leeds<!--  <span class="badge quote-badge">896</span>  ❤ --></p>
-                  </div>
-                </div>
-              </blockquote>
-              <blockquote id="quote-box-bottom-right" class="quote-box d-flex flex-grow-1">
-                <p class="quotation-mark">“</p>
-                <div>
-                  <p class="quote-text">Techaway helped me to get a Macbook pro which I can illustrate from.</p>
-                  <p class="quotation-mark text-right mb-0">”</p>
-                  <div class="blog-post-actions">
-                    <p class="quote-name">Farid</p>
-                    <p class="quote-location">London<!--  <span class="badge quote-badge">896</span>  ❤ --></p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="row">
+
+        <div class="col flex-grow-1">
+          <div id="quote-header-container">
+            <p id="huge-quotation-mark">“</p>
+            <h1 class="quote-header">Success </h1>
+            <h1 class="quote-header text-right">Stories</h1>
+            <p>How tech items can change lives</p>
           </div>
+
+          <blockquote id="quote-box-left" class="quote-box d-flex flex-grow-1 ml-auto">
+            <p class="quotation-mark">“</p>
+
+            <div>
+              <p class="quote-text">After receiving a laptop, I managed to score a job as a web developer and could rebuild my career. Thank you so much Techaway!</p>
+              <p class="quotation-mark text-right mb-0">”</p>
+
+              <div class="blog-post-actions">
+                <p class="quote-name">Saroo</p>
+                <p class="quote-location">Manchester</p>
+              </div>
+            </div>
+          </blockquote>
         </div>
+
+        <div class="col flex-grow-1">
+          <blockquote id="quote-box-top-right" class="quote-box d-flex flex-grow-1">
+            <p class="quotation-mark">“</p>
+
+            <div>
+              <p class="quote-text">I received a mobile phone through Techaway. Now I can keep in contact with my family and work. Amazing!</p>
+              <p class="quotation-mark text-right mb-0">”</p>
+
+              <div class="blog-post-actions">
+                <p class="quote-name">Asil</p>
+                <p class="quote-location">Leeds</p>
+              </div>
+            </div>
+          </blockquote>
+
+          <blockquote id="quote-box-bottom-right" class="quote-box d-flex flex-grow-1">
+            <p class="quotation-mark">“</p>
+
+            <div>
+              <p class="quote-text">Techaway helped me to get a Macbook pro which I can illustrate from.</p>
+              <p class="quotation-mark text-right mb-0">”</p>
+
+              <div class="blog-post-actions">
+                <p class="quote-name">Farid</p>
+                <p class="quote-location">London</p>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-

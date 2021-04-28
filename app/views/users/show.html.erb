@@ -6,6 +6,7 @@
 <% end %>
 
 <div class="container my-5">
+
   <div class="seeker-card">
     <div class="seeker-content">
       <% if @user.photo.attached? %>
@@ -14,13 +15,14 @@
 
       <div class="seeker-description">
         <h2 class="seeker-name"><%= @user.name %></h2>
+
         <%= @user.description %>
       </div>
     </div>
   </div>
 
   <% if @user.charity_id == current_user.charity_id && @unchosen_categories.present? %>
-    <button type="button" class="btn btn-secondary mt-3 w-100" data-toggle="modal" data-target="#request-modal">
+    <button type="button" class="btn btn-primary-outline mt-3 w-100" data-toggle="modal" data-target="#request-modal">
       Add a request
     </button>
   <% end %>
@@ -29,26 +31,36 @@
 
   <% if @user.requests.present? %>
     <ul class="seeker-requests-list">
+
       <% @user.requests.each do |request| %>
+
         <li class="list-item-card">
           <div class="d-flex align-items-center">
+
             <div class="offer-list-item-content d-flex flex-grow-1 align-items-center justify-content-between">
               <div class="d-flex align-items-center">
+
                 <div class="ml-2 mr-5">
                   <% if request.category.photo.attached? %>
                     <%= cl_image_tag request.category.photo.key, class: "request-category-icon" %>
                   <% end %>
                 </div>
+
                 <div><%= request.description %></div>
               </div>
+
               <div class="mr-4"><%= request.created_at.strftime("%b %d, %Y") %></div>
             </div>
-              <%= link_to new_product_path(request_id: request.id) do %>
-                <div class="btn btn-primary justify-self-end">Donate</div>
-              <% end %>
+
+            <%= link_to new_product_path(request_id: request.id) do %>
+              <div class="btn btn-primary justify-self-end">Donate</div>
+            <% end %>
+
           </div>
         </li>
+
       <% end %>
+
     </ul>
   <% else %>
     <div class="seeker-requests-list">
@@ -59,7 +71,9 @@
 
 <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
+
     <%= render 'requests/form/form_content' %>
+
   </div>
 </div>
 

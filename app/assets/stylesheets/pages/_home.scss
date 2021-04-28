@@ -2,6 +2,10 @@
 #stories{
   background-color: $primary;
   color: #fff;
+
+  .container {
+    padding: 7rem 1rem 7rem 1rem;
+  }
 }
 .item-needed{
   font-size: 20px;

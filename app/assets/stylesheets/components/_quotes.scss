@@ -81,17 +81,26 @@ blockquote{
 }
 @media (max-width: 768px) {
   #quote-header-container {
-    width: 80%;
+    width: 75%;
     margin: 0 auto 30px auto;
-    padding-left: 40px;
+    padding-left: 15px;
 
     #huge-quotation-mark {
       font-size: 400px;
       top: -150px;
-      left: -100px;
+      left: -120px;
     }
     h1 {
       font-size: 39px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  #quote-header-container {
+    padding-left: 70px;
+
+    #huge-quotation-mark {
+      left: -60px;
     }
   }
 }

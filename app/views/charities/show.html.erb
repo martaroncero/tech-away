@@ -2,15 +2,18 @@
 <% content_for :meta_description, "All of the seekers from #{@charity.name}" %>
 
 <% if @charity.photo.attached? %>
-  <div id="charity-banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= cl_image_path @charity.photo.key %>);">
+  <% style = "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(#{ cl_image_path @charity.photo.key});" %>
 <% else %>
-  <div id="charity-banner">
+  <% style = "" %>
 <% end %>
-    <div id="text_container">
-      <h1><%= @charity.name.titleize %></h1>
-      <h5 class="whitespace-preline"><%= @charity.description %></h5>
-    </div>
+
+<div id="charity-banner" style="<%= style %>">
+  <div id="text_container">
+    <h1><%= @charity.name.titleize %></h1>
+
+    <h5 class="whitespace-preline"><%= @charity.description %></h5>
   </div>
+</div>
 
 <div class="container my-5">
   <div id="content-tabs">
@@ -18,37 +21,55 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link <%= 'active' unless params[:tab] == "2" %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Our seekers</button>
       </li>
+
       <li class="nav-item" role="presentation">
         <button class="nav-link <%= 'active' if params[:tab] == "2" %>" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Offers</button>
       </li>
+
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Register a new seeker</button>
       </li>
     </ul>
+
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade <%= 'show active' unless params[:tab] == "2" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="row px-3">
+
           <% @our_seekers.each do |our_seeker| %>
+
             <%= render 'shared/seeker_card', user: our_seeker, seeker_request: nil %>
+
           <% end %>
+
         </div>
       </div>
+
       <div class="tab-pane fade <%= 'show active' if params[:tab] == "2" %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="row px-3">
           <div class="col-12 col-lg-6 mb-4">
+
             <%= render 'bookings/booking_items', bookings: @charity.bookings.order(created_at: :desc), charity: @charity, status: "Pending" %>
+
           </div>
+
           <div class="col-12 col-lg-6 mb-4">
+
             <%= render 'bookings/booking_items', bookings: @charity.bookings.order(created_at: :desc), charity: @charity, status: "Accepted" %>
+
           </div>
         </div>
       </div>
+
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <div class="d-flex justify-content-center">
+
           <%= render 'users/new_form'%>
+
           <a class="nav-link" href="#"></a>
         </div>
       </div>
+
     </div>
+
   </div>
 </div>

@@ -1,40 +1,49 @@
 <h3><%= status %> offers</h3>
+
 <ul class="list-group">
   <% if bookings.where(status: status).empty? %>
     <p class="mt-3">You have no <%= status.downcase %> offers</p>
   <% else %>
     <% bookings.where(status: status).each do |booking| %>
+
       <li class="list-item-card">
         <div class="d-flex align-items-center justify-content-between">
+
           <div class="offer-list-item-content d-flex align-items-center">
             <div>
-              <% if booking.status == "Pending" %>
+
+              <% if booking.status == "Pending"%>
                 <%= "New offer for" %>
-              <% elsif booking.status == "Accepted" %>
-                <%= "You accepted an offer for " %>
-              <% elsif booking.status == "Declined" %>
-                <%= "You declined an offer for " %>
+              <% else %>
+                <%= "You #{booking.status.downcase} an offer for " %>
               <% end %>
+
               <%= link_to booking.user.first_name, product_path(booking.product) %>
-                 <div class="posted-text">
-                   <h6> <%= booking.time_since_creation %></h6>
-                 </div>
+
+              <div class="posted-text">
+                <h6> <%= booking.time_since_creation %></h6>
+              </div>
             </div>
           </div>
+
           <% if booking.status == "Pending" %>
             <div>
               <div class="btn-group">
+
                 <%= link_to(accept_booking_path(booking),  class: "btn btn-primary", method: :get, data: { confirm: "Are you sure you want to accept this offer and decline all other pending offers on this request?"}) do %>
                   Accept
                 <% end %>
+
                 <%= link_to(decline_booking_path(booking), class: "btn btn-dark", method: :get, data: { confirm: "Are you sure you want to decline this offer?"}) do %>
                   Decline
                 <% end %>
               </div>
             </div>
           <% end %>
+
         </div>
       </li>
+
     <% end %>
   <% end %>
 </ul>

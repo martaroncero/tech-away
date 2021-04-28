@@ -13,7 +13,9 @@
         <%= f.input :title, class: "w-100", label: "Product title"%>
         <%= f.association :category, disabled: (params[:request_id].present?) %>
         <%= f.input :condition, collection: Product::CONDITIONS %>
+
         <%= link_to "Condition Information", "#", class: "mb-3", data: { toggle: "modal", target: "#exampleModal" } %>
+
         <%= f.input :description, class: "w-100" %>
         <%= f.input :address, class: "w-100" %>
 
@@ -21,11 +23,13 @@
           <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'btn btn-primary-outline'}, label: '📷 Upload a photo' %>
           <%= f.button :submit, "List your donation", class: 'btn btn-primary mb-3' %>
         </div>
+
         <div class="col-12 col-md-6 p-0">
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 
@@ -33,21 +37,26 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Condition</h5>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
         <p>New - Brand new, never used,undamaged item. Ideally in the original package.</p>
         <p>Used (like new) - Excellent condition, but has previously been used. No signs of wear or defects</p>
         <p>Used (good) - Minor signs of wear. Item is operational and works as intended.</p>
         <p>Used (fair) - Some signs of wear and tear or minor defects. Item is still usable as intended.</p>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
+
     </div>
   </div>
 </div>
